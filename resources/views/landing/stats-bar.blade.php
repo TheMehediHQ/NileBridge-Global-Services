@@ -11,8 +11,8 @@
                 </div>
                 <div>
                     <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0B152F] tracking-tight">24/7</div>
-                    <div class="text-xs sm:text-sm font-bold text-slate-800 mt-1">Support &amp; Operations</div>
-                    <div class="text-[11px] text-slate-400 mt-0.5">Round-the-clock shift coverage</div>
+                    <div class="text-sm sm:text-base font-bold text-slate-800 mt-1">Support &amp; Operations</div>
+                    <div class="text-xs text-slate-500 font-medium mt-0.5">Round-the-clock shift coverage</div>
                 </div>
             </div>
 
@@ -25,8 +25,8 @@
                 </div>
                 <div>
                     <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0B152F] tracking-tight">US &amp; UK</div>
-                    <div class="text-xs sm:text-sm font-bold text-slate-800 mt-1">Offices &amp; Operations</div>
-                    <div class="text-[11px] text-slate-400 mt-0.5">Full daytime overlap &amp; liaison</div>
+                    <div class="text-sm sm:text-base font-bold text-slate-800 mt-1">Offices &amp; Operations</div>
+                    <div class="text-xs text-slate-500 font-medium mt-0.5">Full daytime overlap &amp; liaison</div>
                 </div>
             </div>
 
@@ -39,8 +39,8 @@
                 </div>
                 <div>
                     <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-teal-600 tracking-tight">5 &ndash; 100+</div>
-                    <div class="text-xs sm:text-sm font-bold text-slate-800 mt-1">Team Size Flexibility</div>
-                    <div class="text-[11px] text-teal-600 font-bold mt-0.5">Up to 70% realized savings</div>
+                    <div class="text-sm sm:text-base font-bold text-slate-800 mt-1">Team Size Flexibility</div>
+                    <div class="text-xs text-teal-600 font-bold mt-0.5">Up to 70% realized savings</div>
                 </div>
             </div>
 
@@ -53,8 +53,8 @@
                 </div>
                 <div>
                     <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0B152F] tracking-tight">Uganda</div>
-                    <div class="text-xs sm:text-sm font-bold text-slate-800 mt-1">Operating Base</div>
-                    <div class="text-[11px] text-slate-400 mt-0.5">#1 English fluency in East Africa</div>
+                    <div class="text-sm sm:text-base font-bold text-slate-800 mt-1">Operating Base</div>
+                    <div class="text-xs text-slate-500 font-medium mt-0.5">#1 English fluency in East Africa</div>
                 </div>
             </div>
         </div>

@@ -29,15 +29,15 @@
                         </svg>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2 tracking-tight">Recruitment &amp; Staffing</h3>
-                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 font-normal">
+                    <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
                         Build your dream team with vetted global talent across engineering, product and customer success.
                     </p>
                 </div>
                 <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                    <a href="#lead-capture" class="inline-flex items-center text-xs font-bold text-teal-400 group-hover:text-teal-300 transition">
+                    <a href="#lead-capture" class="inline-flex items-center text-sm font-bold text-teal-400 group-hover:text-teal-300 transition">
                         <span>&rarr; Explore Roles</span>
                     </a>
-                    <span class="text-[10px] text-slate-500 font-mono">12-Day SLA</span>
+                    <span class="text-xs text-slate-400 font-mono">12-Day SLA</span>
                 </div>
             </div>
 
@@ -50,15 +50,15 @@
                         </svg>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2 tracking-tight">HR &amp; Payroll</h3>
-                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 font-normal">
+                    <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
                         Simplify international payroll, tax withholding, compliant contracts, and local benefits administration.
                     </p>
                 </div>
                 <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                    <a href="#lead-capture" class="inline-flex items-center text-xs font-bold text-teal-400 group-hover:text-teal-300 transition">
+                    <a href="#lead-capture" class="inline-flex items-center text-sm font-bold text-teal-400 group-hover:text-teal-300 transition">
                         <span>&rarr; Explore Payroll</span>
                     </a>
-                    <span class="text-[10px] text-slate-500 font-mono">100% Compliant</span>
+                    <span class="text-xs text-slate-400 font-mono">100% Compliant</span>
                 </div>
             </div>
 
@@ -71,15 +71,15 @@
                         </svg>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2 tracking-tight">BPO Services</h3>
-                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 font-normal">
+                    <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
                         Outsource customer care, dispute mediation, back-office auditing, and data workflows with complete confidence.
                     </p>
                 </div>
                 <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                    <a href="#lead-capture" class="inline-flex items-center text-xs font-bold text-teal-400 group-hover:text-teal-300 transition">
+                    <a href="#lead-capture" class="inline-flex items-center text-sm font-bold text-teal-400 group-hover:text-teal-300 transition">
                         <span>&rarr; Explore Operations</span>
                     </a>
-                    <span class="text-[10px] text-slate-500 font-mono">24/7 Shifts</span>
+                    <span class="text-xs text-slate-400 font-mono">24/7 Shifts</span>
                 </div>
             </div>
 
@@ -92,15 +92,15 @@
                         </svg>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2 tracking-tight">Team Management</h3>
-                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 font-normal">
+                    <p class="text-sm text-slate-300 leading-relaxed mb-6 font-normal">
                         Keep distributed pods productive with dedicated team leads, KPI tracking dashboards, and continuous upskilling.
                     </p>
                 </div>
                 <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                    <a href="#lead-capture" class="inline-flex items-center text-xs font-bold text-teal-400 group-hover:text-teal-300 transition">
+                    <a href="#lead-capture" class="inline-flex items-center text-sm font-bold text-teal-400 group-hover:text-teal-300 transition">
                         <span>&rarr; Explore Pods</span>
                     </a>
-                    <span class="text-[10px] text-slate-500 font-mono">Dedicated Leads</span>
+                    <span class="text-xs text-slate-400 font-mono">Dedicated Leads</span>
                 </div>
             </div>
 

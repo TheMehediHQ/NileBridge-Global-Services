@@ -29,7 +29,7 @@
                         <span class="w-2 h-2 rounded-full bg-teal-400"></span>
                         NILEBRIDGE
                     </span>
-                    <span class="text-[11px] font-semibold text-teal-300 bg-teal-900/50 px-2 py-0.5 rounded-full border border-teal-700/50">
+                    <span class="text-xs font-semibold text-teal-300 bg-teal-900/50 px-2.5 py-1 rounded-full border border-teal-700/50">
                         Modern Managed Model
                     </span>
                 </div>

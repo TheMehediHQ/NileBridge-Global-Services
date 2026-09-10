@@ -33,11 +33,11 @@
                     </div>
 
                     <h3 class="text-xl font-bold text-[#0B152F] mb-2 tracking-tight">Talent Recruitment</h3>
-                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6 font-normal">
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
                         Source, hire and onboard top global talent for your team.
                     </p>
 
-                    <ul class="space-y-3 text-xs sm:text-sm text-slate-600 mb-8 font-medium">
+                    <ul class="space-y-3 text-sm text-slate-600 mb-8 font-medium">
                         <li class="flex items-center">
                             <svg class="w-4 h-4 text-teal-500 mr-2.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                             <span>Global Sourcing</span>
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="pt-4 border-t border-slate-100">
-                    <a href="#lead-capture" class="inline-flex items-center text-xs sm:text-sm font-bold text-teal-600 hover:text-teal-700 transition">
+                    <a href="#lead-capture" class="inline-flex items-center text-sm font-bold text-teal-600 hover:text-teal-700 transition">
                         <span>Learn More</span>
                         <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </a>
@@ -79,11 +79,11 @@
                     </div>
 
                     <h3 class="text-xl font-bold text-[#0B152F] mb-2 tracking-tight">HR &amp; Payroll Management</h3>
-                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6 font-normal">
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
                         Simplify HR operations and payroll across borders.
                     </p>
 
-                    <ul class="space-y-3 text-xs sm:text-sm text-slate-600 mb-8 font-medium">
+                    <ul class="space-y-3 text-sm text-slate-600 mb-8 font-medium">
                         <li class="flex items-center">
                             <svg class="w-4 h-4 text-teal-500 mr-2.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                             <span>Payroll Processing</span>
@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="pt-4 border-t border-slate-100">
-                    <a href="#lead-capture" class="inline-flex items-center text-xs sm:text-sm font-bold text-teal-600 hover:text-teal-700 transition">
+                    <a href="#lead-capture" class="inline-flex items-center text-sm font-bold text-teal-600 hover:text-teal-700 transition">
                         <span>Learn More</span>
                         <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </a>
@@ -124,11 +124,11 @@
                     </div>
 
                     <h3 class="text-xl font-bold text-[#0B152F] mb-2 tracking-tight">Remote Team Management</h3>
-                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6 font-normal">
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
                         Keep your distributed team productive and engaged.
                     </p>
 
-                    <ul class="space-y-3 text-xs sm:text-sm text-slate-600 mb-8 font-medium">
+                    <ul class="space-y-3 text-sm text-slate-600 mb-8 font-medium">
                         <li class="flex items-center">
                             <svg class="w-4 h-4 text-teal-500 mr-2.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                             <span>Performance Tracking</span>
@@ -149,7 +149,7 @@
                 </div>
 
                 <div class="pt-4 border-t border-slate-100">
-                    <a href="#lead-capture" class="inline-flex items-center text-xs sm:text-sm font-bold text-teal-600 hover:text-teal-700 transition">
+                    <a href="#lead-capture" class="inline-flex items-center text-sm font-bold text-teal-600 hover:text-teal-700 transition">
                         <span>Learn More</span>
                         <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </a>
@@ -169,11 +169,11 @@
                     </div>
 
                     <h3 class="text-xl font-bold text-[#0B152F] mb-2 tracking-tight">Business Process Outsourcing</h3>
-                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6 font-normal">
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
                         Focus on growth while we handle the operations.
                     </p>
 
-                    <ul class="space-y-3 text-xs sm:text-sm text-slate-600 mb-8 font-medium">
+                    <ul class="space-y-3 text-sm text-slate-600 mb-8 font-medium">
                         <li class="flex items-center">
                             <svg class="w-4 h-4 text-teal-500 mr-2.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                             <span>Customer Support &amp; BPO</span>
@@ -194,7 +194,7 @@
                 </div>
 
                 <div class="pt-4 border-t border-slate-100">
-                    <a href="#lead-capture" class="inline-flex items-center text-xs sm:text-sm font-bold text-teal-600 hover:text-teal-700 transition">
+                    <a href="#lead-capture" class="inline-flex items-center text-sm font-bold text-teal-600 hover:text-teal-700 transition">
                         <span>Learn More</span>
                         <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </a>

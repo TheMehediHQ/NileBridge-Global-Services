@@ -14,11 +14,11 @@
                     <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
                     <span>GLOBAL TALENT SOLUTIONS</span>
                     <span class="text-teal-300">&bull;</span>
-                    <span class="text-slate-600 font-semibold text-[11px]">Top 1% Acceptance Bar</span>
+                    <span class="text-slate-600 font-semibold text-xs">Top 1% Acceptance Bar</span>
                 </div>
 
                 <!-- Main Headline -->
-                <h1 class="text-4xl sm:text-6xl lg:text-[64px] font-black text-[#0B152F] uppercase tracking-tight leading-[1.04]">
+                <h1 class="text-3xl sm:text-5xl lg:text-[56px] font-black text-[#0B152F] uppercase tracking-tight leading-[1.08]">
                     GLOBAL TALENT,<br>
                     EXCEPTIONAL<br>
                     <span class="bg-gradient-to-r from-teal-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">OPERATIONS.</span>
@@ -32,21 +32,21 @@
                 <!-- Action Button Group -->
                 <div class="mt-8 flex flex-wrap items-center gap-4">
                     <a href="#lead-capture" 
-                       class="inline-flex items-center justify-center px-7 py-3.5 text-xs sm:text-sm font-bold rounded-full text-white bg-teal-500 hover:bg-teal-600 shadow-xl shadow-teal-500/25 hover:shadow-teal-500/35 transition-all transform hover:-translate-y-0.5 active:scale-95">
+                       class="inline-flex items-center justify-center px-7 py-3.5 text-sm sm:text-base font-bold rounded-full text-white bg-teal-500 hover:bg-teal-600 shadow-xl shadow-teal-500/25 hover:shadow-teal-500/35 transition-all transform hover:-translate-y-0.5 active:scale-95">
                         <span>Start Hiring</span>
                         <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </a>
                     <a href="#about" 
-                       class="inline-flex items-center justify-center px-6 py-3.5 text-xs sm:text-sm font-semibold rounded-full text-slate-800 bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 shadow-sm transition group active:scale-95">
-                        <span class="w-5 h-5 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center mr-2.5 text-[10px] group-hover:bg-teal-500 group-hover:text-white transition">▶</span>
+                       class="inline-flex items-center justify-center px-6 py-3.5 text-sm sm:text-base font-semibold rounded-full text-slate-800 bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 shadow-sm transition group active:scale-95">
+                        <span class="w-5 h-5 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center mr-2.5 text-xs group-hover:bg-teal-500 group-hover:text-white transition">▶</span>
                         <span>Watch Our Story</span>
                     </a>
                 </div>
 
                 <!-- 3 Value Props (Horizontal Icons) -->
-                <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs font-semibold text-slate-600">
+                <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm font-medium text-slate-700">
                     <div class="flex items-center space-x-2">
                         <div class="w-5 h-5 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center">
                             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -125,7 +125,7 @@
                         </div>
                         <div>
                             <div class="text-base sm:text-lg font-black text-[#0B152F] leading-none">250+</div>
-                            <div class="text-[10px] uppercase tracking-wider font-bold text-slate-500 mt-1">Global Experts</div>
+                            <div class="text-xs uppercase tracking-wider font-bold text-slate-500 mt-1">Global Experts</div>
                         </div>
                     </div>
 
@@ -138,7 +138,7 @@
                         </div>
                         <div>
                             <div class="text-base sm:text-lg font-black text-[#0B152F] leading-none">15+</div>
-                            <div class="text-[10px] uppercase tracking-wider font-bold text-slate-500 mt-1">Countries</div>
+                            <div class="text-xs uppercase tracking-wider font-bold text-slate-500 mt-1">Countries</div>
                         </div>
                     </div>
 
@@ -149,7 +149,7 @@
                         </div>
                         <div>
                             <div class="text-base sm:text-lg font-black text-[#0B152F] leading-none">98%</div>
-                            <div class="text-[10px] uppercase tracking-wider font-bold text-slate-500 mt-1">Client Satisfaction</div>
+                            <div class="text-xs uppercase tracking-wider font-bold text-slate-500 mt-1">Client Satisfaction</div>
                         </div>
                     </div>
 
@@ -161,10 +161,10 @@
         <!-- Enterprise Trust Logo Strip -->
         <div class="mt-16 pt-10 border-t border-slate-100">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-400">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">
                     Trusted by high-growth companies across US, UK &amp; Europe:
                 </span>
-                <div class="flex flex-wrap items-center gap-8 text-slate-400 font-bold text-sm tracking-tight grayscale opacity-70 hover:opacity-100 transition">
+                <div class="flex flex-wrap items-center gap-8 text-slate-500 font-bold text-sm sm:text-base tracking-tight grayscale opacity-75 hover:opacity-100 transition">
                     <span class="hover:text-teal-600 transition">FinTech Solutions</span>
                     <span class="hover:text-teal-600 transition">Starlight E-Commerce</span>
                     <span class="hover:text-teal-600 transition">Apex Financial</span>

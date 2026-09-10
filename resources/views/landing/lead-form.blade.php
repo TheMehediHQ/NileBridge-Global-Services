@@ -42,8 +42,8 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="text-sm font-bold text-[#0B152F]">+256 700 123 456</div>
-                            <div class="text-xs text-slate-400 font-medium">Direct Line &bull; Call us anytime (US/UK Aligned)</div>
+                            <div class="text-base font-bold text-[#0B152F]">+256 700 123 456</div>
+                            <div class="text-sm text-slate-500 font-medium">Direct Line &bull; Call us anytime (US/UK Aligned)</div>
                         </div>
                     </div>
 
@@ -55,14 +55,14 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="text-sm font-bold text-[#0B152F]">hello@globaltalent.com</div>
-                            <div class="text-xs text-slate-400 font-medium">We reply with custom quotes within 24 hours</div>
+                            <div class="text-base font-bold text-[#0B152F]">hello@globaltalent.com</div>
+                            <div class="text-sm text-slate-500 font-medium">We reply with custom quotes within 24 hours</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Trust Guarantee Badge -->
-                <div class="mt-8 p-4 rounded-2xl bg-slate-50 border border-slate-100 text-xs text-slate-500 flex items-center gap-3">
+                <div class="mt-8 p-4 rounded-2xl bg-slate-50 border border-slate-100 text-sm text-slate-600 flex items-center gap-3">
                     <span class="text-teal-600 font-bold text-base">🔒</span>
                     <div>
                         <strong class="text-slate-800">Bank-Grade Confidentiality:</strong> Strict mutual NDAs signed automatically prior to discovering candidate portfolios.
@@ -79,12 +79,12 @@
                         <button 
                             type="button"
                             @click="openFaq = (openFaq === 1 ? null : 1)"
-                            class="w-full px-6 py-4.5 text-left flex items-center justify-between text-sm sm:text-base font-bold text-[#0B152F] hover:text-teal-600 transition"
+                            class="w-full px-6 py-4.5 text-left flex items-center justify-between text-base sm:text-lg font-bold text-[#0B152F] hover:text-teal-600 transition"
                         >
                             <span>How fast can you find talent?</span>
                             <span class="text-slate-400 font-mono text-lg font-bold" x-text="openFaq === 1 ? '−' : '+'"></span>
                         </button>
-                        <div x-show="openFaq === 1" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed font-normal border-t border-slate-100 pt-3">
+                        <div x-show="openFaq === 1" x-collapse class="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal border-t border-slate-100 pt-3">
                             Our average placement cycle is 10 to 14 business days. Pre-vetted specialists in our Kampala talent pool can often onboard even faster for immediate operational needs.
                         </div>
                     </div>
@@ -94,12 +94,12 @@
                         <button 
                             type="button"
                             @click="openFaq = (openFaq === 2 ? null : 2)"
-                            class="w-full px-6 py-4.5 text-left flex items-center justify-between text-sm sm:text-base font-bold text-[#0B152F] hover:text-teal-600 transition"
+                            class="w-full px-6 py-4.5 text-left flex items-center justify-between text-base sm:text-lg font-bold text-[#0B152F] hover:text-teal-600 transition"
                         >
                             <span>What industries do you serve?</span>
                             <span class="text-slate-400 font-mono text-lg font-bold" x-text="openFaq === 2 ? '−' : '+'"></span>
                         </button>
-                        <div x-show="openFaq === 2" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed font-normal border-t border-slate-100 pt-3">
+                        <div x-show="openFaq === 2" x-collapse class="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal border-t border-slate-100 pt-3">
                             We support high-growth companies across E-Commerce, SaaS, FinTech &amp; Payment Processing, HealthTech, Logistics, and Education with dedicated remote teams.
                         </div>
                     </div>
@@ -109,12 +109,12 @@
                         <button 
                             type="button"
                             @click="openFaq = (openFaq === 3 ? null : 3)"
-                            class="w-full px-6 py-4.5 text-left flex items-center justify-between text-sm sm:text-base font-bold text-[#0B152F] hover:text-teal-600 transition"
+                            class="w-full px-6 py-4.5 text-left flex items-center justify-between text-base sm:text-lg font-bold text-[#0B152F] hover:text-teal-600 transition"
                         >
                             <span>Do you handle payroll and taxes?</span>
                             <span class="text-slate-400 font-mono text-lg font-bold" x-text="openFaq === 3 ? '−' : '+'"></span>
                         </button>
-                        <div x-show="openFaq === 3" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed font-normal border-t border-slate-100 pt-3">
+                        <div x-show="openFaq === 3" x-collapse class="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal border-t border-slate-100 pt-3">
                             Yes, 100%. We manage international payroll, local compliance, benefits, tax withholding, and equipment provisioning so you receive a single predictable invoice.
                         </div>
                     </div>
@@ -124,12 +124,12 @@
                         <button 
                             type="button"
                             @click="openFaq = (openFaq === 4 ? null : 4)"
-                            class="w-full px-6 py-4.5 text-left flex items-center justify-between text-sm sm:text-base font-bold text-[#0B152F] hover:text-teal-600 transition"
+                            class="w-full px-6 py-4.5 text-left flex items-center justify-between text-base sm:text-lg font-bold text-[#0B152F] hover:text-teal-600 transition"
                         >
                             <span>Can I hire a single team member?</span>
                             <span class="text-slate-400 font-mono text-lg font-bold" x-text="openFaq === 4 ? '−' : '+'"></span>
                         </button>
-                        <div x-show="openFaq === 4" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed font-normal border-t border-slate-100 pt-3">
+                        <div x-show="openFaq === 4" x-collapse class="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal border-t border-slate-100 pt-3">
                             Absolutely. You can start with a pilot of 1 dedicated specialist and seamlessly scale to an entire department of 50+ as your operations grow.
                         </div>
                     </div>
@@ -139,12 +139,12 @@
                         <button 
                             type="button"
                             @click="openFaq = (openFaq === 5 ? null : 5)"
-                            class="w-full px-6 py-4.5 text-left flex items-center justify-between text-sm sm:text-base font-bold text-[#0B152F] hover:text-teal-600 transition"
+                            class="w-full px-6 py-4.5 text-left flex items-center justify-between text-base sm:text-lg font-bold text-[#0B152F] hover:text-teal-600 transition"
                         >
                             <span>Is there a long-term contract?</span>
                             <span class="text-slate-400 font-mono text-lg font-bold" x-text="openFaq === 5 ? '−' : '+'"></span>
                         </button>
-                        <div x-show="openFaq === 5" x-collapse class="px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed font-normal border-t border-slate-100 pt-3">
+                        <div x-show="openFaq === 5" x-collapse class="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal border-t border-slate-100 pt-3">
                             We offer flexible month-to-month contracts with no lock-ins, backed by a 2-week risk-free talent replacement guarantee.
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                 <div class="mt-6">
                     <a 
                         href="#lead-capture" 
-                        class="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-teal-500 hover:bg-teal-600 transition shadow-lg shadow-teal-500/20 active:scale-95 transform hover:-translate-y-0.5"
+                        class="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-sm sm:text-base font-bold text-white bg-teal-500 hover:bg-teal-600 transition shadow-lg shadow-teal-500/20 active:scale-95 transform hover:-translate-y-0.5"
                     >
                         <span>Get a Free Consultation &rarr;</span>
                     </a>
@@ -164,7 +164,7 @@
                 <div id="lead-capture" class="mt-10 bg-gradient-to-b from-slate-50 to-white rounded-3xl border border-slate-200 p-8 sm:p-10 shadow-xl relative">
                     <div class="flex items-center justify-between pb-6 border-b border-slate-200 mb-6">
                         <div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Enterprise Intake</span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Enterprise Intake</span>
                             <h3 class="text-xl font-bold text-[#0B152F] mt-2 tracking-tight">Initiate Your Requisition</h3>
                         </div>
                         <span class="text-xs text-slate-400 font-mono">24h SLA</span>
@@ -183,26 +183,26 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Full name <span class="text-teal-600">*</span></label>
-                                <input type="text" name="contact_name" required value="{{ old('contact_name') }}" placeholder="Jane Smith" class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition">
-                                @error('contact_name') <span class="text-[11px] text-rose-500 mt-0.5 block">{{ $message }}</span> @enderror
+                                <label class="block text-sm font-semibold text-slate-700 mb-1.5">Full name <span class="text-teal-600">*</span></label>
+                                <input type="text" name="contact_name" required value="{{ old('contact_name') }}" placeholder="Jane Smith" class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition">
+                                @error('contact_name') <span class="text-xs text-rose-500 mt-0.5 block">{{ $message }}</span> @enderror
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Work email <span class="text-teal-600">*</span></label>
-                                <input type="email" name="contact_email" required value="{{ old('contact_email') }}" placeholder="jane@company.com" class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition">
-                                @error('contact_email') <span class="text-[11px] text-rose-500 mt-0.5 block">{{ $message }}</span> @enderror
+                                <label class="block text-sm font-semibold text-slate-700 mb-1.5">Work email <span class="text-teal-600">*</span></label>
+                                <input type="email" name="contact_email" required value="{{ old('contact_email') }}" placeholder="jane@company.com" class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition">
+                                @error('contact_email') <span class="text-xs text-rose-500 mt-0.5 block">{{ $message }}</span> @enderror
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Company <span class="text-teal-600">*</span></label>
-                                <input type="text" name="company_name" required value="{{ old('company_name') }}" placeholder="Acme Inc." class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition">
-                                @error('company_name') <span class="text-[11px] text-rose-500 mt-0.5 block">{{ $message }}</span> @enderror
+                                <label class="block text-sm font-semibold text-slate-700 mb-1.5">Company <span class="text-teal-600">*</span></label>
+                                <input type="text" name="company_name" required value="{{ old('company_name') }}" placeholder="Acme Inc." class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition">
+                                @error('company_name') <span class="text-xs text-rose-500 mt-0.5 block">{{ $message }}</span> @enderror
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Service Interest <span class="text-teal-600">*</span></label>
-                                <select name="service_category" required class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition">
+                                <label class="block text-sm font-semibold text-slate-700 mb-1.5">Service Interest <span class="text-teal-600">*</span></label>
+                                <select name="service_category" required class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition">
                                     <option value="bpo_customer_support">BPO &amp; Customer Support</option>
                                     <option value="payment_operations">Payment &amp; Fraud Ops</option>
                                     <option value="software_engineering">Software Engineering</option>
@@ -212,11 +212,11 @@
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Requirements &amp; Goals</label>
-                            <textarea name="notes" rows="3" placeholder="Tell us about the roles, timezone needs or goals you are hiring for..." class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition">{{ old('notes') }}</textarea>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Requirements &amp; Goals</label>
+                            <textarea name="notes" rows="3" placeholder="Tell us about the roles, timezone needs or goals you are hiring for..." class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition">{{ old('notes') }}</textarea>
                         </div>
 
-                        <button type="submit" class="w-full py-3.5 px-6 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-teal-500/25 transition-all transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2">
+                        <button type="submit" class="w-full py-3.5 px-6 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 text-white text-sm sm:text-base font-bold rounded-xl shadow-lg shadow-teal-500/25 transition-all transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2">
                             <span>Submit Requisition &rarr;</span>
                         </button>
                     </form>

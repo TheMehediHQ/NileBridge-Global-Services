@@ -40,14 +40,14 @@
                         <div class="w-12 h-12 rounded-2xl bg-teal-500 text-white font-black text-base flex items-center justify-center shadow-lg shadow-teal-500/25 group-hover:scale-110 transition duration-300">
                             01
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Phase 1</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Phase 1</span>
                     </div>
                     <h3 class="text-lg font-bold text-[#0B152F] mb-2 tracking-tight">Share Your Needs</h3>
-                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
+                    <p class="text-sm text-slate-600 leading-relaxed font-normal">
                         Tell us what you're looking for, required skills, time zone alignment and operational goals.
                     </p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-400 flex items-center gap-1.5">
+                <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-500 flex items-center gap-1.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
                     <span>Intake within 24 Hours</span>
                 </div>
@@ -60,14 +60,14 @@
                         <div class="w-12 h-12 rounded-2xl bg-teal-500 text-white font-black text-base flex items-center justify-center shadow-lg shadow-teal-500/25 group-hover:scale-110 transition duration-300">
                             02
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Phase 2</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Phase 2</span>
                     </div>
                     <h3 class="text-lg font-bold text-[#0B152F] mb-2 tracking-tight">We Find the Best Talent</h3>
-                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
+                    <p class="text-sm text-slate-600 leading-relaxed font-normal">
                         We shortlist, vet and technically screen top 1% candidate portfolios tailored to your stack.
                     </p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-400 flex items-center gap-1.5">
+                <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-500 flex items-center gap-1.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
                     <span>Top 3 Handpicked Profiles</span>
                 </div>
@@ -80,14 +80,14 @@
                         <div class="w-12 h-12 rounded-2xl bg-teal-500 text-white font-black text-base flex items-center justify-center shadow-lg shadow-teal-500/25 group-hover:scale-110 transition duration-300">
                             03
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Phase 3</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Phase 3</span>
                     </div>
                     <h3 class="text-lg font-bold text-[#0B152F] mb-2 tracking-tight">You Hire &amp; Onboard</h3>
-                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
+                    <p class="text-sm text-slate-600 leading-relaxed font-normal">
                         Interview your finalists, approve candidate selections, and begin immediate day-one integration.
                     </p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-400 flex items-center gap-1.5">
+                <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-500 flex items-center gap-1.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
                     <span>2-Week Risk-Free Trial</span>
                 </div>
@@ -100,14 +100,14 @@
                         <div class="w-12 h-12 rounded-2xl bg-teal-500 text-white font-black text-base flex items-center justify-center shadow-lg shadow-teal-500/25 group-hover:scale-110 transition duration-300">
                             04
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Phase 4</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Phase 4</span>
                     </div>
                     <h3 class="text-lg font-bold text-[#0B152F] mb-2 tracking-tight">We Support &amp; Scale</h3>
-                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
+                    <p class="text-sm text-slate-600 leading-relaxed font-normal">
                         Ongoing performance tracking, payroll management, and proactive account management for scale.
                     </p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-400 flex items-center gap-1.5">
+                <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-500 flex items-center gap-1.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
                     <span>Continuous Dedicated Oversight</span>
                 </div>

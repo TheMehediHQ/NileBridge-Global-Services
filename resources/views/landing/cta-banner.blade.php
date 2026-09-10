@@ -13,7 +13,7 @@
         </div>
 
         <!-- Heading -->
-        <h2 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.05]">
+        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08]">
             Let's Build Your Team.
         </h2>
 
@@ -26,14 +26,14 @@
         <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
                 href="#lead-capture" 
-                class="w-full sm:w-auto inline-flex items-center justify-center px-9 py-4 rounded-full text-xs sm:text-sm font-bold bg-amber-400 hover:bg-amber-500 text-[#0B152F] transition-all shadow-xl shadow-amber-400/20 active:scale-95 transform hover:-translate-y-0.5"
+                class="w-full sm:w-auto inline-flex items-center justify-center px-9 py-4 rounded-full text-sm sm:text-base font-bold bg-amber-400 hover:bg-amber-500 text-[#0B152F] transition-all shadow-xl shadow-amber-400/20 active:scale-95 transform hover:-translate-y-0.5"
             >
                 <span>Get Started Today &rarr;</span>
                 <span class="sr-only">Initiate Your Requisition</span>
             </a>
             <a 
                 href="#contact" 
-                class="w-full sm:w-auto inline-flex items-center justify-center px-9 py-4 rounded-full text-xs sm:text-sm font-bold border border-slate-700 bg-slate-900/80 text-slate-200 hover:text-white hover:border-teal-400 transition-all active:scale-95 transform hover:-translate-y-0.5"
+                class="w-full sm:w-auto inline-flex items-center justify-center px-9 py-4 rounded-full text-sm sm:text-base font-bold border border-slate-700 bg-slate-900/80 text-slate-200 hover:text-white hover:border-teal-400 transition-all active:scale-95 transform hover:-translate-y-0.5"
             >
                 <span>Talk to Our Team &rarr;</span>
                 <span class="sr-only">Initiate Your Global Talent Search</span>
@@ -41,7 +41,7 @@
         </div>
 
         <!-- Micro-Guarantee Strip -->
-        <div class="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-xs text-slate-400 font-medium">
+        <div class="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-sm text-slate-300 font-medium">
             <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 <span>Zero Upfront Recruitment Fees</span>

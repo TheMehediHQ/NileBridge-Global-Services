@@ -13,7 +13,7 @@
                     </div>
                     <span class="text-lg font-black text-white tracking-tight">GlobalTalent</span>
                 </div>
-                <p class="text-slate-400 text-xs leading-relaxed mb-6 font-normal">
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 font-normal">
                     Global Talent. Exceptional Operations. Connecting North American and European businesses with dedicated African delivery centers.
                 </p>
 
@@ -37,7 +37,7 @@
             <!-- Quick Links -->
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Quick Links</h4>
-                <ul class="space-y-2.5">
+                <ul class="space-y-2.5 text-sm text-slate-400">
                     <li><a href="{{ route('home') }}" class="hover:text-teal-400 transition">Home</a></li>
                     <li><a href="#services" class="hover:text-teal-400 transition">Services</a></li>
                     <li><a href="#about" class="hover:text-teal-400 transition">About Us</a></li>
@@ -50,7 +50,7 @@
             <!-- Our Services -->
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Our Services</h4>
-                <ul class="space-y-2.5">
+                <ul class="space-y-2.5 text-sm text-slate-400">
                     <li><a href="#services" class="hover:text-teal-400 transition">Talent Recruitment</a></li>
                     <li><a href="#services" class="hover:text-teal-400 transition">HR &amp; Payroll</a></li>
                     <li><a href="#services" class="hover:text-teal-400 transition">BPO Services</a></li>
@@ -61,7 +61,7 @@
             <!-- Contact Us -->
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Contact Us</h4>
-                <ul class="space-y-2.5">
+                <ul class="space-y-2.5 text-sm text-slate-400">
                     <li class="flex items-center gap-2">
                         <svg class="w-3.5 h-3.5 text-teal-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
                         <span>Kampala, Uganda</span>
@@ -89,11 +89,11 @@
                     </svg>
                 </div>
                 <div class="mt-3">
-                    <div class="inline-flex items-center gap-1.5 text-[10px] font-mono text-teal-400">
+                    <div class="inline-flex items-center gap-1.5 text-xs font-mono text-teal-400">
                         <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
                         <span>Systems Operational</span>
                     </div>
-                    <p class="text-[11px] text-slate-500 leading-snug mt-1">
+                    <p class="text-xs text-slate-400 leading-snug mt-1">
                         Building global teams for a better tomorrow.
                     </p>
                 </div>
@@ -102,14 +102,14 @@
         </div>
 
         <!-- Sub-Footer Bottom Bar -->
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-xs">
             <div>
                 &copy; {{ date('Y') }} NileBridge GlobalTalent Ltd. All rights reserved.
             </div>
             <div class="flex items-center space-x-6">
-                <a href="#" class="hover:text-slate-400 transition">Privacy Policy</a>
-                <a href="#" class="hover:text-slate-400 transition">Terms of Service</a>
-                <a href="#" class="hover:text-slate-400 transition">Security Disclosure</a>
+                <a href="#" class="hover:text-slate-300 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-slate-300 transition">Terms of Service</a>
+                <a href="#" class="hover:text-slate-300 transition">Security Disclosure</a>
             </div>
         </div>
     </div>

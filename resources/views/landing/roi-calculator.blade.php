@@ -26,12 +26,12 @@
             <div class="lg:col-span-7 bg-[#0B152F] p-6 sm:p-10 text-white flex flex-col justify-between">
                 <div>
                     <h3 class="text-xl font-bold text-white tracking-tight">Your Current Operation</h3>
-                    <p class="text-slate-400 text-xs mt-1">Enter your team numbers to estimate your savings.</p>
+                    <p class="text-slate-400 text-sm mt-1">Enter your team numbers to estimate your savings.</p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                         <!-- Current Headcount -->
                         <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                                 Current Onshore Headcount
                             </label>
                             <input 
@@ -46,7 +46,7 @@
 
                         <!-- Average Annual Salary -->
                         <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                                 Average Annual Salary (USD)
                             </label>
                             <div class="relative">
@@ -63,7 +63,7 @@
 
                         <!-- Role Function -->
                         <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                                 Role Function
                             </label>
                             <select 
@@ -80,7 +80,7 @@
 
                         <!-- NileBridge Hourly Range -->
                         <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                                 NileBridge Hourly Range
                             </label>
                             <select 
@@ -96,7 +96,7 @@
 
                         <!-- Benefits & Overhead % -->
                         <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                                 Benefits &amp; Overhead %
                             </label>
                             <select 
@@ -112,7 +112,7 @@
 
                         <!-- Onboarding Timeline -->
                         <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                                 Onboarding Timeline
                             </label>
                             <select class="w-full bg-[#132247] border border-slate-700/80 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-teal-400">
@@ -123,7 +123,7 @@
 
                         <!-- Expected NileBridge Roles (Full Span) -->
                         <div class="sm:col-span-2">
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                                 Expected NileBridge Roles
                             </label>
                             <input 
@@ -152,7 +152,7 @@
             <!-- Right Card: Clean White Output Card -->
             <div class="lg:col-span-5 bg-white p-6 sm:p-10 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-slate-200">
                 <div>
-                    <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block">
                         ESTIMATED ANNUAL SAVINGS
                     </span>
 
@@ -160,7 +160,7 @@
                         $454,000
                     </div>
 
-                    <p class="text-xs text-slate-500 mt-1 font-medium" x-text="'~' + savingsPercentage + '% lower than current onshore operations cost'">
+                    <p class="text-sm text-slate-600 mt-1 font-medium" x-text="'~' + savingsPercentage + '% lower than current onshore operations cost'">
                         ~56% lower than current onshore operations cost
                     </p>
 
@@ -188,7 +188,7 @@
                 </div>
 
                 <!-- Footnote -->
-                <p class="text-[11px] text-slate-400 leading-relaxed mt-8 pt-6 border-t border-slate-100">
+                <p class="text-xs text-slate-400 leading-relaxed mt-8 pt-6 border-t border-slate-100">
                     *Estimates include direct salary, fully managed workspace, equipment, local taxes, benefits, compliance, and ongoing management overhead. Schedule a consultation for a customized proposal.
                 </p>
             </div>
