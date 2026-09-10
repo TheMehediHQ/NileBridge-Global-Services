@@ -17,32 +17,6 @@
 </head>
 <body class="bg-white text-slate-800 font-sans antialiased selection:bg-teal-500 selection:text-white min-h-screen flex flex-col justify-between">
 
-    <!-- Top Announcement Bar (Ultra-Crisp Enterprise Status) -->
-    <div class="bg-[#050A17] text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800/80 font-medium">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center space-x-2.5">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-teal-500/10 text-teal-400 border border-teal-500/20">
-                    <span class="w-1.5 h-1.5 rounded-full bg-teal-400 mr-1.5 animate-pulse"></span>
-                    Live Operations
-                </span>
-                <span class="text-slate-400 hidden sm:inline">&bull;</span>
-                <span class="truncate text-xs"><strong>NileBridge GlobalTalent</strong> &bull; Tier-1 African Delivery Center &bull; 99.8% SLA Adherence</span>
-            </div>
-            <div class="hidden sm:flex items-center space-x-4 text-slate-400 text-xs">
-                @auth
-                    <span class="text-teal-400 font-medium">{{ auth()->user()->name }} ({{ ucfirst(auth()->user()->role) }})</span>
-                @else
-                    <a href="{{ route('login') }}" class="hover:text-white transition flex items-center space-x-1.5">
-                        <svg class="w-3.5 h-3.5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
-                        <span>Client Portal</span>
-                    </a>
-                    <span>&bull;</span>
-                    <a href="{{ route('login') }}" class="hover:text-white transition">Staff Sign In</a>
-                @endauth
-            </div>
-        </div>
-    </div>
-
     <!-- Main Navigation Header (Deep Navy Glassmorphism) -->
     <header x-data="{ mobileOpen: false, scrolled: false }" 
             @scroll.window="scrolled = (window.pageYOffset > 20)"
