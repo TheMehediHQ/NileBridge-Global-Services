@@ -67,13 +67,13 @@
                 </div>
 
                 <!-- Desktop Navigation Links -->
-                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-200">
+                <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-slate-200">
                     <a href="{{ route('home') }}" class="hover:text-teal-400 transition py-1">Home</a>
                     <a href="{{ route('home') }}#services" class="hover:text-teal-400 transition py-1">Services</a>
-                    <a href="{{ route('home') }}#about" class="hover:text-teal-400 transition py-1">Why Uganda</a>
-                    <a href="{{ route('home') }}#solutions" class="hover:text-teal-400 transition py-1">Solutions</a>
+                    <a href="{{ route('home') }}#about" class="hover:text-teal-400 transition py-1">About</a>
+                    <a href="{{ route('home') }}#case-studies" class="hover:text-teal-400 transition py-1">Case Studies</a>
                     <a href="{{ route('home') }}#pricing" class="hover:text-teal-400 transition py-1">Pricing</a>
-                    <a href="{{ route('home') }}#testimonials" class="hover:text-teal-400 transition py-1">Reviews</a>
+                    <a href="{{ route('home') }}#faq" class="hover:text-teal-400 transition py-1">Blog</a>
                     <a href="{{ route('home') }}#contact" class="hover:text-teal-400 transition py-1">Contact</a>
                 </nav>
 
@@ -96,10 +96,7 @@
                             Log In
                         </a>
                         <a href="#lead-capture" class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold rounded-full text-white bg-teal-500 hover:bg-teal-600 shadow-lg shadow-teal-500/25 transition transform hover:-translate-y-0.5 active:scale-95">
-                            <span>Get Started</span>
-                            <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
+                            <span>Get Started &rarr;</span>
                         </a>
                     @endauth
                 </div>
@@ -117,17 +114,16 @@
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div x-show="mobileOpen" x-cloak @click.outside="mobileOpen = false" class="lg:hidden bg-navy-950 border-b border-navy-800 px-4 pt-3 pb-6 space-y-3">
+        <div x-show="mobileOpen" x-cloak @click.outside="mobileOpen = false" class="lg:hidden bg-[#070D1E] border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a @click="mobileOpen = false" href="{{ route('home') }}" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Home</a>
             <a @click="mobileOpen = false" href="{{ route('home') }}#services" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Services</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#uganda-hub" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Why Uganda</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#technology" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Platform & MDM</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#process" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">How It Works</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#benchmarks" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Benchmarks</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#comparison" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Why NileBridge</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#calculator" class="block py-2 text-sm font-medium text-amber-400">ROI Calculator</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#lead-capture" class="block py-2 text-sm font-medium text-teal-400">Schedule Consultation</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#about" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">About</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#case-studies" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Case Studies</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#pricing" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Pricing</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#faq" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Blog</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#contact" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Contact</a>
 
-            <div class="pt-4 border-t border-navy-800 space-y-2">
+            <div class="pt-4 border-t border-slate-800 space-y-2">
                 @auth
                     <a href="{{ match(auth()->user()->role) { 'admin' => route('admin.dashboard'), 'employee' => route('portal.dashboard'), default => route('client.dashboard') } }}" 
                        class="block w-full text-center py-2.5 text-xs font-bold rounded-lg bg-teal-500 text-white">
@@ -140,11 +136,11 @@
                         </button>
                     </form>
                 @else
-                    <a href="{{ route('login') }}" class="block w-full text-center py-2.5 text-xs font-semibold text-slate-300 border border-navy-700 rounded-lg">
+                    <a href="{{ route('login') }}" class="block w-full text-center py-2.5 text-xs font-semibold text-slate-300 border border-slate-700 rounded-lg">
                         Sign In
                     </a>
                     <a href="{{ route('home') }}#lead-capture" class="block w-full text-center py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-teal-500 rounded-lg">
-                        Talk to Us
+                        Get Started &rarr;
                     </a>
                 @endauth
             </div>

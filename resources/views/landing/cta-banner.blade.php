@@ -1,8 +1,19 @@
 <!-- Section 9: Pre-Footer CTA Banner matching media_1789070132452.png -->
 <section class="py-28 bg-[#050A17] relative overflow-hidden text-center border-t border-slate-800">
-    <!-- Atmospheric Teal & Cyan Radial Glow -->
+    <!-- Atmospheric Teal & Cyan Radial Glow & Subtle Global Network Map -->
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div class="w-[700px] h-[350px] bg-teal-500/15 rounded-full blur-[140px]"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none -z-0">
+        <svg class="w-full h-full max-w-6xl" viewBox="0 0 1000 400" fill="none">
+            <path d="M 150 200 Q 300 100 500 220 T 850 180" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="4 4" />
+            <path d="M 250 260 Q 500 120 750 240" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="3 3" />
+            <circle cx="150" cy="200" r="4" fill="#14b8a6" />
+            <circle cx="500" cy="220" r="5" fill="#2dd4bf" />
+            <circle cx="850" cy="180" r="4" fill="#38bdf8" />
+            <circle cx="300" cy="100" r="3" fill="#38bdf8" />
+            <circle cx="750" cy="240" r="3" fill="#14b8a6" />
+        </svg>
     </div>
 
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

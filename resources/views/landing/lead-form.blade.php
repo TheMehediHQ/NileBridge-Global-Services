@@ -59,6 +59,20 @@
                             <div class="text-sm text-slate-500 font-medium">We reply with custom quotes within 24 hours</div>
                         </div>
                     </div>
+
+                    <!-- Location -->
+                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50/70 border border-slate-200/70 hover:border-teal-300 transition duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 border border-teal-100 shadow-sm">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-base font-bold text-[#0B152F]">Kampala, Uganda</div>
+                            <div class="text-sm text-slate-500 font-medium">Global Delivery Operations Hub &bull; East Africa</div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Trust Guarantee Badge -->

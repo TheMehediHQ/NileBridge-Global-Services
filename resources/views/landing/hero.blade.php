@@ -101,20 +101,44 @@
                         <!-- Atmospheric Limb Shader -->
                         <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#020617]/85 via-transparent to-teal-300/35 pointer-events-none"></div>
 
-                        <!-- High-Tech Lat/Long Grid Overlay -->
-                        <svg class="absolute inset-0 w-full h-full opacity-35 pointer-events-none" viewBox="0 0 400 400" fill="none">
-                            <circle cx="200" cy="200" r="180" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3 3"/>
-                            <ellipse cx="200" cy="200" rx="180" ry="80" stroke="#2dd4bf" stroke-width="0.8"/>
-                            <ellipse cx="200" cy="200" rx="180" ry="140" stroke="#2dd4bf" stroke-width="0.8"/>
-                            <ellipse cx="200" cy="200" rx="90" ry="180" stroke="#38bdf8" stroke-width="0.8"/>
-                            <line x1="20" y1="200" x2="380" y2="200" stroke="#2dd4bf" stroke-width="1" stroke-dasharray="4 4"/>
-                            <line x1="200" y1="20" x2="200" y2="380" stroke="#2dd4bf" stroke-width="1" stroke-dasharray="4 4"/>
+                        <!-- High-Tech Lat/Long Grid Overlay & Connected Country Arcs -->
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 400" fill="none">
+                            <!-- Lat/Long Circles -->
+                            <circle cx="200" cy="200" r="180" stroke="#38bdf8" stroke-width="0.75" stroke-dasharray="3 3" opacity="0.35"/>
+                            <ellipse cx="200" cy="200" rx="180" ry="80" stroke="#2dd4bf" stroke-width="0.75" opacity="0.3"/>
+                            <ellipse cx="200" cy="200" rx="180" ry="140" stroke="#2dd4bf" stroke-width="0.75" opacity="0.3"/>
+                            <ellipse cx="200" cy="200" rx="90" ry="180" stroke="#38bdf8" stroke-width="0.75" opacity="0.3"/>
+                            <line x1="20" y1="200" x2="380" y2="200" stroke="#2dd4bf" stroke-width="0.75" stroke-dasharray="4 4" opacity="0.3"/>
+                            <line x1="200" y1="20" x2="200" y2="380" stroke="#2dd4bf" stroke-width="0.75" stroke-dasharray="4 4" opacity="0.3"/>
+
+                            <!-- Curved Connected Flight/Data Arcs (Kampala Hub to US, UK, Europe, Asia) -->
+                            <!-- Hub: Kampala (210, 205) -->
+                            <!-- London: (185, 125) -->
+                            <path d="M 210 205 Q 185 155 185 125" stroke="#14b8a6" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4 2" opacity="0.85" />
+                            <!-- New York: (120, 145) -->
+                            <path d="M 210 205 Q 140 160 120 145" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4 2" opacity="0.85" />
+                            <!-- Dubai: (265, 175) -->
+                            <path d="M 210 205 Q 240 185 265 175" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 2" opacity="0.8" />
+                            <!-- Singapore: (315, 230) -->
+                            <path d="M 210 205 Q 275 225 315 230" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 2" opacity="0.75" />
+
+                            <!-- Connected Country Glowing Nodes -->
+                            <!-- London Node -->
+                            <circle cx="185" cy="125" r="3.5" fill="#2dd4bf" />
+                            <circle cx="185" cy="125" r="7" stroke="#2dd4bf" stroke-width="1" opacity="0.5" />
+                            <!-- New York Node -->
+                            <circle cx="120" cy="145" r="3.5" fill="#38bdf8" />
+                            <circle cx="120" cy="145" r="7" stroke="#38bdf8" stroke-width="1" opacity="0.5" />
+                            <!-- Dubai Node -->
+                            <circle cx="265" cy="175" r="3" fill="#2dd4bf" />
+                            <!-- Singapore Node -->
+                            <circle cx="315" cy="230" r="3" fill="#38bdf8" />
                         </svg>
 
-                        <!-- Glowing Active Radar Pulsing Node: Kampala -->
-                        <div class="absolute top-[48%] left-[53%] -translate-x-1/2 -translate-y-1/2">
-                            <span class="absolute -inset-3 rounded-full bg-teal-400/40 animate-ping"></span>
-                            <span class="relative block w-3 h-3 rounded-full bg-teal-400 border-2 border-white shadow-lg shadow-teal-400"></span>
+                        <!-- Glowing Active Radar Pulsing Node: Kampala (Operating Base) -->
+                        <div class="absolute top-[51%] left-[52.5%] -translate-x-1/2 -translate-y-1/2 z-10" title="Kampala Hub Operations">
+                            <span class="absolute -inset-3.5 rounded-full bg-teal-400/50 animate-ping"></span>
+                            <span class="relative block w-3.5 h-3.5 rounded-full bg-teal-300 border-2 border-white shadow-lg shadow-teal-400"></span>
                         </div>
                     </div>
 

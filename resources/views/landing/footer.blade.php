@@ -104,7 +104,7 @@
         <!-- Sub-Footer Bottom Bar -->
         <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-xs">
             <div>
-                &copy; {{ date('Y') }} NileBridge GlobalTalent Ltd. All rights reserved.
+                &copy; 2025 GlobalTalent (by NileBridge Global Services Ltd). All rights reserved.
             </div>
             <div class="flex items-center space-x-6">
                 <a href="#" class="hover:text-slate-300 transition">Privacy Policy</a>

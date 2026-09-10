@@ -1,14 +1,25 @@
 <!-- Section 4: How It Works: Simple Process. Powerful Results. matching media_1789070132452.png -->
 <section id="process" class="py-24 bg-slate-50/60 border-b border-slate-100 relative overflow-hidden">
     <!-- Subtle World Network Background Graphic -->
-    <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none -z-10">
-        <svg class="w-full h-full max-w-7xl" viewBox="0 0 1200 600" fill="currentColor">
-            <circle cx="200" cy="200" r="4" />
-            <circle cx="400" cy="180" r="4" />
-            <circle cx="600" cy="250" r="4" />
-            <circle cx="800" cy="220" r="4" />
-            <circle cx="1000" cy="200" r="4" />
-            <path d="M200 200 Q 400 120 600 250 T 1000 200" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="6 6" />
+    <div class="absolute inset-0 flex items-center justify-center opacity-[0.06] pointer-events-none -z-10">
+        <svg class="w-full h-full max-w-7xl" viewBox="0 0 1200 500" fill="currentColor">
+            <!-- Global Grid Dots -->
+            <g fill="#0f766e">
+                <!-- North America -->
+                <circle cx="220" cy="140" r="3" /><circle cx="260" cy="160" r="3" /><circle cx="180" cy="180" r="3" /><circle cx="300" cy="190" r="3.5" />
+                <!-- Europe / UK -->
+                <circle cx="560" cy="130" r="3.5" /><circle cx="590" cy="150" r="3" /><circle cx="620" cy="160" r="3" />
+                <!-- Africa / Uganda Hub -->
+                <circle cx="630" cy="280" r="5" fill="#0d9488" /><circle cx="600" cy="240" r="3" /><circle cx="660" cy="340" r="3" /><circle cx="570" cy="310" r="3" />
+                <!-- Middle East / Asia -->
+                <circle cx="750" cy="190" r="3.5" /><circle cx="850" cy="220" r="3" /><circle cx="920" cy="240" r="3.5" /><circle cx="880" cy="320" r="3" />
+            </g>
+            <!-- Connecting Beziers -->
+            <path d="M 300 190 Q 450 110 560 130" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4 3" fill="none" />
+            <path d="M 560 130 Q 600 200 630 280" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4 3" fill="none" />
+            <path d="M 630 280 Q 720 220 750 190" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4 3" fill="none" />
+            <path d="M 750 190 Q 820 180 920 240" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4 3" fill="none" />
+            <path d="M 300 190 Q 480 320 630 280" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4 3" fill="none" />
         </svg>
     </div>
 
