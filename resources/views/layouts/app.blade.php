@@ -17,20 +17,24 @@
 </head>
 <body class="bg-white text-slate-800 font-sans antialiased selection:bg-teal-500 selection:text-white min-h-screen flex flex-col justify-between">
 
-    <!-- Top Announcement Bar (Dark Navy) -->
-    <div class="bg-navy-950 text-slate-300 text-[11px] py-2 px-4 border-b border-navy-800/80">
+    <!-- Top Announcement Bar (Ultra-Crisp Enterprise Status) -->
+    <div class="bg-[#050A17] text-slate-300 text-[11px] py-2 px-4 border-b border-slate-800/80 font-medium">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
-                <span><strong>NileBridge Global Services</strong> &bull; Powered by high-growth East African talent &bull; 24/7 Follow-the-Sun Delivery Hub</span>
+            <div class="flex items-center space-x-2.5">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-teal-500/10 text-teal-400 border border-teal-500/20">
+                    <span class="w-1.5 h-1.5 rounded-full bg-teal-400 mr-1.5 animate-pulse"></span>
+                    Live Operations
+                </span>
+                <span class="text-slate-400 hidden sm:inline">&bull;</span>
+                <span class="truncate"><strong>NileBridge GlobalTalent</strong> &bull; Tier-1 African Delivery Center &bull; 99.8% SLA Adherence</span>
             </div>
-            <div class="hidden sm:flex items-center space-x-4 text-slate-400">
+            <div class="hidden sm:flex items-center space-x-4 text-slate-400 text-[11px]">
                 @auth
                     <span class="text-teal-400 font-medium">{{ auth()->user()->name }} ({{ ucfirst(auth()->user()->role) }})</span>
                 @else
-                    <a href="{{ route('login') }}" class="hover:text-white transition flex items-center space-x-1">
-                        <svg class="w-3.5 h-3.5 mr-1 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
-                        <span>Client Login</span>
+                    <a href="{{ route('login') }}" class="hover:text-white transition flex items-center space-x-1.5">
+                        <svg class="w-3.5 h-3.5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
+                        <span>Client Portal</span>
                     </a>
                     <span>&bull;</span>
                     <a href="{{ route('login') }}" class="hover:text-white transition">Staff Sign In</a>
@@ -39,10 +43,10 @@
         </div>
     </div>
 
-    <!-- Main Navigation Header (Dark Navy #0B152F) -->
+    <!-- Main Navigation Header (Deep Navy Glassmorphism) -->
     <header x-data="{ mobileOpen: false, scrolled: false }" 
             @scroll.window="scrolled = (window.pageYOffset > 20)"
-            :class="scrolled ? 'bg-navy-900/98 backdrop-blur-md shadow-xl border-b border-navy-800' : 'bg-navy-900 border-b border-navy-800/80'"
+            :class="scrolled ? 'bg-[#070D1E]/95 backdrop-blur-xl shadow-2xl border-b border-slate-800/80' : 'bg-[#0B152F] border-b border-slate-800/60'"
             class="sticky top-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-18 py-3">
@@ -50,34 +54,34 @@
                 <!-- Brand Logo -->
                 <div class="flex items-center space-x-3">
                     <a href="{{ route('home') }}" class="flex items-center space-x-2.5 group">
-                        <div class="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-[#070D1E] font-black text-sm shadow-md">
-                            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-teal-500 to-cyan-400 flex items-center justify-center text-[#070D1E] font-black text-sm shadow-lg shadow-teal-500/20 group-hover:scale-105 transition">
+                            <svg class="w-4 h-4 text-[#070D1E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
                         <div class="flex items-baseline gap-1.5">
-                            <span class="text-lg font-extrabold tracking-tight text-white group-hover:text-teal-400 transition leading-none">GlobalTalent</span>
-                            <span class="text-[10px] tracking-widest uppercase font-semibold text-slate-400 hidden sm:inline">by NileBridge</span>
+                            <span class="text-xl font-black tracking-tight text-white group-hover:text-teal-400 transition leading-none">GlobalTalent</span>
+                            <span class="text-[10px] tracking-wider uppercase font-bold text-slate-400 hidden sm:inline">by NileBridge</span>
                         </div>
                     </a>
                 </div>
 
                 <!-- Desktop Navigation Links -->
-                <nav class="hidden lg:flex items-center space-x-7 text-xs font-medium text-slate-300">
-                    <a href="{{ route('home') }}" class="hover:text-white transition">Home</a>
-                    <a href="{{ route('home') }}#services" class="hover:text-white transition">Services</a>
-                    <a href="{{ route('home') }}#about" class="hover:text-white transition">About</a>
-                    <a href="{{ route('home') }}#solutions" class="hover:text-white transition">Solutions</a>
-                    <a href="{{ route('home') }}#pricing" class="hover:text-white transition">Pricing</a>
-                    <a href="{{ route('home') }}#testimonials" class="hover:text-white transition">Reviews</a>
-                    <a href="{{ route('home') }}#contact" class="hover:text-white transition">Contact</a>
+                <nav class="hidden lg:flex items-center space-x-8 text-xs font-semibold text-slate-300">
+                    <a href="{{ route('home') }}" class="hover:text-white transition py-1 hover:border-b-2 hover:border-teal-400">Home</a>
+                    <a href="{{ route('home') }}#services" class="hover:text-white transition py-1 hover:border-b-2 hover:border-teal-400">Services</a>
+                    <a href="{{ route('home') }}#about" class="hover:text-white transition py-1 hover:border-b-2 hover:border-teal-400">Why Uganda</a>
+                    <a href="{{ route('home') }}#solutions" class="hover:text-white transition py-1 hover:border-b-2 hover:border-teal-400">Solutions</a>
+                    <a href="{{ route('home') }}#pricing" class="hover:text-white transition py-1 hover:border-b-2 hover:border-teal-400">Pricing</a>
+                    <a href="{{ route('home') }}#testimonials" class="hover:text-white transition py-1 hover:border-b-2 hover:border-teal-400">Reviews</a>
+                    <a href="{{ route('home') }}#contact" class="hover:text-white transition py-1 hover:border-b-2 hover:border-teal-400">Contact</a>
                 </nav>
 
                 <!-- Auth / Portal CTAs -->
                 <div class="hidden md:flex items-center space-x-4">
                     @auth
                         <a href="{{ match(auth()->user()->role) { 'admin' => route('admin.dashboard'), 'employee' => route('portal.dashboard'), default => route('client.dashboard') } }}" 
-                           class="inline-flex items-center px-4 py-2 text-xs font-bold rounded-full border border-navy-700 bg-navy-800/80 hover:bg-navy-700 text-white transition">
+                           class="inline-flex items-center px-4 py-2 text-xs font-bold rounded-full border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-white transition">
                             <span class="w-2 h-2 rounded-full mr-2 {{ match(auth()->user()->role) { 'admin' => 'bg-purple-400', 'employee' => 'bg-amber-400', default => 'bg-teal-400' } }}"></span>
                             {{ ucfirst(auth()->user()->role) }} Workspace
                         </a>
@@ -88,8 +92,14 @@
                             </button>
                         </form>
                     @else
-                        <a href="#lead-capture" class="inline-flex items-center justify-center px-5 py-2 text-xs font-bold rounded-full text-white bg-teal-500 hover:bg-teal-600 shadow-md shadow-teal-500/25 transition transform hover:-translate-y-0.5">
-                            Get Started &rarr;
+                        <a href="{{ route('login') }}" class="text-xs font-semibold text-slate-300 hover:text-white transition">
+                            Log In
+                        </a>
+                        <a href="#lead-capture" class="inline-flex items-center justify-center px-5 py-2.5 text-xs font-bold rounded-full text-white bg-teal-500 hover:bg-teal-600 shadow-lg shadow-teal-500/25 transition transform hover:-translate-y-0.5 active:scale-95">
+                            <span>Get Started</span>
+                            <svg class="w-3.5 h-3.5 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
                         </a>
                     @endauth
                 </div>
