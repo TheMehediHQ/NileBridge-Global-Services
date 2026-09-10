@@ -7,6 +7,9 @@
     <!-- 2. Stats Bar -->
     @include('landing.stats-bar')
 
+    <!-- 2.5 Strategic Uganda Hub Advantage -->
+    @include('landing.uganda-hub')
+
     <!-- 3. Core Services Grid -->
     @include('landing.services-grid')
 
@@ -28,3 +31,4 @@
     <!-- 9. Multi-Column Institutional Footer -->
     @include('landing.footer')
 @endsection
+

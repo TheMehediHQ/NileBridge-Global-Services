@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'NileBridge Global Services | Elite Global Talent & BPO Operations' }}</title>
-    <meta name="description" content="NileBridge connects enterprise companies with pre-vetted global software engineering, BPO, finance, and operations teams with up to 70% cost savings.">
+    <title>{{ $title ?? 'NileBridge Global Services | Premier Uganda Call Center & Payment Processing Partner' }}</title>
+    <meta name="description" content="NileBridge connects enterprise companies with Uganda-based 24/7 omnichannel call center, payment processing, and dedicated operational teams with up to 70% cost savings.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -15,41 +15,41 @@
     <!-- Scripts & Styles via Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950 min-h-screen flex flex-col justify-between">
+<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-navy-950 min-h-screen flex flex-col justify-between">
 
     <!-- Navigation Header -->
     <header x-data="{ mobileOpen: false, scrolled: false }" 
             @scroll.window="scrolled = (window.pageYOffset > 20)"
-            :class="scrolled ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800 shadow-lg' : 'bg-transparent border-b border-slate-900'"
+            :class="scrolled ? 'bg-navy-950/95 backdrop-blur-md border-b border-navy-800 shadow-xl' : 'bg-transparent border-b border-navy-900/80'"
             class="sticky top-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Brand Logo -->
                 <div class="flex items-center space-x-3">
                     <a href="{{ route('home') }}" class="flex items-center space-x-3 group">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition">
-                            <span class="text-slate-950 font-black text-xl tracking-tighter">NB</span>
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-400 via-nile to-amber-500 flex items-center justify-center shadow-lg shadow-teal-500/20 group-hover:scale-105 transition">
+                            <span class="text-navy-950 font-black text-xl tracking-tighter">NB</span>
                         </div>
                         <div class="flex flex-col">
-                            <span class="text-lg font-extrabold tracking-tight text-white group-hover:text-emerald-400 transition">NileBridge</span>
-                            <span class="text-[10px] tracking-widest uppercase font-semibold text-emerald-400 -mt-1">Global Services</span>
+                            <span class="text-lg font-extrabold tracking-tight text-white group-hover:text-teal-400 transition">NileBridge</span>
+                            <span class="text-[10px] tracking-widest uppercase font-semibold text-amber-400 -mt-1">Global Services</span>
                         </div>
                     </a>
                 </div>
 
                 <!-- Desktop Navigation Links -->
                 <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                    <a href="{{ route('home') }}#services" class="hover:text-emerald-400 transition">Core Capabilities</a>
-                    <a href="{{ route('home') }}#process" class="hover:text-emerald-400 transition">Deployment Model</a>
-                    <a href="{{ route('home') }}#comparison" class="hover:text-emerald-400 transition">Why NileBridge</a>
-                    <a href="{{ route('home') }}#calculator" class="hover:text-emerald-400 transition flex items-center">
-                        <span class="relative flex h-2 w-2 mr-2">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                        </span>
+                    <a href="{{ route('home') }}#services" class="hover:text-teal-400 transition">Flagship Services</a>
+                    <a href="{{ route('home') }}#uganda-hub" class="hover:text-amber-400 transition flex items-center">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 mr-2 animate-pulse"></span>
+                        Uganda Hub
+                    </a>
+                    <a href="{{ route('home') }}#process" class="hover:text-teal-400 transition">Deployment Model</a>
+                    <a href="{{ route('home') }}#comparison" class="hover:text-teal-400 transition">Why NileBridge</a>
+                    <a href="{{ route('home') }}#calculator" class="hover:text-amber-400 transition flex items-center">
                         ROI Calculator
                     </a>
-                    <a href="{{ route('home') }}#lead-capture" class="hover:text-emerald-400 transition">Schedule Consultation</a>
+                    <a href="{{ route('home') }}#lead-capture" class="hover:text-teal-400 transition">Schedule Consultation</a>
                 </nav>
 
                 <!-- Auth / Portal CTAs -->
@@ -58,8 +58,8 @@
                         <!-- Authenticated User Menu -->
                         <div class="flex items-center space-x-3">
                             <a href="{{ match(auth()->user()->role) { 'admin' => route('admin.dashboard'), 'employee' => route('portal.dashboard'), default => route('client.dashboard') } }}" 
-                               class="inline-flex items-center px-4 py-2 text-xs font-bold rounded-lg border border-slate-700 bg-slate-900 hover:bg-slate-800 text-white transition">
-                                <span class="w-2 h-2 rounded-full mr-2 {{ match(auth()->user()->role) { 'admin' => 'bg-purple-400', 'employee' => 'bg-amber-400', default => 'bg-emerald-400' } }}"></span>
+                               class="inline-flex items-center px-4 py-2 text-xs font-bold rounded-lg border border-navy-700 bg-navy-900 hover:bg-navy-800 text-white transition">
+                                <span class="w-2 h-2 rounded-full mr-2 {{ match(auth()->user()->role) { 'admin' => 'bg-purple-400', 'employee' => 'bg-amber-400', default => 'bg-teal-400' } }}"></span>
                                 {{ ucfirst(auth()->user()->role) }} Portal
                             </a>
                             <form action="{{ route('logout') }}" method="POST" class="inline">
@@ -72,9 +72,9 @@
                     @else
                         <!-- Guest Actions -->
                         <a href="{{ route('login') }}" class="text-sm font-semibold text-slate-300 hover:text-white transition">
-                            Client & Staff Login
+                            Staff & Client Login
                         </a>
-                        <a href="{{ route('home') }}#calculator" class="inline-flex items-center justify-center px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg shadow-md shadow-emerald-500/20 transition transform hover:-translate-y-0.5">
+                        <a href="{{ route('home') }}#calculator" class="inline-flex items-center justify-center px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-navy-950 bg-amber-400 hover:bg-amber-300 rounded-lg shadow-md shadow-amber-500/20 transition transform hover:-translate-y-0.5">
                             Estimate Savings
                         </a>
                     @endauth
@@ -93,17 +93,18 @@
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div x-show="mobileOpen" x-cloak @click.outside="mobileOpen = false" class="md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
-            <a @click="mobileOpen = false" href="{{ route('home') }}#services" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">Core Capabilities</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#process" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">Deployment Model</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#comparison" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">Why NileBridge</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#calculator" class="block py-2 text-base font-medium text-emerald-400">ROI Calculator</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#lead-capture" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">Schedule Consultation</a>
+        <div x-show="mobileOpen" x-cloak @click.outside="mobileOpen = false" class="md:hidden bg-navy-900 border-b border-navy-800 px-4 pt-3 pb-6 space-y-3">
+            <a @click="mobileOpen = false" href="{{ route('home') }}#services" class="block py-2 text-base font-medium text-slate-300 hover:text-teal-400">Flagship Services</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#uganda-hub" class="block py-2 text-base font-medium text-amber-400">Uganda Delivery Hub</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#process" class="block py-2 text-base font-medium text-slate-300 hover:text-teal-400">Deployment Model</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#comparison" class="block py-2 text-base font-medium text-slate-300 hover:text-teal-400">Why NileBridge</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#calculator" class="block py-2 text-base font-medium text-amber-400">ROI Calculator</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#lead-capture" class="block py-2 text-base font-medium text-slate-300 hover:text-teal-400">Schedule Consultation</a>
 
-            <div class="pt-4 border-t border-slate-800 space-y-2">
+            <div class="pt-4 border-t border-navy-800 space-y-2">
                 @auth
                     <a href="{{ match(auth()->user()->role) { 'admin' => route('admin.dashboard'), 'employee' => route('portal.dashboard'), default => route('client.dashboard') } }}" 
-                       class="block w-full text-center py-2.5 text-xs font-bold rounded-lg bg-emerald-500 text-slate-950">
+                       class="block w-full text-center py-2.5 text-xs font-bold rounded-lg bg-teal-400 text-navy-950">
                         Go to {{ ucfirst(auth()->user()->role) }} Dashboard
                     </a>
                     <form action="{{ route('logout') }}" method="POST">
@@ -113,10 +114,10 @@
                         </button>
                     </form>
                 @else
-                    <a href="{{ route('login') }}" class="block w-full text-center py-2.5 text-xs font-semibold text-slate-300 border border-slate-700 rounded-lg">
+                    <a href="{{ route('login') }}" class="block w-full text-center py-2.5 text-xs font-semibold text-slate-300 border border-navy-700 rounded-lg">
                         Sign In
                     </a>
-                    <a href="{{ route('home') }}#calculator" class="block w-full text-center py-2.5 text-xs font-bold uppercase tracking-wider text-slate-950 bg-emerald-400 rounded-lg">
+                    <a href="{{ route('home') }}#calculator" class="block w-full text-center py-2.5 text-xs font-bold uppercase tracking-wider text-navy-950 bg-amber-400 rounded-lg">
                         Estimate Savings
                     </a>
                 @endauth
@@ -127,14 +128,14 @@
     <!-- Global Toast / Alert Notifications -->
     @if(session('success') || session('status'))
         <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000)" 
-             class="fixed bottom-6 right-6 z-50 max-w-md bg-emerald-950/95 border border-emerald-500/40 text-emerald-100 px-5 py-4 rounded-xl shadow-2xl backdrop-blur-sm flex items-start space-x-3">
-            <svg class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             class="fixed bottom-6 right-6 z-50 max-w-md bg-navy-900 border border-teal-500/40 text-teal-100 px-5 py-4 rounded-xl shadow-2xl backdrop-blur-sm flex items-start space-x-3">
+            <svg class="w-6 h-6 text-teal-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
             <div class="flex-1 text-sm font-medium">
                 {{ session('success') ?? session('status') }}
             </div>
-            <button @click="show = false" class="text-emerald-400 hover:text-white">
+            <button @click="show = false" class="text-teal-400 hover:text-white">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
         </div>

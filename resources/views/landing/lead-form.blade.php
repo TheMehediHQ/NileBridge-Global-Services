@@ -1,24 +1,24 @@
 <!-- Section 8: Enterprise Lead Capture Form -->
-<section id="lead-capture" class="py-24 bg-slate-900/40 border-t border-slate-900 relative">
+<section id="lead-capture" class="py-24 bg-navy-950 border-t border-navy-900 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto">
             
             <div class="text-center mb-12">
-                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Rapid Enterprise Onboarding</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Launch Your Uganda Operations</span>
                 <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
-                    Initiate Your Global Talent Search
+                    Initiate Your Requisition & Schedule Discovery
                 </h2>
                 <p class="mt-3 text-slate-400 text-sm sm:text-base">
-                    Speak directly with a Senior NileBridge Delivery Partner. Receive pre-vetted candidate portfolios matched to your exact requirements within 48 hours.
+                    Connect directly with a NileBridge Senior Delivery Partner. Receive pre-screened agent profiles and custom SLA statements of work within 24 hours.
                 </p>
             </div>
 
             <!-- Lead Capture Card with Alpine Auto-populate State -->
             <div 
                 x-data="{
-                    service_category: '{{ old('service_category', 'software_engineering') }}',
-                    team_size_needed: {{ old('team_size_needed', 3) }},
-                    estimated_budget: '{{ old('estimated_budget', '12600') }}',
+                    service_category: '{{ old('service_category', 'bpo_customer_support') }}',
+                    team_size_needed: {{ old('team_size_needed', 5) }},
+                    estimated_budget: '{{ old('estimated_budget', '9000') }}',
                     calculator_inputs: '{{ old('calculator_inputs', '') }}',
                     source: '{{ old('source', 'landing_page') }}',
                     handoffReceived: false,
@@ -36,17 +36,17 @@
                         });
                     }
                 }"
-                class="bg-slate-900/95 border border-slate-800 p-8 sm:p-12 rounded-3xl shadow-2xl backdrop-blur-xl relative"
+                class="bg-navy-900/95 border border-teal-500/30 p-8 sm:p-12 rounded-3xl shadow-2xl backdrop-blur-xl relative"
             >
                 <!-- Handoff Banner if filled via calculator -->
-                <div x-show="handoffReceived" x-cloak class="mb-8 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-between">
+                <div x-show="handoffReceived" x-cloak class="mb-8 p-4 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-between">
                     <div class="flex items-center space-x-3">
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span class="text-xs sm:text-sm font-semibold text-emerald-300">
-                            Custom parameters imported: <strong x-text="team_size_needed + ' FTEs'"></strong> targeting <strong x-text="'$' + new Intl.NumberFormat().format(savingsHighlight) + ' annual savings'"></strong>.
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                        <span class="text-xs sm:text-sm font-semibold text-amber-300">
+                            Calculator parameters imported: <strong x-text="team_size_needed + ' Specialists'"></strong> targeting <strong x-text="'$' + new Intl.NumberFormat().format(savingsHighlight) + ' annual savings'"></strong>.
                         </span>
                     </div>
-                    <span class="text-[10px] font-mono uppercase bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded">Applied</span>
+                    <span class="text-[10px] font-mono uppercase bg-amber-400/20 text-amber-300 px-2 py-1 rounded font-bold">Applied</span>
                 </div>
 
                 <form action="{{ route('leads.store') }}" method="POST" class="space-y-6">
@@ -66,7 +66,7 @@
                         <!-- Company Name -->
                         <div>
                             <label for="company_name" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                                Company / Enterprise Entity <span class="text-emerald-400">*</span>
+                                Company / Enterprise Name <span class="text-amber-400">*</span>
                             </label>
                             <input 
                                 type="text" 
@@ -74,8 +74,8 @@
                                 name="company_name" 
                                 required
                                 value="{{ old('company_name') }}"
-                                placeholder="e.g. Acme Technologies Inc."
-                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm transition"
+                                placeholder="e.g. Stripe Merchant Partner / FinTech Corp"
+                                class="w-full px-4 py-3 bg-navy-950 border border-navy-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm transition"
                             />
                             @error('company_name')
                                 <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span>
@@ -85,7 +85,7 @@
                         <!-- Contact Name -->
                         <div>
                             <label for="contact_name" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                                Lead Representative / Decision Maker <span class="text-emerald-400">*</span>
+                                Key Decision Maker / Executive <span class="text-amber-400">*</span>
                             </label>
                             <input 
                                 type="text" 
@@ -93,8 +93,8 @@
                                 name="contact_name" 
                                 required
                                 value="{{ old('contact_name') }}"
-                                placeholder="e.g. Sarah Jenkins"
-                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm transition"
+                                placeholder="e.g. Victoria Sterling"
+                                class="w-full px-4 py-3 bg-navy-950 border border-navy-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm transition"
                             />
                             @error('contact_name')
                                 <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span>
@@ -104,7 +104,7 @@
                         <!-- Work Email -->
                         <div>
                             <label for="contact_email" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                                Corporate Email Address <span class="text-emerald-400">*</span>
+                                Corporate Email Address <span class="text-amber-400">*</span>
                             </label>
                             <input 
                                 type="email" 
@@ -112,8 +112,8 @@
                                 name="contact_email" 
                                 required
                                 value="{{ old('contact_email') }}"
-                                placeholder="sjenkins@acme.com"
-                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm transition"
+                                placeholder="vsterling@company.com"
+                                class="w-full px-4 py-3 bg-navy-950 border border-navy-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm transition"
                             />
                             @error('contact_email')
                                 <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span>
@@ -123,15 +123,15 @@
                         <!-- Phone Number -->
                         <div>
                             <label for="contact_phone" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                                Direct Phone Number (Optional)
+                                Phone Number (Optional)
                             </label>
                             <input 
                                 type="text" 
                                 id="contact_phone" 
                                 name="contact_phone" 
                                 value="{{ old('contact_phone') }}"
-                                placeholder="+1 (555) 012-3456"
-                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm transition"
+                                placeholder="+1 (555) 019-3322"
+                                class="w-full px-4 py-3 bg-navy-950 border border-navy-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm transition"
                             />
                             @error('contact_phone')
                                 <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span>
@@ -141,16 +141,17 @@
                         <!-- Service Category Selection -->
                         <div>
                             <label for="service_category" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                                Primary Specialization Required <span class="text-emerald-400">*</span>
+                                Primary Specialization <span class="text-amber-400">*</span>
                             </label>
                             <select 
                                 id="service_category" 
                                 name="service_category" 
                                 x-model="service_category"
-                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm transition"
+                                class="w-full px-4 py-3 bg-navy-950 border border-navy-800 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm transition"
                             >
+                                <option value="bpo_customer_support">24/7 Omnichannel Call Center & BPO (Flagship)</option>
+                                <option value="payment_processing">Fintech & Payment Processing Operations (Flagship)</option>
                                 <option value="software_engineering">Dedicated Software & Cloud Engineering</option>
-                                <option value="bpo_customer_support">24/7 BPO & Omnichannel Customer Success</option>
                                 <option value="finance_backoffice">Finance, Accounting & Back-Office Operations</option>
                                 <option value="digital_marketing">Growth Marketing & Revenue Operations</option>
                             </select>
@@ -162,7 +163,7 @@
                         <!-- Team Size Needed -->
                         <div>
                             <label for="team_size_needed" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                                Requisition Team Size (FTEs) <span class="text-emerald-400">*</span>
+                                Team Pod Size (FTEs) <span class="text-amber-400">*</span>
                             </label>
                             <input 
                                 type="number" 
@@ -172,7 +173,7 @@
                                 max="500" 
                                 required
                                 x-model.number="team_size_needed"
-                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm transition"
+                                class="w-full px-4 py-3 bg-navy-950 border border-navy-800 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm transition"
                             />
                             @error('team_size_needed')
                                 <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span>
@@ -193,8 +194,8 @@
                                 id="estimated_budget" 
                                 name="estimated_budget" 
                                 x-model="estimated_budget"
-                                placeholder="12600"
-                                class="w-full pl-8 pr-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm transition"
+                                placeholder="9000"
+                                class="w-full pl-8 pr-4 py-3 bg-navy-950 border border-navy-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm transition"
                             />
                         </div>
                         @error('estimated_budget')
@@ -205,30 +206,30 @@
                     <!-- Additional Scoping Notes -->
                     <div>
                         <label for="notes" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                            Specific Tech Stack, Roles or Project Goals
+                            Specific Workflow, Gateways (e.g. Stripe, Zendesk) or KPI Goals
                         </label>
                         <textarea 
                             id="notes" 
                             name="notes" 
                             rows="3" 
-                            placeholder="e.g. We are migrating our backend to Laravel & AWS. We need 3 Senior Engineers with experience in MySQL replication and high-concurrency architecture. Target start date: next month."
-                            class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm transition"
+                            placeholder="e.g. We require a 10-person 24/7 call center team for US and UK inbound support on Zendesk & Talkdesk, plus 2 dispute resolution specialists familiar with Stripe chargeback representation."
+                            class="w-full px-4 py-3 bg-navy-950 border border-navy-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm transition"
                         >{{ old('notes') }}</textarea>
                         @error('notes')
                             <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span>
                         @enderror
                     </div>
 
-                    <!-- Privacy & Submission Button -->
+                    <!-- Submission Button -->
                     <div class="pt-4">
                         <button 
                             type="submit" 
-                            class="w-full py-4 px-6 rounded-xl font-black text-slate-950 bg-emerald-400 hover:bg-emerald-300 shadow-xl shadow-emerald-500/20 text-base transition transform hover:-translate-y-0.5"
+                            class="w-full py-4 px-6 rounded-xl font-extrabold text-navy-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 shadow-xl shadow-amber-500/20 text-base transition transform hover:-translate-y-0.5"
                         >
                             Request Custom Talent Dossier & Schedule Consultation
                         </button>
                         <p class="text-center text-[11px] text-slate-500 mt-3">
-                            Strict NDA protected &bull; No spam &bull; Direct technical response within 24 business hours.
+                            Strict NDA protected &bull; PCI-DSS compliant infrastructure &bull; Direct technical response within 24 business hours.
                         </p>
                     </div>
 

@@ -30,8 +30,9 @@ class LeadCaptureController extends Controller
             'contact_email' => ['required', 'string', 'email', 'max:191'],
             'contact_phone' => ['nullable', 'string', 'max:32'],
             'service_category' => ['required', Rule::in([
-                Lead::CATEGORY_SOFTWARE,
                 Lead::CATEGORY_BPO,
+                Lead::CATEGORY_PAYMENT,
+                Lead::CATEGORY_SOFTWARE,
                 Lead::CATEGORY_FINANCE,
                 Lead::CATEGORY_MARKETING,
             ])],

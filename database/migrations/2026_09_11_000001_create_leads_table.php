@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string('contact_email')->index();
             $table->string('contact_phone', 32)->nullable();
             $table->enum('service_category', [
-                'software_engineering',
                 'bpo_customer_support',
+                'payment_processing',
+                'software_engineering',
                 'finance_backoffice',
                 'digital_marketing',
             ])->index();
@@ -58,3 +59,4 @@ return new class extends Migration
         Schema::dropIfExists('leads');
     }
 };
+

@@ -20,8 +20,9 @@ class Lead extends Model
     public const STATUS_WON = 'won';
     public const STATUS_LOST = 'lost';
 
-    public const CATEGORY_SOFTWARE = 'software_engineering';
     public const CATEGORY_BPO = 'bpo_customer_support';
+    public const CATEGORY_PAYMENT = 'payment_processing';
+    public const CATEGORY_SOFTWARE = 'software_engineering';
     public const CATEGORY_FINANCE = 'finance_backoffice';
     public const CATEGORY_MARKETING = 'digital_marketing';
 
@@ -166,10 +167,11 @@ class Lead extends Model
     public function getServiceCategoryLabelAttribute(): string
     {
         return match ($this->service_category) {
-            self::CATEGORY_SOFTWARE => 'Dedicated Software Engineering',
-            self::CATEGORY_BPO => '24/7 BPO & Customer Success',
-            self::CATEGORY_FINANCE => 'Finance & Back-Office Operations',
-            self::CATEGORY_MARKETING => 'Growth & Digital Operations',
+            self::CATEGORY_BPO => 'Omnichannel Call Center & 24/7 BPO',
+            self::CATEGORY_PAYMENT => 'Fintech & Payment Processing Operations',
+            self::CATEGORY_SOFTWARE => 'Dedicated Software & Cloud Engineering',
+            self::CATEGORY_FINANCE => 'Finance & Back-Office Accounting',
+            self::CATEGORY_MARKETING => 'Growth & Revenue Operations',
             default => ucwords(str_replace('_', ' ', $this->service_category ?? 'General Outsourcing')),
         };
     }

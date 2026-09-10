@@ -1,10 +1,10 @@
 <!-- Section 2: Enterprise Performance & Metric Bar -->
-<section class="border-y border-slate-800/80 bg-slate-900/40 backdrop-blur-md py-10 relative">
+<section class="border-y border-navy-800/80 bg-navy-900/40 backdrop-blur-md py-10 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-800/60">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-navy-800/60">
             <!-- Stat 1 -->
             <div class="pt-4 md:pt-0 px-4">
-                <div class="text-3xl sm:text-5xl font-black text-emerald-400 tracking-tight flex items-center justify-center">
+                <div class="text-3xl sm:text-5xl font-black text-amber-400 tracking-tight flex items-center justify-center">
                     <span>Up to 70%</span>
                 </div>
                 <div class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mt-2">
@@ -24,13 +24,13 @@
                     Global Vetted Talent
                 </div>
                 <div class="text-xs text-slate-400 mt-1">
-                    Multi-tier technical, linguistic & cognitive assessment bar
+                    English fluency & rigorous technical/ops assessment bar
                 </div>
             </div>
 
             <!-- Stat 3 -->
             <div class="pt-4 md:pt-0 px-4">
-                <div class="text-3xl sm:text-5xl font-black text-emerald-400 tracking-tight flex items-center justify-center">
+                <div class="text-3xl sm:text-5xl font-black text-amber-400 tracking-tight flex items-center justify-center">
                     <span>14 Days</span>
                 </div>
                 <div class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mt-2">
@@ -43,16 +43,17 @@
 
             <!-- Stat 4 -->
             <div class="pt-4 md:pt-0 px-4">
-                <div class="text-3xl sm:text-5xl font-black text-cyan-400 tracking-tight flex items-center justify-center">
+                <div class="text-3xl sm:text-5xl font-black text-teal-400 tracking-tight flex items-center justify-center">
                     <span>99.2%</span>
                 </div>
                 <div class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mt-2">
                     Client Retention Rate
                 </div>
                 <div class="text-xs text-slate-400 mt-1">
-                    Backed by dedicated Delivery Managers & replacement guarantees
+                    Backed by Kampala delivery center & replacement guarantees
                 </div>
             </div>
         </div>
     </div>
 </section>
+
