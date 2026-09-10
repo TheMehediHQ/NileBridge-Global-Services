@@ -169,7 +169,7 @@ class Lead extends Model
         return match ($this->service_category) {
             self::CATEGORY_BPO => 'Omnichannel Call Center & 24/7 BPO',
             self::CATEGORY_PAYMENT => 'Fintech & Payment Processing Operations',
-            self::CATEGORY_SOFTWARE => 'Dedicated Software & Cloud Engineering',
+            self::CATEGORY_SOFTWARE => 'Dedicated Software Engineering',
             self::CATEGORY_FINANCE => 'Finance & Back-Office Accounting',
             self::CATEGORY_MARKETING => 'Growth & Revenue Operations',
             default => ucwords(str_replace('_', ' ', $this->service_category ?? 'General Outsourcing')),

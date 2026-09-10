@@ -1,59 +1,58 @@
-<!-- Section 2: Enterprise Performance & Metric Bar -->
-<section class="border-y border-navy-800/80 bg-navy-900/40 backdrop-blur-md py-10 relative">
+<!-- Section 2: Enterprise Metric & Delivery Bar matching media_1789070132452.png -->
+<section class="border-y border-slate-200/80 bg-slate-50/70 py-8 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-navy-800/60">
-            <!-- Stat 1 -->
-            <div class="pt-4 md:pt-0 px-4">
-                <div class="text-3xl sm:text-5xl font-black text-amber-400 tracking-tight flex items-center justify-center">
-                    <span>Up to 70%</span>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-slate-200/80">
+            <!-- Stat 1: 24/7 Support & Operations -->
+            <div class="pt-3 sm:pt-0 px-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 border border-teal-100">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
                 </div>
-                <div class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mt-2">
-                    Average Cost Reduction
-                </div>
-                <div class="text-xs text-slate-400 mt-1">
-                    Compared to domestic US/UK/EU fully-burdened compensation
-                </div>
-            </div>
-
-            <!-- Stat 2 -->
-            <div class="pt-4 md:pt-0 px-4">
-                <div class="text-3xl sm:text-5xl font-black text-teal-300 tracking-tight flex items-center justify-center">
-                    <span>Top 1%</span>
-                </div>
-                <div class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mt-2">
-                    Global Vetted Talent
-                </div>
-                <div class="text-xs text-slate-400 mt-1">
-                    English fluency & rigorous technical/ops assessment bar
+                <div class="text-left">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-[#0B152F] tracking-tight">24/7</div>
+                    <div class="text-xs text-slate-500 font-medium">Support &amp; Operations</div>
                 </div>
             </div>
 
-            <!-- Stat 3 -->
-            <div class="pt-4 md:pt-0 px-4">
-                <div class="text-3xl sm:text-5xl font-black text-amber-400 tracking-tight flex items-center justify-center">
-                    <span>14 Days</span>
+            <!-- Stat 2: US & UK Offices & Operations -->
+            <div class="pt-3 sm:pt-0 px-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 border border-teal-100">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
                 </div>
-                <div class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mt-2">
-                    Fast-Track Placement
-                </div>
-                <div class="text-xs text-slate-400 mt-1">
-                    From initial discovery scope to full operational integration
+                <div class="text-left">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-[#0B152F] tracking-tight">US &amp; UK</div>
+                    <div class="text-xs text-slate-500 font-medium">Offices &amp; Operations</div>
                 </div>
             </div>
 
-            <!-- Stat 4 -->
-            <div class="pt-4 md:pt-0 px-4">
-                <div class="text-3xl sm:text-5xl font-black text-teal-400 tracking-tight flex items-center justify-center">
-                    <span>99.2%</span>
+            <!-- Stat 3: 5 - 100+ Team Size Flexibility (Up to 70% savings) -->
+            <div class="pt-3 sm:pt-0 px-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 border border-teal-100">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
                 </div>
-                <div class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mt-2">
-                    Client Retention Rate
+                <div class="text-left">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-teal-600 tracking-tight">5 &ndash; 100+</div>
+                    <div class="text-xs text-slate-500 font-medium">Team Size Flexibility <span class="text-[10px] text-teal-600 font-bold">&bull; Up to 70%</span></div>
                 </div>
-                <div class="text-xs text-slate-400 mt-1">
-                    Backed by Kampala delivery center & replacement guarantees
+            </div>
+
+            <!-- Stat 4: Uganda Operating Base -->
+            <div class="pt-3 sm:pt-0 px-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 border border-teal-100">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <div class="text-left">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-[#0B152F] tracking-tight">Uganda</div>
+                    <div class="text-xs text-slate-500 font-medium">Operating Base</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-

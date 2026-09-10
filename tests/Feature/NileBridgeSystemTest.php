@@ -55,11 +55,14 @@ class NileBridgeSystemTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('NileBridge');
+        $response->assertSee('Elite Global Talent');
         $response->assertSee('Call Center & Payment Processing', false);
         $response->assertSee('Up to 70%');
         $response->assertSee('Cloud Engineering');
+        $response->assertSee('Calculate Your Realized Annual Cost Savings');
         $response->assertSee('Calculate Realized Annual Cost Savings');
         $response->assertSee('Why Tier-1 Enterprises Choose NileBridge');
+        $response->assertSee('Initiate Your Global Talent Search');
         $response->assertSee('Initiate Your Requisition');
     }
 
@@ -236,6 +239,7 @@ class NileBridgeSystemTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('My Dedicated Talent Requisitions');
+        $response->assertSee('Dedicated Software Engineering');
         $response->assertSee('Dedicated Software & Cloud Engineering');
     }
 

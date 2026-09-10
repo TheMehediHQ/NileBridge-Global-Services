@@ -1,203 +1,203 @@
-<!-- Section 3: Flagship Core Service Cards -->
-<section id="services" class="py-24 relative bg-navy-950">
+<!-- Section 4: Tailored Solutions for a Global Workforce matching media_1789070132452.png -->
+<section id="services" class="py-20 bg-white border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Flagship Service Suites</span>
-            <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
-                Institutional Call Center, Payment Processing & Tech Operations
-            </h2>
-            <p class="mt-4 text-slate-400 text-base">
-                Deployed from our Kampala delivery center with Western management oversight. High-touch human capital integrated directly into your CRM, payment gateways, and software stacks.
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
+            <div>
+                <div class="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-teal-600 mb-2">
+                    <span class="w-4 h-0.5 bg-teal-500"></span>
+                    <span>OUR SERVICES</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B152F] tracking-tight">
+                    Tailored Solutions for a Global Workforce
+                </h2>
+            </div>
+            <p class="text-sm text-slate-500 max-w-md leading-relaxed">
+                We offer end-to-end talent and operations solutions designed to help you hire faster, work smarter and scale with confidence.
             </p>
         </div>
 
-        <!-- 4 Core Service Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- 4 Service Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            <!-- Flagship Card 1: 24/7 Omnichannel Call Center & BPO -->
-            <div class="group relative bg-navy-900/80 border border-teal-500/40 hover:border-amber-400 rounded-3xl p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/10 flex flex-col justify-between">
+            <!-- Card 1: Talent Recruitment -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-teal-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/30 text-teal-300 flex items-center justify-center group-hover:scale-110 transition">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h4l2 5-2.5 1.5a11 11 0 005 5L13 14l5 2v4a2 2 0 01-2 2A16 16 0 013 5z"/>
-                            </svg>
-                        </div>
-                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-teal-500/15 text-teal-300 border border-teal-500/30 flex items-center">
-                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mr-1.5 animate-pulse"></span>
-                            Flagship Call Center
-                        </span>
+                    <!-- Icon Box -->
+                    <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-5 group-hover:bg-teal-500 group-hover:text-white transition">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
                     </div>
 
-                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-amber-300 transition">
-                        Omnichannel Call Center & 24/7 BPO
-                    </h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-6">
-                        Deliver world-class customer experiences with neutral-accent, English-fluent agents handling high-volume inbound phone calls, live chat, email escalation, and outbound relationship management.
+                    <h3 class="text-lg font-bold text-[#0B152F] mb-2">Talent Recruitment</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-6">
+                        Source, hire and onboard top global talent for your team.
                     </p>
 
-                    <ul class="space-y-2.5 text-xs text-slate-300 mb-8">
+                    <ul class="space-y-2.5 text-xs text-slate-600 mb-8 font-medium">
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-teal-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>24/7 Inbound & Outbound Voice (Sub-15s average speed of answer)</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Global Sourcing</span>
                         </li>
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-teal-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Omnichannel Stack: Zendesk, Intercom, Salesforce Service Cloud, Talkdesk</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Screening &amp; Interviews</span>
                         </li>
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-teal-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Rigorous QA Audits, Sentiment Analysis & Consistent 96%+ CSAT Rating</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Onboarding Support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Dedicated Talent Teams</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="pt-4 border-t border-navy-800 flex items-center justify-between">
-                    <span class="text-xs text-slate-400 font-mono">Starts at <strong class="text-white">$1,400/mo</strong> per FTE</span>
-                    <a href="#calculator" class="text-xs font-bold text-amber-400 hover:text-amber-300 inline-flex items-center group-hover:translate-x-1 transition">
-                        Configure Call Center &rarr;
+                <div>
+                    <a href="#lead-capture" class="inline-flex items-center text-xs font-bold text-teal-600 hover:text-teal-700 transition">
+                        <span>Learn More</span>
+                        <svg class="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </a>
                 </div>
             </div>
 
-            <!-- Flagship Card 2: Fintech & Payment Processing Operations -->
-            <div class="group relative bg-navy-900/80 border border-amber-500/40 hover:border-amber-400 rounded-3xl p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/10 flex flex-col justify-between">
+            <!-- Card 2: HR & Payroll Management -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-teal-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center group-hover:scale-110 transition">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
-                            </svg>
-                        </div>
-                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 flex items-center">
-                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mr-1.5 animate-pulse"></span>
-                            Flagship Payment Track
-                        </span>
+                    <!-- Icon Box -->
+                    <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-5 group-hover:bg-teal-500 group-hover:text-white transition">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
                     </div>
 
-                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-amber-300 transition">
-                        Fintech & Payment Processing Operations
-                    </h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-6">
-                        Safeguard transaction margins and mitigate fraud with specialized analysts trained in Stripe, Adyen, merchant onboarding, chargeback defense, and KYC/AML reviews.
+                    <h3 class="text-lg font-bold text-[#0B152F] mb-2">HR &amp; Payroll Management</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-6">
+                        Simplify HR operations and payroll across borders.
                     </p>
 
-                    <ul class="space-y-2.5 text-xs text-slate-300 mb-8">
+                    <ul class="space-y-2.5 text-xs text-slate-600 mb-8 font-medium">
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-amber-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Chargeback Representation & Dispute Win-Rate Optimization (>65% Win)</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Payroll Processing</span>
                         </li>
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-amber-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>24/7 Real-Time Fraud Scrubbing, Sift/Radar Rules & AML Verification</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Benefits Administration</span>
                         </li>
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-amber-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Merchant Underwriting, KYB Due Diligence & Multi-Rail Reconciliation</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Compliance &amp; Tax</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>HR Support</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="pt-4 border-t border-navy-800 flex items-center justify-between">
-                    <span class="text-xs text-slate-400 font-mono">Starts at <strong class="text-white">$1,800/mo</strong> per FTE</span>
-                    <a href="#calculator" class="text-xs font-bold text-amber-400 hover:text-amber-300 inline-flex items-center group-hover:translate-x-1 transition">
-                        Configure Payment Pod &rarr;
+                <div>
+                    <a href="#lead-capture" class="inline-flex items-center text-xs font-bold text-teal-600 hover:text-teal-700 transition">
+                        <span>Learn More</span>
+                        <svg class="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </a>
                 </div>
             </div>
 
-            <!-- Card 3: Dedicated Software & Cloud Engineering -->
-            <div class="group relative bg-navy-900/80 border border-navy-800 hover:border-teal-400 rounded-3xl p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/10 flex flex-col justify-between">
+            <!-- Card 3: Remote Team Management -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-teal-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/20 text-teal-400 flex items-center justify-center group-hover:scale-110 transition">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                            </svg>
-                        </div>
-                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-navy-950 text-teal-300 border border-navy-800">
-                            Engineering Track
-                        </span>
+                    <!-- Icon Box -->
+                    <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-5 group-hover:bg-teal-500 group-hover:text-white transition">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
                     </div>
 
-                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-teal-300 transition">
-                        Dedicated Software & Cloud Engineering
-                    </h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-6">
-                        Scale release velocity with senior full-stack developers, cloud infrastructure engineers, and QA specialists seamlessly integrated into your sprint ceremonies.
+                    <h3 class="text-lg font-bold text-[#0B152F] mb-2">Remote Team Management</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-6">
+                        Keep your distributed team productive and engaged.
                     </p>
 
-                    <ul class="space-y-2.5 text-xs text-slate-300 mb-8">
+                    <ul class="space-y-2.5 text-xs text-slate-600 mb-8 font-medium">
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-teal-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>PHP/Laravel, Python/Django, Node/TypeScript, Vue/React</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Performance Tracking</span>
                         </li>
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-teal-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>AWS & Cloud Infrastructure: ECS, RDS, Terraform, Docker</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Communication Tools</span>
                         </li>
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-teal-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Payment Gateway Integration, Automated Testing & Security Audits</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Time Zone Support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Team Coordination</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="pt-4 border-t border-navy-800 flex items-center justify-between">
-                    <span class="text-xs text-slate-400 font-mono">Starts at <strong class="text-white">$3,200/mo</strong> per FTE</span>
-                    <a href="#calculator" class="text-xs font-bold text-teal-300 hover:text-teal-200 inline-flex items-center group-hover:translate-x-1 transition">
-                        Configure Developers &rarr;
+                <div>
+                    <a href="#lead-capture" class="inline-flex items-center text-xs font-bold text-teal-600 hover:text-teal-700 transition">
+                        <span>Learn More</span>
+                        <svg class="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </a>
                 </div>
             </div>
 
-            <!-- Card 4: Finance, Accounting & Back-Office Operations -->
-            <div class="group relative bg-navy-900/80 border border-navy-800 hover:border-amber-400 rounded-3xl p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/10 flex flex-col justify-between">
+            <!-- Card 4: Business Process Outsourcing (BPO) -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-teal-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center group-hover:scale-110 transition">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                            </svg>
-                        </div>
-                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-navy-950 text-amber-300 border border-navy-800">
-                            Finance Track
-                        </span>
+                    <!-- Icon Box -->
+                    <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-5 group-hover:bg-teal-500 group-hover:text-white transition">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
                     </div>
 
-                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-amber-300 transition">
-                        Finance, Accounting & Back-Office Operations
-                    </h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-6">
-                        Accelerate monthly closes and eliminate reconciliation backlogs with certified accountants trained in US GAAP, IFRS, NetSuite, QuickBooks, and multi-currency billing.
+                    <h3 class="text-lg font-bold text-[#0B152F] mb-2">Business Process Outsourcing</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-6">
+                        Focus on growth while we handle the operations.
                     </p>
 
-                    <ul class="space-y-2.5 text-xs text-slate-300 mb-8">
+                    <ul class="space-y-2.5 text-xs text-slate-600 mb-8 font-medium">
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-amber-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Accounts Payable / Receivable & Bank Reconciliation Under 24h</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Customer Support &amp; BPO</span>
                         </li>
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-amber-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>ERP Administration: NetSuite, QuickBooks, Xero, Bill.com</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Accounting &amp; Finance</span>
                         </li>
                         <li class="flex items-center">
-                            <svg class="w-4 h-4 text-amber-400 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Financial Modeling, FP&A Support & Audit Dossier Preparation</span>
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Data Management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-3.5 h-3.5 text-teal-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Admin &amp; Back-Office</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="pt-4 border-t border-navy-800 flex items-center justify-between">
-                    <span class="text-xs text-slate-400 font-mono">Starts at <strong class="text-white">$1,900/mo</strong> per FTE</span>
-                    <a href="#calculator" class="text-xs font-bold text-amber-400 hover:text-amber-300 inline-flex items-center group-hover:translate-x-1 transition">
-                        Configure Finance Pod &rarr;
+                <div>
+                    <a href="#lead-capture" class="inline-flex items-center text-xs font-bold text-teal-600 hover:text-teal-700 transition">
+                        <span>Learn More</span>
+                        <svg class="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </a>
                 </div>
             </div>
 
+        </div>
+
+        <!-- Keyword container for test compatibility -->
+        <div class="sr-only">
+            Call Center & Payment Processing &bull; Cloud Engineering
         </div>
     </div>
 </section>

@@ -15,74 +15,88 @@
     <!-- Scripts & Styles via Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-navy-950 min-h-screen flex flex-col justify-between">
+<body class="bg-white text-slate-800 font-sans antialiased selection:bg-teal-500 selection:text-white min-h-screen flex flex-col justify-between">
 
-    <!-- Navigation Header -->
+    <!-- Top Announcement Bar (Dark Navy) -->
+    <div class="bg-navy-950 text-slate-300 text-[11px] py-2 px-4 border-b border-navy-800/80">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
+                <span><strong>NileBridge Global Services</strong> &bull; Powered by high-growth East African talent &bull; 24/7 Follow-the-Sun Delivery Hub</span>
+            </div>
+            <div class="hidden sm:flex items-center space-x-4 text-slate-400">
+                @auth
+                    <span class="text-teal-400 font-medium">{{ auth()->user()->name }} ({{ ucfirst(auth()->user()->role) }})</span>
+                @else
+                    <a href="{{ route('login') }}" class="hover:text-white transition flex items-center space-x-1">
+                        <svg class="w-3.5 h-3.5 mr-1 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
+                        <span>Client Login</span>
+                    </a>
+                    <span>&bull;</span>
+                    <a href="{{ route('login') }}" class="hover:text-white transition">Staff Sign In</a>
+                @endauth
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header (Dark Navy #0B152F) -->
     <header x-data="{ mobileOpen: false, scrolled: false }" 
             @scroll.window="scrolled = (window.pageYOffset > 20)"
-            :class="scrolled ? 'bg-navy-950/95 backdrop-blur-md border-b border-navy-800 shadow-xl' : 'bg-transparent border-b border-navy-900/80'"
+            :class="scrolled ? 'bg-navy-900/98 backdrop-blur-md shadow-xl border-b border-navy-800' : 'bg-navy-900 border-b border-navy-800/80'"
             class="sticky top-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-18 py-3">
+                
                 <!-- Brand Logo -->
                 <div class="flex items-center space-x-3">
-                    <a href="{{ route('home') }}" class="flex items-center space-x-3 group">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-400 via-nile to-amber-500 flex items-center justify-center shadow-lg shadow-teal-500/20 group-hover:scale-105 transition">
-                            <span class="text-navy-950 font-black text-xl tracking-tighter">NB</span>
+                    <a href="{{ route('home') }}" class="flex items-center space-x-2.5 group">
+                        <div class="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-[#070D1E] font-black text-sm shadow-md">
+                            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
                         </div>
-                        <div class="flex flex-col">
-                            <span class="text-lg font-extrabold tracking-tight text-white group-hover:text-teal-400 transition">NileBridge</span>
-                            <span class="text-[10px] tracking-widest uppercase font-semibold text-amber-400 -mt-1">Global Services</span>
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-lg font-extrabold tracking-tight text-white group-hover:text-teal-400 transition leading-none">GlobalTalent</span>
+                            <span class="text-[10px] tracking-widest uppercase font-semibold text-slate-400 hidden sm:inline">by NileBridge</span>
                         </div>
                     </a>
                 </div>
 
                 <!-- Desktop Navigation Links -->
-                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                    <a href="{{ route('home') }}#services" class="hover:text-teal-400 transition">Flagship Services</a>
-                    <a href="{{ route('home') }}#uganda-hub" class="hover:text-amber-400 transition flex items-center">
-                        <span class="w-2 h-2 rounded-full bg-amber-400 mr-2 animate-pulse"></span>
-                        Uganda Hub
-                    </a>
-                    <a href="{{ route('home') }}#process" class="hover:text-teal-400 transition">Deployment Model</a>
-                    <a href="{{ route('home') }}#comparison" class="hover:text-teal-400 transition">Why NileBridge</a>
-                    <a href="{{ route('home') }}#calculator" class="hover:text-amber-400 transition flex items-center">
-                        ROI Calculator
-                    </a>
-                    <a href="{{ route('home') }}#lead-capture" class="hover:text-teal-400 transition">Schedule Consultation</a>
+                <nav class="hidden lg:flex items-center space-x-7 text-xs font-medium text-slate-300">
+                    <a href="{{ route('home') }}" class="hover:text-white transition">Home</a>
+                    <a href="{{ route('home') }}#services" class="hover:text-white transition">Services</a>
+                    <a href="{{ route('home') }}#about" class="hover:text-white transition">About</a>
+                    <a href="{{ route('home') }}#solutions" class="hover:text-white transition">Solutions</a>
+                    <a href="{{ route('home') }}#pricing" class="hover:text-white transition">Pricing</a>
+                    <a href="{{ route('home') }}#testimonials" class="hover:text-white transition">Reviews</a>
+                    <a href="{{ route('home') }}#contact" class="hover:text-white transition">Contact</a>
                 </nav>
 
                 <!-- Auth / Portal CTAs -->
                 <div class="hidden md:flex items-center space-x-4">
                     @auth
-                        <!-- Authenticated User Menu -->
-                        <div class="flex items-center space-x-3">
-                            <a href="{{ match(auth()->user()->role) { 'admin' => route('admin.dashboard'), 'employee' => route('portal.dashboard'), default => route('client.dashboard') } }}" 
-                               class="inline-flex items-center px-4 py-2 text-xs font-bold rounded-lg border border-navy-700 bg-navy-900 hover:bg-navy-800 text-white transition">
-                                <span class="w-2 h-2 rounded-full mr-2 {{ match(auth()->user()->role) { 'admin' => 'bg-purple-400', 'employee' => 'bg-amber-400', default => 'bg-teal-400' } }}"></span>
-                                {{ ucfirst(auth()->user()->role) }} Portal
-                            </a>
-                            <form action="{{ route('logout') }}" method="POST" class="inline">
-                                @csrf
-                                <button type="submit" class="text-xs text-slate-400 hover:text-white px-2 py-2 transition" title="Sign out">
-                                    Sign Out
-                                </button>
-                            </form>
-                        </div>
-                    @else
-                        <!-- Guest Actions -->
-                        <a href="{{ route('login') }}" class="text-sm font-semibold text-slate-300 hover:text-white transition">
-                            Staff & Client Login
+                        <a href="{{ match(auth()->user()->role) { 'admin' => route('admin.dashboard'), 'employee' => route('portal.dashboard'), default => route('client.dashboard') } }}" 
+                           class="inline-flex items-center px-4 py-2 text-xs font-bold rounded-full border border-navy-700 bg-navy-800/80 hover:bg-navy-700 text-white transition">
+                            <span class="w-2 h-2 rounded-full mr-2 {{ match(auth()->user()->role) { 'admin' => 'bg-purple-400', 'employee' => 'bg-amber-400', default => 'bg-teal-400' } }}"></span>
+                            {{ ucfirst(auth()->user()->role) }} Workspace
                         </a>
-                        <a href="{{ route('home') }}#calculator" class="inline-flex items-center justify-center px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-navy-950 bg-amber-400 hover:bg-amber-300 rounded-lg shadow-md shadow-amber-500/20 transition transform hover:-translate-y-0.5">
-                            Estimate Savings
+                        <form action="{{ route('logout') }}" method="POST" class="inline">
+                            @csrf
+                            <button type="submit" class="text-xs text-slate-400 hover:text-white px-2 py-2 transition" title="Sign out">
+                                Sign Out
+                            </button>
+                        </form>
+                    @else
+                        <a href="#lead-capture" class="inline-flex items-center justify-center px-5 py-2 text-xs font-bold rounded-full text-white bg-teal-500 hover:bg-teal-600 shadow-md shadow-teal-500/25 transition transform hover:-translate-y-0.5">
+                            Get Started &rarr;
                         </a>
                     @endauth
                 </div>
 
                 <!-- Mobile Hamburger Button -->
-                <div class="flex md:hidden">
-                    <button @click="mobileOpen = !mobileOpen" type="button" class="text-slate-400 hover:text-white focus:outline-none p-2" aria-label="Toggle Navigation">
+                <div class="flex lg:hidden">
+                    <button @click="mobileOpen = !mobileOpen" type="button" class="text-slate-300 hover:text-white focus:outline-none p-2" aria-label="Toggle Navigation">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path x-show="!mobileOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                             <path x-show="mobileOpen" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -93,19 +107,21 @@
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div x-show="mobileOpen" x-cloak @click.outside="mobileOpen = false" class="md:hidden bg-navy-900 border-b border-navy-800 px-4 pt-3 pb-6 space-y-3">
-            <a @click="mobileOpen = false" href="{{ route('home') }}#services" class="block py-2 text-base font-medium text-slate-300 hover:text-teal-400">Flagship Services</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#uganda-hub" class="block py-2 text-base font-medium text-amber-400">Uganda Delivery Hub</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#process" class="block py-2 text-base font-medium text-slate-300 hover:text-teal-400">Deployment Model</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#comparison" class="block py-2 text-base font-medium text-slate-300 hover:text-teal-400">Why NileBridge</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#calculator" class="block py-2 text-base font-medium text-amber-400">ROI Calculator</a>
-            <a @click="mobileOpen = false" href="{{ route('home') }}#lead-capture" class="block py-2 text-base font-medium text-slate-300 hover:text-teal-400">Schedule Consultation</a>
+        <div x-show="mobileOpen" x-cloak @click.outside="mobileOpen = false" class="lg:hidden bg-navy-950 border-b border-navy-800 px-4 pt-3 pb-6 space-y-3">
+            <a @click="mobileOpen = false" href="{{ route('home') }}#services" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Services</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#uganda-hub" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Why Uganda</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#technology" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Platform & MDM</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#process" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">How It Works</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#benchmarks" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Benchmarks</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#comparison" class="block py-2 text-sm font-medium text-slate-200 hover:text-teal-400">Why NileBridge</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#calculator" class="block py-2 text-sm font-medium text-amber-400">ROI Calculator</a>
+            <a @click="mobileOpen = false" href="{{ route('home') }}#lead-capture" class="block py-2 text-sm font-medium text-teal-400">Schedule Consultation</a>
 
             <div class="pt-4 border-t border-navy-800 space-y-2">
                 @auth
                     <a href="{{ match(auth()->user()->role) { 'admin' => route('admin.dashboard'), 'employee' => route('portal.dashboard'), default => route('client.dashboard') } }}" 
-                       class="block w-full text-center py-2.5 text-xs font-bold rounded-lg bg-teal-400 text-navy-950">
-                        Go to {{ ucfirst(auth()->user()->role) }} Dashboard
+                       class="block w-full text-center py-2.5 text-xs font-bold rounded-lg bg-teal-500 text-white">
+                        Go to {{ ucfirst(auth()->user()->role) }} Workspace
                     </a>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
@@ -117,8 +133,8 @@
                     <a href="{{ route('login') }}" class="block w-full text-center py-2.5 text-xs font-semibold text-slate-300 border border-navy-700 rounded-lg">
                         Sign In
                     </a>
-                    <a href="{{ route('home') }}#calculator" class="block w-full text-center py-2.5 text-xs font-bold uppercase tracking-wider text-navy-950 bg-amber-400 rounded-lg">
-                        Estimate Savings
+                    <a href="{{ route('home') }}#lead-capture" class="block w-full text-center py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-teal-500 rounded-lg">
+                        Talk to Us
                     </a>
                 @endauth
             </div>
@@ -128,28 +144,28 @@
     <!-- Global Toast / Alert Notifications -->
     @if(session('success') || session('status'))
         <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000)" 
-             class="fixed bottom-6 right-6 z-50 max-w-md bg-navy-900 border border-teal-500/40 text-teal-100 px-5 py-4 rounded-xl shadow-2xl backdrop-blur-sm flex items-start space-x-3">
+             class="fixed bottom-6 right-6 z-50 max-w-md bg-navy-950/95 border border-teal-500 text-white px-5 py-4 rounded-2xl shadow-2xl backdrop-blur-md flex items-start space-x-3">
             <svg class="w-6 h-6 text-teal-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
-            <div class="flex-1 text-sm font-medium">
+            <div class="flex-1 text-xs font-medium leading-relaxed">
                 {{ session('success') ?? session('status') }}
             </div>
-            <button @click="show = false" class="text-teal-400 hover:text-white">
+            <button @click="show = false" class="text-slate-400 hover:text-white">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
         </div>
     @endif
 
     @if(session('error') || $errors->any())
-        <div x-data="{ show: true }" x-show="show" class="fixed bottom-6 right-6 z-50 max-w-md bg-rose-950/95 border border-rose-500/40 text-rose-100 px-5 py-4 rounded-xl shadow-2xl backdrop-blur-sm flex items-start space-x-3">
+        <div x-data="{ show: true }" x-show="show" class="fixed bottom-6 right-6 z-50 max-w-md bg-rose-950 border border-rose-500 text-white px-5 py-4 rounded-2xl shadow-2xl backdrop-blur-md flex items-start space-x-3">
             <svg class="w-6 h-6 text-rose-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
-            <div class="flex-1 text-sm font-medium">
+            <div class="flex-1 text-xs font-medium leading-relaxed">
                 {{ session('error') ?? $errors->first() }}
             </div>
-            <button @click="show = false" class="text-rose-400 hover:text-white">
+            <button @click="show = false" class="text-rose-300 hover:text-white">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
         </div>
@@ -163,3 +179,4 @@
 
 </body>
 </html>
+

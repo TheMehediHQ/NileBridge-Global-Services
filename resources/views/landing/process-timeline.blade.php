@@ -1,87 +1,74 @@
-<!-- Section 4: Process Timeline -->
-<section id="process" class="py-24 bg-navy-900/40 border-t border-navy-800 relative">
+<!-- Section 5: How It Works: Simple Process. Powerful Results. matching media_1789070132452.png -->
+<section id="process" class="py-20 bg-slate-50/50 border-b border-slate-100 relative overflow-hidden">
+    <!-- Subtle World Map Watermark in Background -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none -z-10">
+        <svg class="w-full h-full max-w-6xl" viewBox="0 0 1000 500" fill="currentColor">
+            <path d="M150 150 Q 200 100 250 150 T 350 150 T 450 150 T 550 150 T 650 150 T 750 150 T 850 150" stroke="currentColor" stroke-width="2" fill="none" />
+        </svg>
+    </div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto mb-20">
-            <span class="text-xs font-bold uppercase tracking-widest text-teal-400">Institutional Delivery Framework</span>
-            <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
-                From Requisition to Production in 14 Days
+        <div class="max-w-2xl mb-16">
+            <div class="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-teal-600 mb-2">
+                <span class="w-4 h-0.5 bg-teal-500"></span>
+                <span>HOW IT WORKS</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B152F] tracking-tight">
+                Simple Process. Powerful Results.
             </h2>
-            <p class="mt-4 text-slate-400 text-base">
-                Our precision matchmaking process eliminates the 3-month domestic recruiting grind. We deploy pre-audited, battle-tested talent matched to your operations and tech stack.
+            <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+                Getting started is easy. Our streamlined process helps you find the right talent and build a high-performing team &mdash; fast.
             </p>
         </div>
 
-        <!-- 4 Steps Timeline Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            <!-- Step 1 -->
-            <div class="relative bg-navy-950/80 border border-navy-800 p-6 rounded-2xl flex flex-col justify-between hover:border-teal-500/40 transition">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">Phase 01</span>
-                        <span class="text-xs text-slate-500 font-semibold">48 Hours</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2">Strategic Scoping & SLA Alignment</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        We define KPIs, queue volumes, shift patterns (UTC+3 / US / UK), compliance tier (PCI-DSS, SOC2), and communication rituals.
-                    </p>
+        <!-- 4 Step Process Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            
+            <!-- Step 01 -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:shadow-lg transition-all duration-300 relative group">
+                <div class="w-10 h-10 rounded-full bg-teal-500 text-white font-extrabold text-sm flex items-center justify-center mb-6 shadow-md shadow-teal-500/20 group-hover:scale-105 transition">
+                    01
                 </div>
-                <div class="mt-6 pt-4 border-t border-navy-800 text-[11px] text-teal-400 font-medium">
-                    &bull; Custom Talent Dossier Created
-                </div>
+                <h3 class="text-base font-bold text-[#0B152F] mb-2">Share Your Needs</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Tell us what you're looking for and your goals.
+                </p>
             </div>
 
-            <!-- Step 2 -->
-            <div class="relative bg-navy-950/80 border border-navy-800 p-6 rounded-2xl flex flex-col justify-between hover:border-amber-500/40 transition">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Phase 02</span>
-                        <span class="text-xs text-slate-500 font-semibold">Day 3 to 7</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2">Top 1% Vetting & Live Audits</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        Rigorous technical audits, simulated phone/chat customer resolution tests, and C1/C2 neutral English fluency verifications.
-                    </p>
+            <!-- Step 02 -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:shadow-lg transition-all duration-300 relative group">
+                <div class="w-10 h-10 rounded-full bg-teal-500 text-white font-extrabold text-sm flex items-center justify-center mb-6 shadow-md shadow-teal-500/20 group-hover:scale-105 transition">
+                    02
                 </div>
-                <div class="mt-6 pt-4 border-t border-navy-800 text-[11px] text-amber-400 font-medium">
-                    &bull; Top 2–3 Specialists Shortlisted
-                </div>
+                <h3 class="text-base font-bold text-[#0B152F] mb-2">We Find the Best Talent</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    We shortlist and vet top candidates for you.
+                </p>
             </div>
 
-            <!-- Step 3 -->
-            <div class="relative bg-navy-950/80 border border-navy-800 p-6 rounded-2xl flex flex-col justify-between hover:border-teal-500/40 transition">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-teal-500/10 text-teal-300 border border-teal-500/20">Phase 03</span>
-                        <span class="text-xs text-slate-500 font-semibold">Day 8 to 14</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2">MDM Tooling & Onboarding</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        Dedicated enterprise hardware provisioning, VoIP/Zendesk/Salesforce setups, secure VPN access, and operational drills.
-                    </p>
+            <!-- Step 03 -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:shadow-lg transition-all duration-300 relative group">
+                <div class="w-10 h-10 rounded-full bg-teal-500 text-white font-extrabold text-sm flex items-center justify-center mb-6 shadow-md shadow-teal-500/20 group-hover:scale-105 transition">
+                    03
                 </div>
-                <div class="mt-6 pt-4 border-t border-navy-800 text-[11px] text-teal-300 font-medium">
-                    &bull; 2-Week Risk-Free Trial Begins
-                </div>
+                <h3 class="text-base font-bold text-[#0B152F] mb-2">You Hire &amp; Onboard</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Get started with your new team member.
+                </p>
             </div>
 
-            <!-- Step 4 -->
-            <div class="relative bg-navy-950/80 border border-navy-800 p-6 rounded-2xl flex flex-col justify-between hover:border-amber-500/40 transition">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">Phase 04</span>
-                        <span class="text-xs text-slate-500 font-semibold">Continuous</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2">Managed Operations & KPI Reviews</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        Dedicated Kampala Delivery Manager oversees shift attendance, QA scorecards, ongoing coaching, and quarterly scaling reviews.
-                    </p>
+            <!-- Step 04 -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:shadow-lg transition-all duration-300 relative group">
+                <div class="w-10 h-10 rounded-full bg-teal-500 text-white font-extrabold text-sm flex items-center justify-center mb-6 shadow-md shadow-teal-500/20 group-hover:scale-105 transition">
+                    04
                 </div>
-                <div class="mt-6 pt-4 border-t border-navy-800 text-[11px] text-amber-300 font-medium">
-                    &bull; 99.2% Long-Term Retention
-                </div>
+                <h3 class="text-base font-bold text-[#0B152F] mb-2">We Support &amp; Scale</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Ongoing support for long-term success.
+                </p>
             </div>
+
         </div>
     </div>
 </section>
-

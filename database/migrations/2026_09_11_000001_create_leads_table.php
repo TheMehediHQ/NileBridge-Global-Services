@@ -23,6 +23,7 @@ return new class extends Migration
                 'bpo_customer_support',
                 'payment_processing',
                 'software_engineering',
+                'bpo_customer_support',
                 'finance_backoffice',
                 'digital_marketing',
             ])->index();

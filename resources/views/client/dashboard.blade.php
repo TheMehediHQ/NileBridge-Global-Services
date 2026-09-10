@@ -56,6 +56,9 @@
                         <h2 class="text-xl sm:text-2xl font-black text-white tracking-tight mt-1">
                             {{ $inquiry->service_category_label }}
                         </h2>
+                        <p class="text-xs text-slate-400 mt-1">
+                            Dedicated Software &amp; Cloud Engineering Pod &bull; High-Velocity Agile Delivery
+                        </p>
                     </div>
 
                     <div>

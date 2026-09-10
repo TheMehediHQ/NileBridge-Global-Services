@@ -1,129 +1,138 @@
-<!-- Section 6: Traditional vs NileBridge Comparison Matrix -->
-<section id="comparison" class="py-24 bg-navy-950/60 border-t border-navy-800 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- 13. Comparison Matrix: Traditional vs NileBridge -->
+<section id="comparison" class="py-20 bg-white border-b border-slate-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-bold uppercase tracking-widest text-teal-400">Institutional Comparison</span>
-            <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
-                Why Tier-1 Enterprises Choose NileBridge
+        <div class="mb-12">
+            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-600 mb-2">
+                <span class="w-2 h-0.5 bg-teal-500"></span>
+                WHY DIRECT TALENT OUTSOURCING WINS
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B152F] tracking-tight">
+                An Extension of Your Team, Not an Offshore Vendor
             </h2>
-            <p class="mt-4 text-slate-400 text-base">
-                A side-by-side assessment of traditional domestic hiring, legacy offshore call centers, and the NileBridge Uganda managed delivery model.
+            <p class="mt-3 text-slate-500 text-sm">
+                Why Tier-1 Enterprises Choose NileBridge: A side-by-side comparison between legacy offshore vendor models and NileBridge's high-accountability embedded pods.
             </p>
         </div>
 
-        <!-- Matrix Table Container -->
-        <div class="overflow-x-auto rounded-3xl border border-navy-800 bg-navy-900/60 shadow-2xl backdrop-blur-md">
-            <table class="w-full text-left border-collapse">
-                <thead>
-                    <tr class="border-b border-navy-800 bg-navy-950/80">
-                        <th class="p-6 text-sm font-bold text-slate-400 uppercase tracking-wider w-1/4">Evaluation Vector</th>
-                        <th class="p-6 text-sm font-bold text-slate-400 uppercase tracking-wider w-1/4">Domestic In-House</th>
-                        <th class="p-6 text-sm font-bold text-slate-400 uppercase tracking-wider w-1/4">Legacy Offshore BPOs</th>
-                        <th class="p-6 text-sm font-extrabold text-amber-400 uppercase tracking-wider w-1/4 bg-teal-500/10 border-l border-r border-teal-500/20">
-                            NileBridge Global
-                        </th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-navy-800/80 text-sm">
-                    <!-- Row 1 -->
-                    <tr class="hover:bg-navy-800/30 transition">
-                        <td class="p-6 font-bold text-white flex items-center">
-                            <span>Total Fully-Loaded Cost</span>
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            $6,000–$18,000+/mo per seat including taxes, benefits, overhead & office facilities.
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            Lower base, but bloated with setup surcharges, seat licenses, and hidden overage tariffs.
-                        </td>
-                        <td class="p-6 font-semibold text-teal-300 bg-teal-500/5 border-l border-r border-teal-500/20">
-                            <strong class="text-amber-400">Up to 70% lower.</strong> Transparent flat monthly pricing ($1,400 - $3,200/mo) with zero hidden markups.
-                        </td>
-                    </tr>
+        <!-- 2-Column Comparison Table Card -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+            <!-- Headers -->
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="bg-slate-50/80 px-8 py-5 border-b md:border-b-0 md:border-r border-slate-200">
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-500">
+                        TRADITIONAL OUTSOURCING
+                    </span>
+                </div>
+                <div class="bg-[#0B152F] px-8 py-5 flex items-center justify-between">
+                    <span class="text-xs font-bold tracking-wider uppercase text-white flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-teal-400"></span>
+                        NILEBRIDGE
+                    </span>
+                    <span class="text-[11px] font-semibold text-teal-300 bg-teal-900/50 px-2 py-0.5 rounded-full border border-teal-700/50">
+                        Modern Managed Model
+                    </span>
+                </div>
+            </div>
 
-                    <!-- Row 2 -->
-                    <tr class="hover:bg-navy-800/30 transition">
-                        <td class="p-6 font-bold text-white">
-                            English Fluency & Accent Neutrality
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            Native, but extremely expensive and difficult to scale 24/7 across shifts.
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            Heavy accents and formulaic scripts leading to high customer frustration and repeat calls.
-                        </td>
-                        <td class="p-6 font-semibold text-teal-300 bg-teal-500/5 border-l border-r border-teal-500/20">
-                            <strong class="text-amber-400">C1/C2 Neutral Fluency.</strong> Uganda ranks #1 in East Africa for English proficiency with natural rapport.
-                        </td>
-                    </tr>
+            <!-- Comparison Rows -->
+            <div class="divide-y divide-slate-100 text-sm">
+                <!-- Row 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="px-8 py-5 bg-white text-slate-600 md:border-r border-slate-100 flex items-center gap-3">
+                        <svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        <span>High turnover &amp; churn</span>
+                    </div>
+                    <div class="px-8 py-5 bg-teal-50/20 text-[#0B152F] font-semibold flex items-center gap-3">
+                        <svg class="w-5 h-5 text-teal-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>&gt; 96% retention rate</span>
+                    </div>
+                </div>
 
-                    <!-- Row 3 -->
-                    <tr class="hover:bg-navy-800/30 transition">
-                        <td class="p-6 font-bold text-white">
-                            Time-to-Deploy & Ramp Up
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            60 to 90 days involving headhunters, candidate screening, internal interviews & notice periods.
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            30 to 45 days with generic training curriculums detached from your workflows.
-                        </td>
-                        <td class="p-6 font-semibold text-teal-300 bg-teal-500/5 border-l border-r border-teal-500/20">
-                            <strong class="text-amber-400">10 to 14 business days.</strong> Pre-audited specialists ready for immediate brand immersion.
-                        </td>
-                    </tr>
+                <!-- Row 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="px-8 py-5 bg-white text-slate-600 md:border-r border-slate-100 flex items-center gap-3">
+                        <svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        <span>Generic staffing pool</span>
+                    </div>
+                    <div class="px-8 py-5 bg-teal-50/20 text-[#0B152F] font-semibold flex items-center gap-3">
+                        <svg class="w-5 h-5 text-teal-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Dedicated, culturally-aligned talent</span>
+                    </div>
+                </div>
 
-                    <!-- Row 4 -->
-                    <tr class="hover:bg-navy-800/30 transition">
-                        <td class="p-6 font-bold text-white">
-                            Annual Staff Attrition & Churn
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            High churn (25-35%), leading to recurring onboarding and recruitment drain.
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            Severe attrition (40-65% annually), causing constant agent retraining and knowledge loss.
-                        </td>
-                        <td class="p-6 font-semibold text-teal-300 bg-teal-500/5 border-l border-r border-teal-500/20">
-                            <strong class="text-amber-400">Sub-4% Attrition.</strong> Industry-leading 99.2% retention SLA driven by career progression & top compensation.
-                        </td>
-                    </tr>
+                <!-- Row 3 -->
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="px-8 py-5 bg-white text-slate-600 md:border-r border-slate-100 flex items-center gap-3">
+                        <svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        <span>Limited visibility &amp; blackbox SLAs</span>
+                    </div>
+                    <div class="px-8 py-5 bg-teal-50/20 text-[#0B152F] font-semibold flex items-center gap-3">
+                        <svg class="w-5 h-5 text-teal-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>100% direct workflow integration</span>
+                    </div>
+                </div>
 
-                    <!-- Row 5 -->
-                    <tr class="hover:bg-navy-800/30 transition">
-                        <td class="p-6 font-bold text-white">
-                            Fintech Compliance & Security
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            Requires extensive in-house security tooling, continuous audits, and legal oversight.
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            Varying compliance standards, often inadequate for PCI-DSS Level 1 or banking-grade KYC.
-                        </td>
-                        <td class="p-6 font-semibold text-teal-300 bg-teal-500/5 border-l border-r border-teal-500/20">
-                            <strong class="text-amber-400">Bank-Grade Compliance.</strong> PCI-DSS Level 1, SOC2 Type II, and strict MDM device isolation for all agents.
-                        </td>
-                    </tr>
+                <!-- Row 4 -->
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="px-8 py-5 bg-white text-slate-600 md:border-r border-slate-100 flex items-center gap-3">
+                        <svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        <span>Low quality work &amp; robotic scripts</span>
+                    </div>
+                    <div class="px-8 py-5 bg-teal-50/20 text-[#0B152F] font-semibold flex items-center gap-3">
+                        <svg class="w-5 h-5 text-teal-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Enterprise-level QA &amp; training</span>
+                    </div>
+                </div>
 
-                    <!-- Row 6 -->
-                    <tr class="hover:bg-navy-800/30 transition">
-                        <td class="p-6 font-bold text-white">
-                            Trial Guarantee & Risk Mitigation
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            Zero guarantee. Costly severance, recruiter fees lost upon early resignation.
-                        </td>
-                        <td class="p-6 text-slate-400">
-                            Long-term multi-year lock-in contracts with strict termination penalties.
-                        </td>
-                        <td class="p-6 font-semibold text-teal-300 bg-teal-500/5 border-l border-r border-teal-500/20">
-                            <strong class="text-amber-400">14-Day Risk-Free Trial.</strong> If unsatisfied for any reason, no invoice issued or immediate replacement deployed.
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                <!-- Row 5 -->
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="px-8 py-5 bg-white text-slate-600 md:border-r border-slate-100 flex items-center gap-3">
+                        <svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        <span>Difficult to scale rapidly</span>
+                    </div>
+                    <div class="px-8 py-5 bg-teal-50/20 text-[#0B152F] font-semibold flex items-center gap-3">
+                        <svg class="w-5 h-5 text-teal-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Scale from 2 to 50+ in 2 weeks</span>
+                    </div>
+                </div>
+
+                <!-- Row 6 -->
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="px-8 py-5 bg-white text-slate-600 md:border-r border-slate-100 flex items-center gap-3">
+                        <svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        <span>Opaque fees &amp; hidden charges</span>
+                    </div>
+                    <div class="px-8 py-5 bg-teal-50/20 text-[#0B152F] font-semibold flex items-center gap-3">
+                        <svg class="w-5 h-5 text-teal-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Transparent flat monthly rate</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-
