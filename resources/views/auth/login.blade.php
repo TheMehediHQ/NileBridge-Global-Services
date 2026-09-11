@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="relative min-h-[calc(100vh-80px)] bg-[#F8FAFC] text-slate-800 py-12 sm:py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center overflow-hidden"
+<div class="relative min-h-screen bg-[#F8FAFC] text-slate-800 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center overflow-hidden"
      x-data="{
         fillCredentials(email, pass) {
             this.$refs.emailInput.value = email;
@@ -14,17 +14,31 @@
     <div class="absolute bottom-10 right-1/4 w-[450px] h-[450px] bg-blue-500/5 rounded-full blur-[130px] pointer-events-none -z-10"></div>
     <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:20px_20px] opacity-70 pointer-events-none -z-10"></div>
 
-    <div class="max-w-md w-full space-y-8 bg-white border border-slate-200/90 p-8 sm:p-10 rounded-3xl shadow-[0_8px_30px_rgba(11,21,47,0.06)] relative z-10">
-        
-        <!-- Header -->
-        <div class="text-center">
-            <div class="w-14 h-14 mx-auto rounded-2xl bg-teal-500 flex items-center justify-center shadow-lg shadow-teal-500/25 mb-4 text-white">
-                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <circle cx="12" cy="12" r="9" stroke-width="2" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.6 9h16.8M3.6 15h16.8" />
-                    <ellipse cx="12" cy="12" rx="4" ry="9" stroke-width="1.75" />
+    <div class="max-w-md w-full space-y-4 relative z-10">
+        <!-- Return to Landing Navigation -->
+        <div class="flex items-center justify-between px-1">
+            <a href="{{ url('/') }}" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-teal-600 transition group">
+                <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-            </div>
+                <span>&larr; Return to Landing</span>
+            </a>
+            <span class="text-[11px] font-mono text-slate-400">NileBridge Global</span>
+        </div>
+
+        <div class="w-full space-y-8 bg-white border border-slate-200/90 p-8 sm:p-10 rounded-3xl shadow-[0_8px_30px_rgba(11,21,47,0.06)]">
+            
+            <!-- Header -->
+            <div class="text-center">
+                <a href="{{ url('/') }}" class="inline-block hover:scale-105 transition-transform mb-4" title="Return to NileBridge Home">
+                <div class="w-14 h-14 mx-auto rounded-2xl bg-teal-500 flex items-center justify-center shadow-lg shadow-teal-500/25 text-white">
+                    <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <circle cx="12" cy="12" r="9" stroke-width="2" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.6 9h16.8M3.6 15h16.8" />
+                        <ellipse cx="12" cy="12" rx="4" ry="9" stroke-width="1.75" />
+                    </svg>
+                </div>
+            </a>
             <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-teal-50 text-teal-700 border border-teal-200 mb-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
                 Authorized Personnel
@@ -113,7 +127,7 @@
                     <label for="remember" class="ml-2 text-slate-500 cursor-pointer">Remember session</label>
                 </div>
                 <div>
-                    <a href="{{ route('home') }}" class="font-semibold text-teal-600 hover:text-teal-700 transition">&larr; Return to Landing</a>
+                    <a href="{{ url('/') }}" class="font-semibold text-teal-600 hover:text-teal-700 transition">&larr; Return to Landing</a>
                 </div>
             </div>
 
@@ -129,5 +143,6 @@
             Protected by SOC 2 Type-II &amp; ISO 27001 Access Policies. All authentication sessions are cryptographically logged.
         </div>
     </div>
+</div>
 </div>
 @endsection

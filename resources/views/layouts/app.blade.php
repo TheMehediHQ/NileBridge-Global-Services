@@ -17,6 +17,7 @@
 </head>
 @php
     $isPortal = request()->is('admin*', 'portal*', 'client*');
+    $isAuth = request()->routeIs('login') || request()->is('login*');
 @endphp
 <body class="{{ $isPortal ? 'bg-[#F8FAFC] text-slate-800' : 'bg-white text-slate-800' }} font-sans antialiased selection:bg-teal-500 selection:text-white min-h-screen flex flex-col justify-between">
 
@@ -112,7 +113,7 @@
                 </div>
             </div>
         </header>
-    @else
+    @elseif(!$isAuth)
         <!-- Main Navigation Header (Premium White / Glassmorphism) -->
         <header x-data="{ mobileOpen: false, scrolled: false }" 
                 @scroll.window="scrolled = (window.pageYOffset > 15)"
