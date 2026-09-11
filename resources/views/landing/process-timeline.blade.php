@@ -1,17 +1,17 @@
 <!-- Section 4: How It Works - Progressive Engagement Journey -->
-<section id="process" class="py-24 lg:py-32 bg-[#F8FAFC] border-b border-slate-200/80 relative overflow-hidden">
+<section id="process" class="py-20 sm:py-28 lg:py-32 bg-[#F8FAFC] border-b border-slate-200/80 relative overflow-hidden">
     <!-- Subtle Architectural Grid Texture -->
     <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none -z-10"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         <!-- Section Header (Editorial Alignment) -->
-        <div class="max-w-2xl mb-16 lg:mb-20">
+        <div class="max-w-2xl mb-12 sm:mb-16">
             <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-teal-600 mb-3">
                 <span class="w-2 h-2 rounded-full bg-teal-500"></span>
                 <span>HOW IT WORKS</span>
             </div>
-            <h2 class="text-4xl sm:text-5xl font-black text-[#0B152F] tracking-tight leading-[1.1]">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B152F] tracking-tight leading-[1.15]">
                 Simple Process. Powerful Results.
             </h2>
             <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
@@ -20,13 +20,13 @@
         </div>
 
         <!-- 4 Step Process Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 relative z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 relative z-10">
             
             <!-- Step 01 -->
-            <div class="bg-white rounded-xl p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-6">
-                        <div class="w-11 h-11 rounded-lg bg-[#0B152F] text-white font-mono font-bold text-sm flex items-center justify-center group-hover:bg-teal-500 transition-colors duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-[#0B152F] text-white font-mono font-bold text-sm flex items-center justify-center group-hover:bg-teal-500 transition-colors duration-300">
                             01
                         </div>
                         <span class="text-[11px] font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Intake</span>
@@ -43,10 +43,10 @@
             </div>
 
             <!-- Step 02 -->
-            <div class="bg-white rounded-xl p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-6">
-                        <div class="w-11 h-11 rounded-lg bg-[#0B152F] text-white font-mono font-bold text-sm flex items-center justify-center group-hover:bg-teal-500 transition-colors duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-[#0B152F] text-white font-mono font-bold text-sm flex items-center justify-center group-hover:bg-teal-500 transition-colors duration-300">
                             02
                         </div>
                         <span class="text-[11px] font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Screening</span>
@@ -63,10 +63,10 @@
             </div>
 
             <!-- Step 03 -->
-            <div class="bg-white rounded-xl p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-6">
-                        <div class="w-11 h-11 rounded-lg bg-[#0B152F] text-white font-mono font-bold text-sm flex items-center justify-center group-hover:bg-teal-500 transition-colors duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-[#0B152F] text-white font-mono font-bold text-sm flex items-center justify-center group-hover:bg-teal-500 transition-colors duration-300">
                             03
                         </div>
                         <span class="text-[11px] font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Onboarding</span>
@@ -83,10 +83,10 @@
             </div>
 
             <!-- Step 04 -->
-            <div class="bg-white rounded-xl p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-6">
-                        <div class="w-11 h-11 rounded-lg bg-[#0B152F] text-white font-mono font-bold text-sm flex items-center justify-center group-hover:bg-teal-500 transition-colors duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-[#0B152F] text-white font-mono font-bold text-sm flex items-center justify-center group-hover:bg-teal-500 transition-colors duration-300">
                             04
                         </div>
                         <span class="text-[11px] font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">Governance</span>

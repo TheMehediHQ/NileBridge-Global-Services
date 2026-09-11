@@ -9,7 +9,7 @@
                     <span class="w-5 h-[2px] bg-amber-400"></span>
                     <span>SECURITY &amp; GOVERNANCE</span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight max-w-xl">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-xl">
                     Institutional Security Standards Built for Mission-Critical Operations
                 </h2>
             </div>

@@ -1,5 +1,5 @@
 <!-- Section 5: Built in Uganda, Designed for the World (Cinematic Global Delivery Operations) -->
-<section id="uganda-hub" class="py-24 lg:py-36 bg-[#060D1D] text-white relative overflow-hidden border-y border-slate-800/80">
+<section id="uganda-hub" class="py-20 sm:py-28 lg:py-32 bg-[#060D1D] text-white relative overflow-hidden border-y border-slate-800/80">
     <!-- Atmospheric Ambient Lighting (Deep Midnight Navy & Subtle Cyan/Teal Nebulas) -->
     <div class="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[150px] pointer-events-none -z-10"></div>
     <div class="absolute bottom-10 left-10 w-[450px] h-[450px] bg-cyan-500/5 rounded-full blur-[130px] pointer-events-none -z-10"></div>
@@ -10,13 +10,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         <!-- Section Header (Authoritative Editorial Alignment) -->
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 lg:mb-20 gap-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-14 lg:mb-18 gap-8">
             <div class="max-w-2xl">
-                <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-teal-950/80 border border-teal-500/30 text-teal-300 text-xs font-bold uppercase tracking-[0.2em] mb-4">
+                <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-teal-950/80 border border-teal-500/30 text-teal-300 text-[11px] font-mono font-bold uppercase tracking-[0.16em] mb-4">
                     <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
                     <span>FLAGSHIP GLOBAL DELIVERY CENTER</span>
                 </div>
-                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.04]">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.025em] text-white leading-[1.08]">
                     Built in Uganda,<br>
                     <span class="bg-gradient-to-r from-teal-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">Designed for the World.</span>
                 </h2>

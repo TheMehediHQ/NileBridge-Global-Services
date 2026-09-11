@@ -1,15 +1,15 @@
 <!-- Section 3: Tailored Solutions for a Global Workforce -->
-<section id="services" class="py-24 lg:py-32 bg-white border-b border-slate-100 relative">
+<section id="services" class="py-20 sm:py-28 lg:py-32 bg-white border-b border-slate-100 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header (Editorial Consulting Style) -->
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 lg:mb-20 gap-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-14 lg:mb-18 gap-8">
             <div class="max-w-2xl">
-                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-teal-600 mb-3">
-                    <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+                <div class="inline-flex items-center gap-2 text-[11px] font-mono font-bold uppercase tracking-[0.16em] text-teal-700 mb-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
                     <span>OUR SERVICES</span>
                 </div>
-                <h2 class="text-4xl sm:text-5xl font-black text-[#0B152F] tracking-tight leading-[1.1]">
+                <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0B152F] tracking-[-0.025em] leading-[1.12]">
                     Tailored Solutions for a Global Workforce
                 </h2>
             </div>
@@ -19,7 +19,7 @@
         </div>
 
         <!-- 4 Editorial Service Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
             
             <!-- Card 1: Talent Recruitment -->
             <div class="bg-white rounded-xl p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-xl hover:shadow-teal-500/5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">

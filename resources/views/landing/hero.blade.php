@@ -20,7 +20,7 @@
                 </div>
 
                 <!-- Main Editorial Headline -->
-                <h1 class="text-5xl sm:text-6xl lg:text-[64px] font-black text-[#0B152F] uppercase tracking-[-0.03em] leading-[1.03] mb-6">
+                <h1 class="text-4xl sm:text-5xl lg:text-[3.75rem] font-extrabold text-[#0B152F] tracking-[-0.03em] leading-[1.05] mb-6">
                     GLOBAL TALENT,<br>
                     EXCEPTIONAL<br>
                     <span class="bg-gradient-to-r from-teal-600 via-teal-500 to-cyan-600 bg-clip-text text-transparent">OPERATIONS.</span>
@@ -312,7 +312,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="text-base sm:text-lg font-black text-[#0B152F] leading-none">250+</div>
+                                <div class="text-base sm:text-lg font-extrabold text-[#0B152F] leading-none font-mono">250+</div>
                                 <div class="text-[11px] sm:text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">Global Experts</div>
                             </div>
                         </a>
@@ -329,7 +329,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="text-base sm:text-lg font-black text-[#0B152F] leading-none">15+</div>
+                                <div class="text-base sm:text-lg font-extrabold text-[#0B152F] leading-none font-mono">15+</div>
                                 <div class="text-[11px] sm:text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">Countries</div>
                             </div>
                         </a>
@@ -345,7 +345,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="text-base sm:text-lg font-black text-[#0B152F] leading-none">98%</div>
+                                <div class="text-base sm:text-lg font-extrabold text-[#0B152F] leading-none font-mono">98%</div>
                                 <div class="text-[11px] sm:text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">Client Satisfaction</div>
                             </div>
                         </a>

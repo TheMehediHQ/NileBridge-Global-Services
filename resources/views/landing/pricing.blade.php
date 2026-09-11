@@ -1,15 +1,15 @@
 <!-- Section 8: Pricing & Engagement Models -->
-<section id="pricing" class="py-24 lg:py-32 bg-white border-b border-slate-100 relative" x-data="{ annual: false }">
+<section id="pricing" class="py-20 sm:py-28 lg:py-32 bg-white border-b border-slate-100 relative" x-data="{ annual: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header (Editorial Alignment) -->
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12 gap-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12 sm:mb-14 gap-8">
             <div class="max-w-2xl">
-                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-teal-600 mb-3">
-                    <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+                <div class="inline-flex items-center gap-2 text-[11px] font-mono font-bold uppercase tracking-[0.16em] text-teal-700 mb-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
                     <span>TRANSPARENT ENGAGEMENT</span>
                 </div>
-                <h2 class="text-4xl sm:text-5xl font-black text-[#0B152F] tracking-tight leading-[1.1]">
+                <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0B152F] tracking-[-0.025em] leading-[1.12]">
                     Flexible Plans for Every Stage
                 </h2>
             </div>
@@ -47,14 +47,14 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 items-stretch">
             
             <!-- Card 1: Basic -->
-            <div class="bg-white rounded-xl p-8 border border-slate-200/90 hover:border-slate-300 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 hover:border-slate-300 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
                 <div>
                     <span class="text-xs font-bold uppercase tracking-widest text-slate-400 font-mono">TIER 01</span>
                     <h3 class="text-2xl font-bold text-[#0B152F] mt-1">Basic</h3>
                     <p class="text-xs sm:text-sm text-slate-500 mt-1">Foundational remote pods &amp; pilots</p>
 
                     <div class="mt-6 flex items-baseline gap-1">
-                        <span class="text-4xl font-black text-[#0B152F] tracking-tight font-mono" x-text="annual ? '$239' : '$299'">$299</span>
+                        <span class="text-4xl font-extrabold text-[#0B152F] tracking-tight font-mono" x-text="annual ? '$239' : '$299'">$299</span>
                         <span class="text-xs text-slate-400 font-medium">/month</span>
                     </div>
 
@@ -86,7 +86,7 @@
             </div>
 
             <!-- Card 2: Growth (Recommended / Featured with Sophisticated Teal Treatment) -->
-            <div class="bg-white rounded-xl p-8 border-2 border-teal-500 shadow-xl shadow-teal-500/10 flex flex-col justify-between relative lg:-translate-y-2">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-teal-500 shadow-xl shadow-teal-500/10 flex flex-col justify-between relative lg:-translate-y-2">
                 <!-- Recommended Tag -->
                 <div class="absolute -top-3.5 right-6 bg-teal-600 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full tracking-widest shadow-sm">
                     MOST POPULAR
@@ -98,7 +98,7 @@
                     <p class="text-xs sm:text-sm text-slate-500 mt-1">Ideal for scaling teams &amp; operations</p>
 
                     <div class="mt-6 flex items-baseline gap-1">
-                        <span class="text-4xl font-black text-teal-600 tracking-tight font-mono" x-text="annual ? '$639' : '$799'">$799</span>
+                        <span class="text-4xl font-extrabold text-teal-600 tracking-tight font-mono" x-text="annual ? '$639' : '$799'">$799</span>
                         <span class="text-xs text-slate-400 font-medium">/month</span>
                     </div>
 
@@ -130,14 +130,14 @@
             </div>
 
             <!-- Card 3: Enterprise -->
-            <div class="bg-white rounded-xl p-8 border border-slate-200/90 hover:border-slate-300 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 hover:border-slate-300 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
                 <div>
                     <span class="text-xs font-bold uppercase tracking-widest text-slate-400 font-mono">TIER 03</span>
                     <h3 class="text-2xl font-bold text-[#0B152F] mt-1">Enterprise</h3>
                     <p class="text-xs sm:text-sm text-slate-500 mt-1">Multi-pod scale &amp; full department BPO</p>
 
                     <div class="mt-6 flex items-baseline gap-1">
-                        <span class="text-4xl font-black text-[#0B152F] tracking-tight font-mono" x-text="annual ? '$1,599' : '$1,999'">$1,999</span>
+                        <span class="text-4xl font-extrabold text-[#0B152F] tracking-tight font-mono" x-text="annual ? '$1,599' : '$1,999'">$1,999</span>
                         <span class="text-xs text-slate-400 font-medium">/month</span>
                     </div>
 
@@ -169,14 +169,14 @@
             </div>
 
             <!-- Card 4: Custom (Restrained Gold Accent) -->
-            <div class="bg-white rounded-xl p-8 border border-amber-300/80 hover:border-amber-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-amber-300/80 hover:border-amber-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
                 <div>
                     <span class="text-xs font-bold uppercase tracking-widest text-amber-700 font-mono">CUSTOM</span>
                     <h3 class="text-2xl font-bold text-[#0B152F] mt-1">Bespoke</h3>
                     <p class="text-xs sm:text-sm text-slate-500 mt-1">Tailored enterprise operational blueprint</p>
 
                     <div class="mt-6 flex items-baseline">
-                        <span class="text-3xl font-black text-[#0B152F] tracking-tight">Let's Talk</span>
+                        <span class="text-3xl font-extrabold text-[#0B152F] tracking-tight">Let's Talk</span>
                     </div>
 
                     <ul class="mt-8 space-y-3 text-xs sm:text-sm text-slate-700 font-medium">

@@ -9,7 +9,7 @@
                     <span class="w-5 h-[2px] bg-amber-400"></span>
                     <span>HOW WE DELIVER</span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-black text-navy-950 tracking-tight">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B152F] tracking-tight">
                     People-Driven Technology
                 </h2>
             </div>

@@ -1,10 +1,10 @@
 <!-- Section 10: Frequently Asked Questions & Enterprise Lead Capture -->
-<section id="contact" class="py-24 lg:py-32 bg-white border-b border-slate-100 relative">
+<section id="contact" class="py-20 sm:py-28 lg:py-32 bg-white border-b border-slate-100 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Success Alert if session exists -->
         @if(session('success'))
-            <div class="mb-12 p-6 rounded-xl bg-teal-50 border border-teal-200 text-teal-800 text-sm flex items-center justify-between shadow-sm">
+            <div class="mb-10 p-5 rounded-2xl bg-teal-50 border border-teal-200 text-teal-800 text-sm flex items-center justify-between shadow-sm">
                 <div class="flex items-center gap-4">
                     <div class="w-9 h-9 rounded-lg bg-teal-500 text-white flex items-center justify-center font-bold shrink-0">✓</div>
                     <div>
@@ -20,14 +20,14 @@
             
             <!-- Left Column: FAQ Accordion (Clean, Spacious Editorial Design) -->
             <div class="lg:col-span-6">
-                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-teal-600 mb-3">
-                    <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+                <div class="inline-flex items-center gap-2 text-[11px] font-mono font-bold uppercase tracking-[0.16em] text-teal-700 mb-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
                     <span>FREQUENTLY ASKED QUESTIONS</span>
                 </div>
-                <h2 class="text-4xl sm:text-5xl font-black text-[#0B152F] tracking-tight leading-[1.1] mb-6">
+                <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0B152F] tracking-[-0.025em] leading-[1.12] mb-5">
                     Common Inquiries About Global Operations
                 </h2>
-                <p class="text-base text-slate-600 leading-relaxed font-normal mb-10">
+                <p class="text-base text-slate-600 leading-relaxed font-normal mb-8">
                     Everything you need to know about talent onboarding, timezone coverage, data security, and contracts.
                 </p>
 
@@ -137,12 +137,12 @@
 
             <!-- Right Column: High-Converting Enterprise Requisition Form -->
             <div class="lg:col-span-6">
-                <div id="lead-capture" class="bg-slate-50/80 rounded-xl border border-slate-200/90 p-8 sm:p-10 shadow-lg relative">
+                <div id="lead-capture" class="bg-slate-50/80 rounded-2xl border border-slate-200/90 p-6 sm:p-8 lg:p-10 shadow-lg relative">
                     
                     <div class="flex items-center justify-between pb-6 border-b border-slate-200 mb-6">
                         <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-200/80">REQUISITION DESK</span>
-                            <h3 class="text-2xl font-black text-[#0B152F] mt-2 tracking-tight">Initiate Your Requisition</h3>
+                            <span class="text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-200/80 font-mono">REQUISITION DESK</span>
+                            <h3 class="text-2xl font-extrabold text-[#0B152F] mt-2 tracking-tight">Initiate Your Requisition</h3>
                         </div>
                         <span class="text-xs text-slate-500 font-mono">24h SLA Response</span>
                     </div>

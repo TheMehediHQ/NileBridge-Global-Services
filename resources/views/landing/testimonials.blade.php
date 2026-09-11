@@ -1,15 +1,15 @@
 <!-- Section 7: Enterprise Client Case Studies & Testimonials -->
-<section id="testimonials" class="py-24 lg:py-32 bg-[#F8FAFC] border-b border-slate-200/80 relative">
+<section id="testimonials" class="py-20 sm:py-28 lg:py-32 bg-[#F8FAFC] border-b border-slate-200/80 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header (Editorial Alignment) -->
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 lg:mb-20 gap-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12 sm:mb-16 gap-8">
             <div class="max-w-2xl">
                 <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-teal-600 mb-3">
                     <span class="w-2 h-2 rounded-full bg-teal-500"></span>
                     <span>CLIENT OUTCOMES</span>
                 </div>
-                <h2 class="text-4xl sm:text-5xl font-black text-[#0B152F] tracking-tight leading-[1.1]">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B152F] tracking-tight leading-[1.15]">
                     What Our Clients Say
                 </h2>
             </div>
@@ -19,14 +19,14 @@
         </div>
 
         <!-- 4 Clean Editorial Testimonial Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
             
             <!-- Card 1: Sarah Mitchell -->
-            <div class="bg-white rounded-xl p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <!-- Small Elegant Avatar & Title -->
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 font-bold flex items-center justify-center text-xs border border-teal-100/80 shrink-0">
+                        <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 font-bold flex items-center justify-center text-xs border border-teal-100/80 shrink-0">
                             SM
                         </div>
                         <div>
@@ -47,10 +47,10 @@
             </div>
 
             <!-- Card 2: James Carter -->
-            <div class="bg-white rounded-xl p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-700 font-bold flex items-center justify-center text-xs border border-blue-100/80 shrink-0">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 font-bold flex items-center justify-center text-xs border border-blue-100/80 shrink-0">
                             JC
                         </div>
                         <div>
@@ -71,10 +71,10 @@
             </div>
 
             <!-- Card 3: Priya Nair -->
-            <div class="bg-white rounded-xl p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 font-bold flex items-center justify-center text-xs border border-purple-100/80 shrink-0">
+                        <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 font-bold flex items-center justify-center text-xs border border-purple-100/80 shrink-0">
                             PN
                         </div>
                         <div>
@@ -95,10 +95,10 @@
             </div>
 
             <!-- Card 4: Daniel Kim -->
-            <div class="bg-white rounded-xl p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 hover:border-teal-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-800 font-bold flex items-center justify-center text-xs border border-amber-100/80 shrink-0">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-800 font-bold flex items-center justify-center text-xs border border-amber-100/80 shrink-0">
                             DK
                         </div>
                         <div>

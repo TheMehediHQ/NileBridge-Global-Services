@@ -62,6 +62,7 @@
                 </div>
                 <div class="mt-6 pt-4 border-t border-teal-500/60">
                     <div class="text-2xl font-black font-mono">12 Days</div>
+                    <div class="text-2xl font-extrabold font-mono">12 Days</div>
                     <div class="text-[11px] uppercase tracking-wider text-teal-100 font-semibold mt-0.5">Time to Placement</div>
                 </div>
             </div>
@@ -82,6 +83,7 @@
                 </div>
                 <div class="mt-6 pt-4 border-t border-slate-800">
                     <div class="text-2xl font-black text-teal-400 font-mono">99.8%</div>
+                    <div class="text-2xl font-extrabold text-teal-400 font-mono">99.8%</div>
                     <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mt-0.5">Order SLA Adherence</div>
                 </div>
             </div>
@@ -102,6 +104,7 @@
                 </div>
                 <div class="mt-6 pt-4 border-t border-amber-500/40">
                     <div class="text-2xl font-black font-mono">100%</div>
+                    <div class="text-2xl font-extrabold font-mono">100%</div>
                     <div class="text-[11px] uppercase tracking-wider text-[#0B152F] font-semibold mt-0.5">HIPAA &amp; SOC-2 Audit Pass</div>
                 </div>
             </div>
@@ -122,6 +125,7 @@
                 </div>
                 <div class="mt-6 pt-4 border-t border-teal-500/60">
                     <div class="text-2xl font-black font-mono">-58%</div>
+                    <div class="text-2xl font-extrabold font-mono">-58%</div>
                     <div class="text-[11px] uppercase tracking-wider text-teal-100 font-semibold mt-0.5">Chargeback Rate</div>
                 </div>
             </div>
@@ -142,6 +146,7 @@
                 </div>
                 <div class="mt-6 pt-4 border-t border-slate-800">
                     <div class="text-2xl font-black text-teal-400 font-mono">99.99%</div>
+                    <div class="text-2xl font-extrabold text-teal-400 font-mono">99.99%</div>
                     <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mt-0.5">Platform Uptime</div>
                 </div>
             </div>
@@ -162,6 +167,7 @@
                 </div>
                 <div class="mt-6 pt-4 border-t border-slate-800">
                     <div class="text-2xl font-black text-amber-400 font-mono">24/7</div>
+                    <div class="text-2xl font-extrabold text-amber-400 font-mono">24/7</div>
                     <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mt-0.5">Live Dispatch Coverage</div>
                 </div>
             </div>

@@ -1,14 +1,14 @@
 <!-- Section 11: Enterprise Institutional Footer -->
 <footer class="bg-[#060D1D] text-slate-400 text-xs border-t border-slate-800/80 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-14">
         
         <!-- Main Footer Columns -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-14 border-b border-slate-800/80">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 sm:gap-12 pb-12 sm:pb-14 border-b border-slate-800/80">
             
             <!-- Brand Column -->
             <div class="lg:col-span-2 max-w-sm">
                 <div class="flex items-center gap-3 mb-5">
-                    <div class="w-10 h-10 rounded-xl bg-teal-500 flex items-center justify-center text-white font-black text-sm shadow-md shadow-teal-500/20 shrink-0">
+                    <div class="w-10 h-10 rounded-xl bg-teal-500 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-teal-500/20 shrink-0">
                         <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <circle cx="12" cy="12" r="9" stroke-width="2" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.6 9h16.8M3.6 15h16.8" />
@@ -17,11 +17,11 @@
                     </div>
                     <div class="flex flex-col justify-center">
                         <span class="text-[10px] sm:text-[11px] tracking-[0.22em] uppercase font-bold text-teal-400 leading-tight">NileBridge</span>
-                        <span class="text-xl font-black text-white tracking-tight leading-none">GlobalTalent</span>
+                        <span class="text-xl font-extrabold text-white tracking-tight leading-none">GlobalTalent</span>
                     </div>
                 </div>
                 
-                <p class="text-slate-400 text-sm leading-relaxed mb-8 font-normal">
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 sm:mb-8 font-normal">
                     Enterprise global talent, compliant employer of record, and dedicated business process outsourcing delivered from East Africa to high-growth international businesses.
                 </p>
 
@@ -41,8 +41,8 @@
 
             <!-- Navigation Links -->
             <div>
-                <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-5 font-mono">PLATFORM</h4>
-                <ul class="space-y-3 text-sm text-slate-400">
+                <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-4 sm:mb-5 font-mono">PLATFORM</h4>
+                <ul class="space-y-2.5 sm:space-y-3 text-sm text-slate-400">
                     <li><a href="{{ route('home') }}" class="hover:text-teal-400 transition">Home</a></li>
                     <li><a href="#services" class="hover:text-teal-400 transition">Services Directory</a></li>
                     <li><a href="#process" class="hover:text-teal-400 transition">Engagement Model</a></li>
@@ -54,8 +54,8 @@
 
             <!-- Solutions Column -->
             <div>
-                <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-5 font-mono">SOLUTIONS</h4>
-                <ul class="space-y-3 text-sm text-slate-400">
+                <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-4 sm:mb-5 font-mono">SOLUTIONS</h4>
+                <ul class="space-y-2.5 sm:space-y-3 text-sm text-slate-400">
                     <li><a href="#services" class="hover:text-teal-400 transition">Talent Sourcing</a></li>
                     <li><a href="#services" class="hover:text-teal-400 transition">Global Payroll EOR</a></li>
                     <li><a href="#services" class="hover:text-teal-400 transition">Customer Care Operations</a></li>
@@ -67,7 +67,7 @@
 
             <!-- Locations Column -->
             <div>
-                <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-5 font-mono">GLOBAL HUBS</h4>
+                <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-4 sm:mb-5 font-mono">GLOBAL HUBS</h4>
                 <ul class="space-y-3.5 text-xs text-slate-400">
                     <li class="flex items-start gap-2.5">
                         <span class="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 shrink-0"></span>

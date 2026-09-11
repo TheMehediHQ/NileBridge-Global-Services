@@ -1,5 +1,5 @@
 <!-- Section 9: Pre-Footer Conversion CTA Banner -->
-<section class="py-28 lg:py-36 bg-[#060D1D] relative overflow-hidden text-center border-t border-slate-800">
+<section class="py-24 sm:py-32 lg:py-36 bg-[#060D1D] relative overflow-hidden text-center border-t border-slate-800">
     <!-- Atmospheric Ambient Lighting & Network Visual -->
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none -z-0">
         <div class="w-[700px] h-[350px] bg-teal-500/10 rounded-full blur-[140px]"></div>
@@ -20,13 +20,13 @@
 
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <!-- Eyebrow -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-950/80 border border-teal-500/30 text-xs font-bold uppercase tracking-[0.2em] text-teal-300 mb-6 shadow-xs">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-950/80 border border-teal-500/30 text-xs font-bold uppercase tracking-[0.2em] text-teal-300 mb-6 shadow-xs font-mono">
             <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
             <span>READY TO GET STARTED?</span>
         </div>
 
         <!-- Heading (Editorial Confidence) -->
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.05]">
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08]">
             Let's Build Your Team.
         </h2>
 
@@ -39,14 +39,14 @@
         <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
                 href="#lead-capture" 
-                class="w-full sm:w-auto inline-flex items-center justify-center px-9 py-4 rounded-full text-sm sm:text-base font-bold bg-teal-500 hover:bg-teal-600 text-white shadow-xl shadow-teal-500/25 transition-all transform hover:-translate-y-0.5 active:scale-95"
+                class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-bold bg-teal-500 hover:bg-teal-600 text-white shadow-xl shadow-teal-500/25 transition-all transform hover:-translate-y-0.5 active:scale-95"
             >
                 <span>Get Started Today &rarr;</span>
                 <span class="sr-only">Initiate Your Requisition</span>
             </a>
             <a 
                 href="#lead-capture" 
-                class="w-full sm:w-auto inline-flex items-center justify-center px-9 py-4 rounded-full text-sm sm:text-base font-semibold border border-slate-700 bg-slate-900/60 text-slate-200 hover:text-white hover:border-teal-400 transition-all active:scale-95"
+                class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-semibold border border-slate-700 bg-slate-900/60 text-slate-200 hover:text-white hover:border-teal-400 transition-all active:scale-95"
             >
                 <span>Talk to Our Team &rarr;</span>
                 <span class="sr-only">Initiate Your Global Talent Search</span>
