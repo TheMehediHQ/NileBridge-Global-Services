@@ -82,14 +82,16 @@ class LeadCaptureController extends Controller
                 'user_agent' => substr($request->userAgent() ?? '', 0, 500),
             ]);
 
-            // Append initial system note
-            $adminUser = User::where('role', User::ROLE_ADMIN)->first();
-            LeadNote::create([
-                'lead_id' => $lead->id,
-                'user_id' => $adminUser ? $adminUser->id : 1,
-                'stage_snapshot' => Lead::STATUS_NEW,
-                'note' => 'Inbound enterprise inquiry captured via ' . ($lead->source === 'roi_calculator' ? 'ROI Calculator Handoff' : 'Landing Page Form') . '.',
-            ]);
+            // Append initial system note if an author exists
+            $systemAuthor = User::where('role', User::ROLE_ADMIN)->first() ?? User::first();
+            if ($systemAuthor) {
+                LeadNote::create([
+                    'lead_id' => $lead->id,
+                    'user_id' => $systemAuthor->id,
+                    'stage_snapshot' => Lead::STATUS_NEW,
+                    'note' => 'Inbound enterprise inquiry captured via ' . ($lead->source === 'roi_calculator' ? 'ROI Calculator Handoff' : 'Landing Page Form') . '.',
+                ]);
+            }
         });
 
         return redirect('/#lead-capture')->with(

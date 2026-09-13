@@ -49,9 +49,20 @@
             </p>
         </div>
 
-        <!-- Quick Demo Switchers -->
+        <!-- Session Status / Alert Feedback -->
+        @if (session('status'))
+            <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="leading-relaxed font-medium">{{ session('status') }}</span>
+            </div>
+        @endif
+
+        @if(app()->isLocal())
+        <!-- Quick Demo Switchers (Local Development Only) -->
         <div class="bg-slate-50/80 border border-slate-200/80 rounded-2xl p-4">
-            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 block mb-2 text-center">Quick Demo Credentials (1-Click Fill)</span>
+            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 block mb-2 text-center">Quick Demo Credentials (1-Click Fill &bull; Local Mode)</span>
             <div class="grid grid-cols-1 gap-2">
                 <button type="button" 
                         @click="fillCredentials('admin@nilebridge.com', 'password')"
@@ -82,6 +93,7 @@
                 </button>
             </div>
         </div>
+        @endif
 
         <!-- Form -->
         <form class="mt-8 space-y-5" action="{{ route('login.post') }}" method="POST">
@@ -96,7 +108,7 @@
                            type="email" 
                            autocomplete="email" 
                            required 
-                           value="{{ old('email', 'admin@nilebridge.com') }}"
+                           value="{{ old('email', app()->isLocal() ? 'admin@nilebridge.com' : '') }}"
                            class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 text-sm transition" 
                            placeholder="name@company.com">
                     @error('email')
@@ -112,7 +124,7 @@
                            type="password" 
                            autocomplete="current-password" 
                            required 
-                           value="password"
+                           value="{{ app()->isLocal() ? 'password' : '' }}"
                            class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 text-sm transition" 
                            placeholder="••••••••••••">
                     @error('password')
@@ -127,7 +139,7 @@
                     <label for="remember" class="ml-2 text-slate-500 cursor-pointer">Remember session</label>
                 </div>
                 <div>
-                    <a href="{{ url('/') }}" class="font-semibold text-teal-600 hover:text-teal-700 transition">&larr; Return to Landing</a>
+                    <a href="{{ route('password.request') }}" class="font-semibold text-teal-600 hover:text-teal-700 transition">Forgot password?</a>
                 </div>
             </div>
 

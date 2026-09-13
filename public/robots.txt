@@ -1,2 +1,17 @@
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /portal/
+Disallow: /client/
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset-password/
+Disallow: /leads
+
+# Allow public landing and informational resources
+Allow: /
+Allow: /services/
+Allow: /industries/
+Allow: /resources/
+Allow: /privacy-policy
+Allow: /terms-of-service

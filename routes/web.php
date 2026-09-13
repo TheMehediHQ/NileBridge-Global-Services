@@ -11,13 +11,17 @@ use App\Http\Controllers\Admin\LeadController as AdminLeadController;
 use App\Http\Controllers\Employee\LeadController as EmployeeLeadController;
 use App\Http\Controllers\Customer\DashboardController as CustomerDashboardController;
 
+use App\Http\Controllers\Auth\PasswordResetController;
+
 /*
 |--------------------------------------------------------------------------
 | Public Landing & Lead Capture Routes
 |--------------------------------------------------------------------------
 */
 Route::get('/', [LandingPageController::class, 'index'])->name('home');
-Route::post('/leads', [LeadCaptureController::class, 'store'])->name('leads.store');
+Route::post('/leads', [LeadCaptureController::class, 'store'])
+    ->middleware('throttle:10,1')
+    ->name('leads.store');
 Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
 Route::get('/industries/{slug}', [IndustryController::class, 'show'])->name('industries.show');
 Route::get('/resources/calculator', [ResourceController::class, 'calculator'])->name('resources.calculator');
@@ -37,10 +41,28 @@ Route::get('/terms-of-service', function () {
 |--------------------------------------------------------------------------
 */
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::post('/login', [AuthController::class, 'login'])
+    ->middleware('throttle:5,1')
+    ->name('login.post');
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
-Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+Route::post('/register', [AuthController::class, 'register'])
+    ->middleware('throttle:5,1')
+    ->name('register.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+/*
+|--------------------------------------------------------------------------
+| Password Recovery / Reset
+|--------------------------------------------------------------------------
+*/
+Route::get('/forgot-password', [PasswordResetController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLinkEmail'])
+    ->middleware('throttle:5,1')
+    ->name('password.email');
+Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])
+    ->middleware('throttle:5,1')
+    ->name('password.update');
 
 /*
 |--------------------------------------------------------------------------

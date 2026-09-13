@@ -5,12 +5,12 @@ namespace Tests\Feature;
 use App\Models\Lead;
 use App\Models\LeadNote;
 use App\Models\User;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class NileBridgeSystemTest extends TestCase
 {
-    use DatabaseTransactions;
+    use RefreshDatabase;
 
     protected User $admin;
     protected User $employee1;
