@@ -41,12 +41,14 @@
                         </svg>
                     </a>
                     
-                    <a href="#about" 
+                    <a href="#services" 
                        class="group inline-flex items-center text-sm sm:text-base font-semibold text-[#0B152F] hover:text-teal-600 transition-colors duration-200">
                         <span class="w-9 h-9 rounded-full border border-slate-200 group-hover:border-teal-500 text-teal-600 flex items-center justify-center mr-3 text-xs bg-white shadow-xs group-hover:bg-teal-50 transition-all duration-300">
-                            &#9658;
+                            <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
                         </span>
-                        <span>Watch Our Story</span>
+                        <span>Explore Our Services</span>
                     </a>
                 </div>
 

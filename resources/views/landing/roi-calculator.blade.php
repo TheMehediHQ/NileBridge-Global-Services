@@ -1,4 +1,4 @@
-<!-- 14. ROI & Savings Calculator -->
+<!-- ROI & Savings Calculator -->
 <section id="calculator" class="py-20 sm:py-28 lg:py-32 bg-white border-b border-slate-100" x-data="roiCalculatorWidget()">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
@@ -6,244 +6,297 @@
             <div>
                 <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-teal-600 mb-3">
                     <span class="w-2 h-0.5 bg-teal-500"></span>
-                    <span>ROI CALCULATOR</span>
+                    <span>ROI &amp; SAVINGS CALCULATOR</span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B152F] tracking-tight leading-[1.15]">
-                    What Could NileBridge Save Your Business?
+                    NileBridger ROI &amp; Savings Calculator
                 </h2>
-                <p class="text-xs text-slate-400 font-medium mt-2">
+                <p class="text-slate-500 text-sm sm:text-base mt-2">
+                    Calculate your potential cost reduction and operational efficiency by partnering with NileBridger.
+                </p>
+                <p class="text-xs text-slate-400 font-medium mt-1">
                     Calculate Your Realized Annual Cost Savings &bull; Calculate Realized Annual Cost Savings
                 </p>
             </div>
-            <p class="text-slate-500 text-sm sm:text-base max-w-md leading-relaxed">
-                Adjust the variables below to calculate your estimated annual savings against domestic onshore cost.
-            </p>
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Live Interactive Model
+                </span>
+            </div>
         </div>
 
-        <!-- 2-Tone Calculator Container -->
-        <div class="rounded-2xl border border-slate-200 overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12">
-            <!-- Left Console: Dark Navy Input Panel -->
-            <div class="lg:col-span-7 bg-[#0B152F] p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between">
+        <!-- Main 2-Tone Calculator Container -->
+        <div class="rounded-2xl border border-slate-200 overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 bg-white">
+            
+            <!-- Left Console: Dark Navy Input Panel (Current Operations) -->
+            <div class="lg:col-span-6 bg-[#0B152F] p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between">
                 <div>
-                    <h3 class="text-xl font-bold text-white tracking-tight">Your Current Operation</h3>
-                    <p class="text-slate-400 text-sm mt-1">Enter your team numbers to estimate your savings.</p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mt-6 sm:mt-8">
-                        <!-- Current Headcount -->
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
-                                Current Onshore Headcount
-                            </label>
-                            <input 
-                                type="number" 
-                                min="1" 
-                                max="200" 
-                                x-model.number="headcount" 
-                                @input="updateCalculations()"
-                                class="w-full bg-[#132247] border border-slate-700/80 rounded-xl px-4 py-2.5 sm:py-3 text-white text-sm focus:outline-none focus:border-teal-400 font-mono"
-                            >
+                            <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight">Current Operations</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-0.5">Input your current team numbers and volumes</p>
                         </div>
+                        <div class="w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-500/20 text-teal-400 flex items-center justify-center">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                    </div>
 
-                        <!-- Average Annual Salary -->
+                    <div class="space-y-5">
+                        <!-- 1. Current Number of Employees -->
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
-                                Average Annual Salary (USD)
-                            </label>
+                            <div class="flex items-center justify-between mb-1.5">
+                                <label for="calc-employees" class="text-xs font-bold uppercase tracking-wider text-slate-300 font-mono">
+                                    Current Number of Employees
+                                </label>
+                                <span class="text-xs text-teal-400 font-mono font-semibold" x-text="employees + ' Staff'">10 Staff</span>
+                            </div>
                             <div class="relative">
-                                <span class="absolute left-3.5 top-2.5 sm:top-3 text-slate-400 text-sm">$</span>
                                 <input 
+                                    id="calc-employees"
                                     type="number" 
-                                    step="1000" 
-                                    x-model.number="salary" 
-                                    @input="updateCalculations()"
-                                    class="w-full bg-[#132247] border border-slate-700/80 rounded-xl pl-8 pr-4 py-2.5 sm:py-3 text-white text-sm focus:outline-none focus:border-teal-400 font-mono"
+                                    min="1" 
+                                    max="1000"
+                                    x-model.number="employees" 
+                                    @input="calculateROI()"
+                                    class="w-full bg-[#132247] border border-slate-700/80 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-teal-400 font-mono transition"
+                                    placeholder="10"
                                 >
+                                <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-400 text-xs font-mono">
+                                    FTEs
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Role Function -->
+                        <!-- 2. Fully Loaded Monthly Cost / Employee ($) -->
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
-                                Role Function
-                            </label>
-                            <select 
-                                x-model="roleFunction" 
-                                @change="updateRoleRate()"
-                                class="w-full bg-[#132247] border border-slate-700/80 rounded-xl px-4 py-2.5 sm:py-3 text-white text-sm focus:outline-none focus:border-teal-400"
-                            >
-                                <option value="support">Customer Support (BPO)</option>
-                                <option value="engineering">Software &amp; Cloud Engineering</option>
-                                <option value="payments">Payment &amp; Fraud Ops</option>
-                                <option value="finance">Finance &amp; Accounting</option>
-                            </select>
+                            <div class="flex items-center justify-between mb-1.5">
+                                <label for="calc-loadedCost" class="text-xs font-bold uppercase tracking-wider text-slate-300 font-mono">
+                                    Fully Loaded Monthly Cost / Employee ($)
+                                </label>
+                                <span class="text-xs text-slate-400 font-mono">Salary + Benefits + Tax</span>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute left-3.5 top-3 text-slate-400 text-sm font-mono">$</span>
+                                <input 
+                                    id="calc-loadedCost"
+                                    type="number" 
+                                    min="0" 
+                                    step="100"
+                                    x-model.number="loadedCost" 
+                                    @input="calculateROI()"
+                                    class="w-full bg-[#132247] border border-slate-700/80 rounded-xl pl-8 pr-16 py-3 text-white text-sm focus:outline-none focus:border-teal-400 font-mono transition"
+                                    placeholder="4500"
+                                >
+                                <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-400 text-xs font-mono">
+                                    /mo
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- NileBridge Hourly Range -->
+                        <!-- 3. Monthly Transactions / Support Tickets -->
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
-                                NileBridge Hourly Range
-                            </label>
-                            <select 
-                                x-model.number="hourlyRate" 
-                                @change="updateCalculations()"
-                                class="w-full bg-[#132247] border border-slate-700/80 rounded-xl px-4 py-2.5 sm:py-3 text-white text-sm focus:outline-none focus:border-teal-400"
-                            >
-                                <option value="14">$12 - $16 / hr (Tier 1)</option>
-                                <option value="18">$16 - $22 / hr (Tier 2)</option>
-                                <option value="25">$22 - $32 / hr (Specialist)</option>
-                            </select>
+                            <div class="flex items-center justify-between mb-1.5">
+                                <label for="calc-volume" class="text-xs font-bold uppercase tracking-wider text-slate-300 font-mono">
+                                    Monthly Transactions / Support Tickets
+                                </label>
+                                <span class="text-xs text-slate-400 font-mono">Volume</span>
+                            </div>
+                            <div class="relative">
+                                <input 
+                                    id="calc-volume"
+                                    type="number" 
+                                    min="1" 
+                                    step="500"
+                                    x-model.number="volume" 
+                                    @input="calculateROI()"
+                                    class="w-full bg-[#132247] border border-slate-700/80 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-teal-400 font-mono transition"
+                                    placeholder="25000"
+                                >
+                                <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-400 text-xs font-mono">
+                                    Units/mo
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Benefits & Overhead % -->
+                        <!-- 4. NileBridger Cost / FTE ($/month) -->
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
-                                Benefits &amp; Overhead %
-                            </label>
-                            <select 
-                                x-model.number="overheadPct" 
-                                @change="updateCalculations()"
-                                class="w-full bg-[#132247] border border-slate-700/80 rounded-xl px-4 py-2.5 sm:py-3 text-white text-sm focus:outline-none focus:border-teal-400"
-                            >
-                                <option value="0.20">20% (Standard)</option>
-                                <option value="0.25">25% (Average US Corp)</option>
-                                <option value="0.30">30% (High Tier Tech)</option>
-                            </select>
-                        </div>
-
-                        <!-- Onboarding Timeline -->
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
-                                Onboarding Timeline
-                            </label>
-                            <select class="w-full bg-[#132247] border border-slate-700/80 rounded-xl px-4 py-2.5 sm:py-3 text-white text-sm focus:outline-none focus:border-teal-400">
-                                <option>2 - 4 Weeks (Immediate Pod)</option>
-                                <option>4 - 8 Weeks (Custom Division)</option>
-                            </select>
-                        </div>
-
-                        <!-- Expected NileBridge Roles (Full Span) -->
-                        <div class="sm:col-span-2">
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
-                                Expected NileBridge Roles
-                            </label>
-                            <input 
-                                type="number" 
-                                min="1" 
-                                max="200" 
-                                x-model.number="nileRoles" 
-                                @input="updateCalculations()"
-                                class="w-full bg-[#132247] border border-slate-700/80 rounded-xl px-4 py-2.5 sm:py-3 text-white text-sm focus:outline-none focus:border-teal-400 font-mono"
-                            >
+                            <div class="flex items-center justify-between mb-1.5">
+                                <label for="calc-nileCost" class="text-xs font-bold uppercase tracking-wider text-teal-300 font-mono">
+                                    NileBridger Cost / FTE ($/month)
+                                </label>
+                                <span class="text-xs text-teal-400/90 font-mono">Managed Rate</span>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute left-3.5 top-3 text-teal-400 text-sm font-mono">$</span>
+                                <input 
+                                    id="calc-nileCost"
+                                    type="number" 
+                                    min="0" 
+                                    step="50"
+                                    x-model.number="nileCost" 
+                                    @input="calculateROI()"
+                                    class="w-full bg-[#132247] border border-teal-500/50 rounded-xl pl-8 pr-16 py-3 text-white text-sm focus:outline-none focus:border-teal-400 font-mono transition shadow-inner"
+                                    placeholder="1200"
+                                >
+                                <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-teal-400/80 text-xs font-mono">
+                                    /mo
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- CTA Button -->
-                <div class="mt-8 sm:mt-10">
+                <!-- Action CTA -->
+                <div class="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-xs text-slate-400">
+                        Need custom volume or a dedicated pod?
+                    </div>
                     <a 
                         href="#lead-capture" 
-                        class="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-500 text-[#0B152F] font-bold px-6 py-3 rounded-full text-sm transition-all shadow-md active:scale-95"
+                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-300 hover:to-teal-400 text-[#0B152F] font-bold px-6 py-3 rounded-xl text-sm transition-all shadow-md active:scale-95 whitespace-nowrap"
                     >
-                        <span>Calculate ROI &rarr;</span>
+                        <span>Lock In These Savings &rarr;</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Right Card: Clean White Output Card -->
-            <div class="lg:col-span-5 bg-white p-6 sm:p-8 lg:p-10 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-slate-200">
+            <!-- Right Console: Output Card & Metrics Grid (Estimated Savings) -->
+            <div class="lg:col-span-6 bg-slate-50/70 p-6 sm:p-8 lg:p-10 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-slate-200">
                 <div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block font-mono">
-                        ESTIMATED ANNUAL SAVINGS
-                    </span>
-
-                    <div class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-teal-600 font-mono tracking-tight mt-3" x-text="'$' + formatNumber(netSavings)">
-                        $454,000
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-200 mb-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-[#0B152F] tracking-tight">Estimated Savings</h3>
+                        <span class="text-xs font-mono font-semibold text-slate-500 uppercase tracking-wider">Annualized &bull; Realized</span>
                     </div>
 
-                    <p class="text-sm sm:text-base text-slate-600 mt-2 font-medium" x-text="'~' + savingsPercentage + '% lower than current onshore operations cost'">
-                        ~56% lower than current onshore operations cost
-                    </p>
+                    <!-- Highlight Card: Potential Annual Savings -->
+                    <div class="bg-[#1e293b] text-white rounded-2xl p-6 sm:p-7 shadow-lg border border-slate-800 text-center relative overflow-hidden">
+                        <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
+                            Potential Annual Savings
+                        </div>
+                        <div class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#10b981] font-mono tracking-tight my-2" x-text="formatCurrency(annualSavings)">
+                            $396,000
+                        </div>
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                            <span x-text="savingsPercentage + '% Lower Operating Cost'">73% Lower Operating Cost</span>
+                        </div>
+                    </div>
 
-                    <div class="mt-8 pt-6 border-t border-slate-100 space-y-4 text-sm">
-                        <div class="flex justify-between items-center text-slate-600">
-                            <span>Current Annual Cost</span>
-                            <span class="font-bold text-[#0B152F] font-mono" x-text="'$' + formatNumber(currentCost)">$812,500</span>
+                    <!-- 2x2 Metrics Grid -->
+                    <div class="grid grid-cols-2 gap-3.5 mt-5">
+                        <!-- Current Annual Cost -->
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                            <div class="text-xs text-slate-500 font-medium">Current Annual Cost</div>
+                            <div class="text-base sm:text-lg font-bold text-slate-800 font-mono mt-1" x-text="formatCurrency(currentAnnualCost)">
+                                $540,000
+                            </div>
                         </div>
 
-                        <div class="flex justify-between items-center text-slate-600">
-                            <span>Estimated NileBridge Cost</span>
-                            <span class="font-bold text-[#0B152F] font-mono" x-text="'$' + formatNumber(nileCost)">$358,500</span>
+                        <!-- NileBridger Annual Cost -->
+                        <div class="bg-white p-4 rounded-xl border border-teal-200/80 bg-teal-50/40 shadow-sm text-center">
+                            <div class="text-xs text-teal-700 font-medium">NileBridger Annual Cost</div>
+                            <div class="text-base sm:text-lg font-bold text-teal-700 font-mono mt-1" x-text="formatCurrency(nileAnnualCost)">
+                                $144,000
+                            </div>
                         </div>
 
-                        <div class="flex justify-between items-center pt-3 border-t border-slate-100">
-                            <span class="font-bold text-[#0B152F]">Net Annual Cost Savings</span>
-                            <span class="font-extrabold text-teal-600 font-mono text-base sm:text-lg" x-text="'$' + formatNumber(netSavings)">$454,000</span>
+                        <!-- Current Cost/Ticket -->
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                            <div class="text-xs text-slate-500 font-medium">Current Cost / Ticket</div>
+                            <div class="text-base sm:text-lg font-bold text-slate-800 font-mono mt-1" x-text="'$' + currentCostPerTicket">
+                                $1.80
+                            </div>
                         </div>
 
-                        <div class="flex justify-between items-center text-slate-600">
-                            <span>First-Year Net ROI</span>
-                            <span class="font-bold text-teal-600 font-mono" x-text="'+' + roiPercentage + '%'">+127%</span>
+                        <!-- NileBridger Cost/Ticket -->
+                        <div class="bg-white p-4 rounded-xl border border-emerald-200/80 bg-emerald-50/40 shadow-sm text-center">
+                            <div class="text-xs text-emerald-700 font-medium">NileBridger Cost / Ticket</div>
+                            <div class="text-base sm:text-lg font-bold text-emerald-700 font-mono mt-1" x-text="'$' + nileCostPerTicket">
+                                $0.48
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Footnote -->
-                <p class="text-xs text-slate-400 leading-relaxed mt-8 pt-6 border-t border-slate-100">
-                    *Estimates include direct salary, fully managed workspace, equipment, local taxes, benefits, compliance, and ongoing management overhead. Schedule a consultation for a customized proposal.
-                </p>
+                <!-- Footnote / Unit Delta -->
+                <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+                    <span class="flex items-center gap-1">
+                        <span class="text-teal-600 font-bold font-mono" x-text="'~' + ticketSavingsPct + '%'">~73%</span> unit cost reduction per ticket
+                    </span>
+                    <span class="font-mono text-slate-400">Zero CapEx Required</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scalability Guarantee Notice (Client-Requested) -->
+        <div class="mt-6 p-4 sm:p-5 bg-gradient-to-r from-blue-50 via-teal-50/40 to-slate-50 border-l-4 border-blue-600 rounded-xl shadow-sm flex items-start sm:items-center gap-4">
+            <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <strong class="text-blue-900 font-bold">Scalability Guarantee:</strong> NileBridger can scale from a 5-seat pilot to a 100+ seat operation without requiring you to build additional internal infrastructure.
             </div>
         </div>
+
     </div>
 </section>
 
 <script>
 function roiCalculatorWidget() {
     return {
-        headcount: 10,
-        salary: 65000,
-        overheadPct: 0.25,
-        roleFunction: 'support',
-        hourlyRate: 14,
-        nileRoles: 10,
-        currentCost: 812500,
-        nileCost: 358500,
-        netSavings: 454000,
-        savingsPercentage: 56,
-        roiPercentage: 127,
+        employees: 10,
+        loadedCost: 4500,
+        volume: 25000,
+        nileCost: 1200,
+
+        currentAnnualCost: 540000,
+        nileAnnualCost: 144000,
+        annualSavings: 396000,
+        savingsPercentage: 73,
+        currentCostPerTicket: '1.80',
+        nileCostPerTicket: '0.48',
+        ticketSavingsPct: 73,
 
         init() {
-            this.updateCalculations();
+            this.calculateROI();
         },
 
-        updateRoleRate() {
-            if (this.roleFunction === 'support') this.hourlyRate = 14;
-            else if (this.roleFunction === 'payments') this.hourlyRate = 18;
-            else if (this.roleFunction === 'engineering') this.hourlyRate = 25;
-            else if (this.roleFunction === 'finance') this.hourlyRate = 18;
-            this.updateCalculations();
+        calculateROI() {
+            const employees = parseFloat(this.employees) || 0;
+            const loadedCost = parseFloat(this.loadedCost) || 0;
+            const volume = parseFloat(this.volume) || 1; // avoid divide by zero
+            const nileCostPerFTE = parseFloat(this.nileCost) || 0;
+
+            const currentMonthlyCost = employees * loadedCost;
+            this.currentAnnualCost = Math.round(currentMonthlyCost * 12);
+
+            const nileMonthlyCost = employees * nileCostPerFTE;
+            this.nileAnnualCost = Math.round(nileMonthlyCost * 12);
+
+            this.annualSavings = Math.max(0, this.currentAnnualCost - this.nileAnnualCost);
+            this.savingsPercentage = this.currentAnnualCost > 0 
+                ? Math.round((this.annualSavings / this.currentAnnualCost) * 100) 
+                : 0;
+
+            const currentTicket = volume > 0 ? (currentMonthlyCost / volume) : 0;
+            const nileTicket = volume > 0 ? (nileMonthlyCost / volume) : 0;
+
+            this.currentCostPerTicket = currentTicket.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            this.nileCostPerTicket = nileTicket.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            this.ticketSavingsPct = currentTicket > 0 
+                ? Math.round(((currentTicket - nileTicket) / currentTicket) * 100) 
+                : 0;
         },
 
-        updateCalculations() {
-            const h = Math.max(1, this.headcount || 1);
-            const sal = Math.max(10000, this.salary || 65000);
-            const ovh = Number(this.overheadPct) || 0.25;
-            const nr = Math.max(1, this.nileRoles || 1);
-            const hr = Number(this.hourlyRate) || 14;
-
-            // Current cost = headcount * salary * (1 + overhead)
-            this.currentCost = Math.round(h * sal * (1 + ovh));
-
-            // NileBridge annual cost per role ~ 2080 hours * hr * 1.23 (workspace, management overhead, tech stack)
-            const annualNilePerRole = Math.round(2080 * hr * 1.231);
-            this.nileCost = Math.round(nr * annualNilePerRole);
-
-            this.netSavings = Math.max(0, this.currentCost - this.nileCost);
-            this.savingsPercentage = Math.round((this.netSavings / this.currentCost) * 100);
-            this.roiPercentage = this.nileCost > 0 ? Math.round((this.netSavings / this.nileCost) * 100) : 100;
-        },
-
-        formatNumber(num) {
-            return Number(num).toLocaleString('en-US');
+        formatCurrency(val) {
+            return '$' + Number(val || 0).toLocaleString('en-US', { maximumFractionDigits: 0 });
         }
     };
 }

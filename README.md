@@ -1,51 +1,81 @@
-# NileBridge Global Services — Enterprise Monolith
+# NileBridge Global Services — Developer Guide & Local Setup
 
-> **Enterprise B2B Global Talent, BPO & Operational Outsourcing Platform**  
-> Built with Laravel 11/12, Blade, Tailwind CSS, Alpine.js, and MySQL 8.x.
-
----
-
-## 🚀 Overview
-
-NileBridge Global Services connects North American, European, and Gulf enterprises with top-tier global software engineers, 24/7 customer support pods, finance analysts, and growth marketing operators—delivering up to **70% cost reduction** with zero compliance friction.
-
-### Key Capabilities & Architectural Highlights
-- **High-Converting Landing Page (`/`):** Enterprise hero, stats bar, 4 core service tracks, 4-step onboarding timeline, quantitative performance bar charts, comparison matrix, and multi-column institutional footer.
-- **Interactive ROI & Savings Calculator:** Built with reactive Alpine.js state (`x-data="roiCalculator()"`), dynamic team-size sliders (1–50 FTEs), seniority tiers, and one-click data handoff directly into the lead capture form.
-- **Enterprise Lead Ingestion (`POST /leads`):** Anti-bot honeypot protection, server-side validation, database transactions, automated initial auditing memo creation, and CRM pipeline progression.
-- **Strict 3-Role Access Control (RBAC):** Custom `RoleMiddleware` guarding isolated portals:
-  - 👑 **Admin Portal (`/admin`):** Global metrics dashboard, leads data table with search & filtering, Account Executive re-assignment dropdown, lead detail drawer, and one-click CSV export (`/admin/leads/export`).
-  - 💼 **Employee / AE Portal (`/portal`):** Scoped strictly to assigned leads, stage transition workflow (`new` $\rightarrow$ `contacted` $\rightarrow$ `qualified` $\rightarrow$ `proposal_sent` $\rightarrow$ `won` $\rightarrow$ `lost`), and internal timeline note-logging.
-  - 🏢 **Customer Portal (`/client`):** Enterprise client dashboard tracking active requisitions, dedicated Account Partner contact info, and 4-phase onboarding lifecycle milestones.
+> **Enterprise B2B Global Talent, BPO & Operational Outsourcing Monolith**  
+> Built with Laravel 11, Blade Components, Tailwind CSS, Alpine.js, and MySQL 8.x.
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 Tech Stack Overview
 
-- **Backend:** Laravel 11.56.x (PHP 8.2+)
-- **Frontend:** Blade Templates, Tailwind CSS 3.4.x, Alpine.js 3.17.x
-- **Database:** MySQL 8.0.x (InnoDB, strict SQL mode)
-- **Asset Tooling:** Bun 1.3.x & Vite 6.x
-- **Testing:** PHPUnit 11.x Feature & Unit Test Suite
+| Layer | Technology | Version | Purpose / Notes |
+| :--- | :--- | :--- | :--- |
+| **Backend** | **PHP / Laravel** | `11.56.x` / `PHP 8.2+` | Clean MVC Monolith, RoleMiddleware RBAC, DB Transactions |
+| **Frontend UI** | **Blade Templates** | Modern Components | Semantic HTML5, Glassmorphism, Responsive Grid |
+| **Styling** | **Tailwind CSS** | `3.4.x` | Deep Navy (`#060D1D`, `#0B152F`), Vibrant Teal (`#0D9488`) |
+| **Reactivity** | **Alpine.js** | `3.17.x` | ROI Calculator Engine, Billing Switcher, Mobile Nav |
+| **Database** | **MySQL Engine** | `8.0.x` | Strict SQL Mode, InnoDB, Foreign Key Constraints |
+| **Bundling** | **Bun & Vite** | `Bun 1.3+` / `Vite 6` | Instant HMR, Production minification & asset bundling |
+| **Testing** | **PHPUnit** | `11.x` | 19 Feature & Unit Tests, 119 Assertions (100% Pass) |
 
 ---
 
-## ⚡ Quickstart & Setup
+## ⚡ Quickstart: How to Run Locally (প্রতিদিন যেভাবে সহজে চালাবেন)
 
-### 1. Requirements
-- PHP 8.2+ with `pdo_mysql`, `mbstring`, `xml`, `curl`
-- MySQL 8.0+
-- Bun (or Node 20+)
-- Composer 2.x
+আপনার মেশিনে প্রোজেক্টটি ইতোমধ্যে সেটআপ করা থাকলে প্রতিদিন রান করার জন্য নিচের ৩টি সহজ ধাপ অনুসরণ করুন:
 
-### 2. Environment Configuration
-Copy `.env.example` to `.env` and configure your MySQL database credentials:
+### ধাপ ১: MySQL ডেটাবেস কন্টেইনার চালু করুন (Docker)
 ```bash
+docker start nilebridge-mysql
+```
+*(যদি ডকার ব্যবহার না করেন, তবে নিশ্চিত করুন আপনার লোকাল MySQL সার্ভিস চালু আছে)*
+
+### ধাপ ২: ফ্রন্টএন্ড অ্যাসেট বিল্ড করুন
+```bash
+bun run build
+# অথবা লাইভ অটো-রিলোড (HMR) এর জন্য:
+# bun run dev
+```
+
+### ধাপ ৩: Laravel সার্ভার চালু করুন
+```bash
+php artisan serve
+```
+
+🌐 ব্রাউজারে প্রবেশ করুন: **[http://127.0.0.1:8000](http://127.0.0.1:8000)** (বা `http://localhost:8000`)
+
+---
+
+## 🛠 Complete First-Time Setup (প্রথমবার সম্পূর্ণ সেটআপ করার নিয়ম)
+
+নতুন মেশিনে প্রজেক্টটি প্রথমবার ক্লোন করার পর কনফিগার করার সম্পূর্ণ ধাপ:
+
+### ১. সিস্টেম রিকোয়ারমেন্টস (Prerequisites)
+* **PHP 8.2+** (এক্সটেনশনসমূহ: `pdo_mysql`, `mbstring`, `xml`, `curl`, `bcmath`, `fileinfo`)
+* **MySQL 8.0+** (লোকাল অথবা ডকার কন্টেইনার)
+* **Composer 2.x**
+* **Bun** (অথবা Node.js 20+ ও NPM)
+
+---
+
+### ২. ডিপেনডেন্সি ও এনভায়রনমেন্ট কনফিগারেশন
+```bash
+# প্রজেক্ট ডিরেক্টরিতে যান
+cd /path/to/kanon
+
+# ১. এনভায়রনমেন্ট ফাইল তৈরি করুন
 cp .env.example .env
+
+# ২. PHP ডিপেনডেন্সি ইনস্টল করুন
+composer install
+
+# ৩. অ্যাপ্লিকেশন সিকিউরিটি কি (Key) তৈরি করুন
 php artisan key:generate
 ```
 
-Sample `.env` database configuration:
+---
+
+### ৩. ডেটাবেস কনফিগারেশন (`.env`)
+আপনার `.env` ফাইলের ডেটাবেস সেটিংস কনফিগার করুন:
 ```ini
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -55,90 +85,118 @@ DB_USERNAME=nilebridge
 DB_PASSWORD=secret
 ```
 
-### 3. Run Migrations & Seed Database
+*(যদি Docker দিয়ে খুব সহজে ডেটাবেস রান করতে চান:)*
+```bash
+docker run --name nilebridge-mysql \
+  -e MYSQL_DATABASE=nilebridge \
+  -e MYSQL_USER=nilebridge \
+  -e MYSQL_PASSWORD=secret \
+  -e MYSQL_ROOT_PASSWORD=secret \
+  -p 3306:3306 -d mysql:8.0
+```
+
+---
+
+### ৪. ডেটাবেস মাইগ্রেশন ও ডেমো ডেটা সিডিং
 ```bash
 php artisan migrate:fresh --seed
 ```
+*এই কমান্ডটি সব টেবিল তৈরি করবে এবং অ্যাডমিন, স্টাফ ও ক্লায়েন্ট অ্যাকাউন্ট সহ বাস্তবসম্মত ডেমো লিড ডেটা প্রস্তুত করে দেবে।*
 
-### 4. Build Frontend Assets
+---
+
+### ৫. ফ্রন্টএন্ড প্যাকেজ ইনস্টল ও প্রোডাকশন বিল্ড
 ```bash
 bun install
 bun run build
 ```
 
-### 5. Start Application Server
+---
+
+### ৬. অ্যাপ্লিকেশন সার্ভার চালু করুন
 ```bash
 php artisan serve
 ```
-Navigate to: `http://localhost:8000`
 
 ---
 
-## 👥 Seeded Demonstration Accounts
+## 👥 Seeded Demonstration Accounts (লগইন তথ্য)
 
-All accounts are pre-seeded with the password: `password`
+সকল অ্যাকাউন্টের ডিফল্ট পাসওয়ার্ড: `password`  
+লগইন পেজ: **[http://127.0.0.1:8000/login](http://127.0.0.1:8000/login)**  
+*(টিপস: লগইন পেজের উপরে **১-ক্লিক অটো-ফিল বাটন** রয়েছে, ক্লিক করলেই পাসওয়ার্ড সহ ইনপুট পূরণ হয়ে যায়)*
 
-| Role | Email | Password | Target Portal | Key Capabilities |
+| রোল (Role) | ইমেইল (Email) | পাসওয়ার্ড | ড্যাশবোর্ড রুট | কার্যাবলী ও এক্সেস |
 | :--- | :--- | :--- | :--- | :--- |
-| **Admin** | `admin@nilebridge.com` | `password` | `/admin` | Global pipeline oversight, reassignment, user management, CSV export. |
-| **Employee 1** | `employee1@nilebridge.com` | `password` | `/portal` | View assigned leads, advance pipeline stages, append timeline notes. |
-| **Employee 2** | `employee2@nilebridge.com` | `password` | `/portal` | View assigned leads (Nordic Health, CloudVanguard), stage transitions. |
-| **Customer** | `client@acme.com` | `password` | `/client` | Track Acme Fintech Corp requisition, onboarding milestones, partner details. |
+| 👑 **Admin** | `admin@nilebridge.com` | `password` | `/admin` | গ্লোবাল সেলস পাইপলাইন, লিড রি-অ্যাসাইন, সম্পূর্ণ CSV ডেটা এক্সপোর্ট |
+| 💼 **Employee 1** | `employee1@nilebridge.com` | `password` | `/portal` | নিজের কাছে অ্যাসাইন করা লিড, স্টেজ ট্রানজিশন, ক্লায়েন্ট ফলো-আপ নোটস |
+| 💼 **Employee 2** | `employee2@nilebridge.com` | `password` | `/portal` | নর্ডিক ও ক্লাউড ভ্যানগার্ড লিড ম্যানেজমেন্ট, পাইপলাইন আপডেট |
+| 🏢 **Client** | `client@acme.com` | `password` | `/client` | নিজস্ব ট্যালেন্ট পড রিকুইজিশন ট্র্যাকিং, অ্যাকাউন্ট পার্টনার ও SLA ওভারভিউ |
 
-> **Tip:** The `/login` page includes **1-Click Quick Fill** buttons for each role to make evaluation instantaneous.
+> **নতুন ক্লায়েন্ট সাইন আপ:** নতুন কোনো ক্লায়েন্ট নিজে অ্যাকাউন্ট খুলতে চাইলে সরাসরি **[http://127.0.0.1:8000/register](http://127.0.0.1:8000/register)** পেজে গিয়ে সাইন আপ করতে পারবে।
 
 ---
 
-## 🧪 Automated Testing
+## 🧪 Automated Testing (টেস্ট রান করার নিয়ম)
 
-Execute the complete automated test suite (includes landing page render tests, public lead ingestion, honeypot suppression, RBAC route isolation, assignment tests, status transitions, and CSV exports):
+প্ল্যাটফর্মের সকল রুট, সিকিউরিটি মিডলওয়্যার, লিড ভ্যালিডেশন, ক্যালকুলেটর ইন্টিগ্রেশন এবং ক্লায়েন্ট রেজিস্ট্রেশন স্বয়ংক্রিয়ভাবে টেস্ট করতে নিচের কমান্ডটি রান করুন:
 
 ```bash
 php artisan test
 ```
 
+### টেস্ট কভারেজ মেট্রিক্স:
+* **মোট টেস্ট:** ১৯টি
+* **মোট Assertion:** ১১৯টি
+* **স্ট্যাটাস:** **All Passing (0 Failures, 0 Errors)**
+
 ---
 
-## 📂 Architecture & Directory Structure
-
-Comprehensive system architecture diagrams, data dictionaries, ERD, and state machine specifications are documented in [SYSTEM_DESIGN.md](SYSTEM_DESIGN.md).
+## 📂 Codebase Directory Architecture
 
 ```
-app/
-├── Http/
-│   ├── Controllers/
-│   │   ├── Admin/LeadController.php
-│   │   ├── Auth/AuthController.php
-│   │   ├── Customer/DashboardController.php
-│   │   ├── Employee/LeadController.php
-│   │   └── Public/
-│   │       ├── LandingPageController.php
-│   │       └── LeadCaptureController.php
-│   └── Middleware/
-│       └── RoleMiddleware.php
-├── Models/
-│   ├── Lead.php
-│   ├── LeadNote.php
-│   └── User.php
-resources/views/
-├── auth/login.blade.php
-├── client/dashboard.blade.php
-├── employee/
-│   ├── dashboard.blade.php
-│   └── leads/show.blade.php
-├── admin/
-│   ├── dashboard.blade.php
-│   └── leads/show.blade.php
-├── landing/
-│   ├── comparison-matrix.blade.php
-│   ├── footer.blade.php
-│   ├── hero.blade.php
-│   ├── lead-form.blade.php
-│   ├── performance-charts.blade.php
-│   ├── process-timeline.blade.php
-│   ├── roi-calculator.blade.php
-│   ├── services-grid.blade.php
-│   └── stats-bar.blade.php
-├── layouts/app.blade.php
-└── pages/landing.blade.php
+kanon/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── Admin/
+│   │   │   │   └── LeadController.php          # Pipeline triage & CSV exporter
+│   │   │   ├── Auth/
+│   │   │   │   └── AuthController.php          # Login, Register, Logout & Role Redirects
+│   │   │   ├── Customer/
+│   │   │   │   └── DashboardController.php     # Client portal pod oversight
+│   │   │   ├── Employee/
+│   │   │   │   └── LeadController.php          # AE staff pipeline & follow-up notes
+│   │   │   └── Public/
+│   │   │       ├── IndustryController.php      # 7 Industry vertical solutions
+│   │   │       ├── LandingPageController.php   # Primary homepage aggregator
+│   │   │       ├── LeadCaptureController.php   # Intake form & Honeypot guard
+│   │   │       ├── ResourceController.php      # Calculator, Guide, Case Studies, Insights
+│   │   │       └── ServiceController.php       # 6 Dedicated service track pages
+│   │   └── Middleware/
+│   │       └── RoleMiddleware.php              # Strict RBAC enforcement
+│   └── Models/
+│       ├── Lead.php                            # Inquiry state machine & scopes
+│       ├── LeadNote.php                        # Timeline audit logs & memos
+│       └── User.php                            # Admin, Employee, Customer model
+├── database/
+│   ├── migrations/                             # Users, cache, jobs, leads, lead_notes
+│   └── seeders/DatabaseSeeder.php              # Seeded accounts & enterprise leads
+├── resources/
+│   ├── css/app.css                             # Tailwind CSS setup & typography
+│   ├── js/app.js                               # Alpine.js core initialization
+│   └── views/
+│       ├── auth/
+│       │   ├── login.blade.php                 # SSO Gateway with 1-click test buttons
+│       │   └── register.blade.php              # Enterprise client self-registration
+│       ├── admin/                              # Global operations dashboard & drawer
+│       ├── employee/                           # Staff pipeline management & timeline notes
+│       ├── client/                             # Customer portal pod oversight
+│       ├── landing/                            # Modular homepage components (ROI, Hero, etc.)
+│       ├── layouts/app.blade.php               # Institutional Glassmorphism master layout
+│       └── pages/                              # Services, Industries, Resources, Legal pages
+├── routes/web.php                              # Explicit monolith route declarations
+├── PROJECT_OVERVIEW.md                         # Business vision & feature documentation
+├── DEPLOYMENT_GUIDE.md                         # Production deployment walkthrough
+└── tests/Feature/NileBridgeSystemTest.php      # 19 Automated test cases
 ```

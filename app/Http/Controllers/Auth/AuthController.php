@@ -24,6 +24,58 @@ class AuthController extends Controller
     }
 
     /**
+     * Display the registration interface for enterprise clients.
+     */
+    public function showRegisterForm(): View|RedirectResponse
+    {
+        if (Auth::check()) {
+            return $this->redirectBasedOnRole(Auth::user());
+        }
+
+        return view('auth.register');
+    }
+
+    /**
+     * Handle enterprise client registration.
+     */
+    public function register(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:191'],
+            'company_name' => ['required', 'string', 'max:191'],
+            'email' => ['required', 'string', 'email', 'max:191', 'unique:users,email'],
+            'phone' => ['nullable', 'string', 'max:32'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'terms' => ['accepted'],
+        ], [
+            'terms.accepted' => 'You must accept the Terms of Service and Privacy Policy to create an account.',
+        ]);
+
+        $user = User::create([
+            'name' => strip_tags($validated['name']),
+            'email' => strtolower(trim($validated['email'])),
+            'password' => $validated['password'], // auto-hashed by User model cast
+            'role' => User::ROLE_CUSTOMER,
+            'phone' => $validated['phone'] ?? null,
+            'status' => User::STATUS_ACTIVE,
+            'email_verified_at' => now(),
+        ]);
+
+        // If an existing lead matches this email, associate customer_id
+        \App\Models\Lead::where('contact_email', $user->email)
+            ->whereNull('customer_id')
+            ->update(['customer_id' => $user->id]);
+
+        Auth::login($user);
+        $request->session()->regenerate();
+
+        return redirect()->route('client.dashboard')->with(
+            'success',
+            'Welcome to NileBridge Global! Your enterprise client account has been created successfully.'
+        );
+    }
+
+    /**
      * Handle authentication attempt.
      */
     public function login(Request $request): RedirectResponse

@@ -22,19 +22,24 @@ class LeadController extends Controller
         $search = $request->query('search');
 
         // Scoped metrics for current employee
+        $statusCounts = Lead::where('assigned_to', $userId)
+            ->selectRaw('status, count(*) as aggregate')
+            ->groupBy('status')
+            ->pluck('aggregate', 'status');
+
         $myTotalLeads = Lead::where('assigned_to', $userId)->count();
-        $myNewCount = Lead::where('assigned_to', $userId)->where('status', Lead::STATUS_NEW)->count();
-        $myActivePipelineCount = Lead::where('assigned_to', $userId)->whereIn('status', [
-            Lead::STATUS_CONTACTED,
-            Lead::STATUS_QUALIFIED,
-            Lead::STATUS_PROPOSAL_SENT,
-        ])->count();
-        $myWonCount = Lead::where('assigned_to', $userId)->where('status', Lead::STATUS_WON)->count();
+        $myNewCount = $statusCounts->get(Lead::STATUS_NEW, 0);
+        $myContactedCount = $statusCounts->get(Lead::STATUS_CONTACTED, 0);
+        $myQualifiedCount = $statusCounts->get(Lead::STATUS_QUALIFIED, 0);
+        $myProposalSentCount = $statusCounts->get(Lead::STATUS_PROPOSAL_SENT, 0);
+        $myWonCount = $statusCounts->get(Lead::STATUS_WON, 0);
+        $myLostCount = $statusCounts->get(Lead::STATUS_LOST, 0);
+        $myActivePipelineCount = $myContactedCount + $myQualifiedCount + $myProposalSentCount;
 
         $leads = Lead::where('assigned_to', $userId)
             ->filterStatus($status)
             ->search($search)
-            ->with(['leadNotes' => fn($q) => $q->latest()->limit(1)])
+            ->with(['leadNotes' => fn($q) => $q->latest()])
             ->latest()
             ->paginate(15)
             ->withQueryString();
@@ -43,8 +48,12 @@ class LeadController extends Controller
             'leads',
             'myTotalLeads',
             'myNewCount',
-            'myActivePipelineCount',
+            'myContactedCount',
+            'myQualifiedCount',
+            'myProposalSentCount',
             'myWonCount',
+            'myLostCount',
+            'myActivePipelineCount',
             'status',
             'search'
         ));

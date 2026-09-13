@@ -23,7 +23,7 @@
 
     @if($isPortal)
         <!-- Dedicated Executive Operations Header (Crisp Off-White Glassmorphism matching Homepage) -->
-        <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 py-3.5 shadow-[0_2px_14px_rgba(11,21,47,0.03)] transition-all">
+        <header x-data="{ mobilePortalOpen: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 py-3.5 shadow-[0_2px_14px_rgba(11,21,47,0.03)] transition-all">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between">
                     
@@ -109,7 +109,42 @@
                                 </button>
                             </form>
                         @endauth
+
+                        <!-- Mobile Hamburger Button -->
+                        <div class="flex md:hidden">
+                            <button @click="mobilePortalOpen = !mobilePortalOpen" type="button" class="text-slate-700 hover:text-slate-900 focus:outline-none p-1.5 rounded-lg border border-slate-200" aria-label="Toggle Portal Navigation">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path x-show="!mobilePortalOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                                    <path x-show="mobilePortalOpen" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Mobile Portal Dropdown Menu -->
+                <div x-show="mobilePortalOpen" x-cloak @click.outside="mobilePortalOpen = false" class="md:hidden pt-3 mt-3 border-t border-slate-100 space-y-2">
+                    @auth
+                        @if(auth()->user()->isAdmin())
+                            <a href="{{ route('admin.dashboard') }}" class="block px-3 py-2 rounded-lg text-sm font-semibold {{ request()->routeIs('admin.*') ? 'bg-[#0B152F] text-white' : 'text-slate-700 hover:bg-slate-50' }}">
+                                Pipeline Oversight (Admin)
+                            </a>
+                            <a href="{{ route('portal.dashboard') }}" class="block px-3 py-2 rounded-lg text-sm font-semibold {{ request()->routeIs('portal.*') ? 'bg-[#0B152F] text-white' : 'text-slate-700 hover:bg-slate-50' }}">
+                                Staff View
+                            </a>
+                        @elseif(auth()->user()->isEmployee())
+                            <a href="{{ route('portal.dashboard') }}" class="block px-3 py-2 rounded-lg text-sm font-semibold {{ request()->routeIs('portal.*') ? 'bg-[#0B152F] text-white' : 'text-slate-700 hover:bg-slate-50' }}">
+                                My Requisitions
+                            </a>
+                        @else
+                            <a href="{{ route('client.dashboard') }}" class="block px-3 py-2 rounded-lg text-sm font-semibold {{ request()->routeIs('client.*') ? 'bg-[#0B152F] text-white' : 'text-slate-700 hover:bg-slate-50' }}">
+                                My Pods &amp; SOWs
+                            </a>
+                        @endif
+                    @endauth
+                    <a href="{{ route('home') }}" target="_blank" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-500 hover:text-teal-600">
+                        View Public Website &rarr;
+                    </a>
                 </div>
             </div>
         </header>
@@ -142,10 +177,161 @@
                     <!-- Desktop Navigation Links -->
                     <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-slate-600">
                         <a href="{{ route('home') }}" class="hover:text-teal-600 transition">Home</a>
-                        <a href="{{ route('home') }}#services" class="hover:text-teal-600 transition">Services</a>
+                        
+                        <!-- Services with Hover Dropdown -->
+                        <div class="relative py-2" 
+                             x-data="{ servicesOpen: false }" 
+                             @mouseenter="servicesOpen = true" 
+                             @mouseleave="servicesOpen = false">
+                            <a href="{{ route('home') }}#services" 
+                               class="inline-flex items-center gap-1.5 transition text-sm font-medium py-1 group"
+                               :class="servicesOpen ? 'text-teal-600 font-semibold' : 'text-slate-600 hover:text-teal-600'">
+                                <span>Services</span>
+                                <svg class="w-3.5 h-3.5 transition-transform duration-200" 
+                                     :class="servicesOpen ? 'rotate-180 text-teal-600' : 'text-slate-400 group-hover:text-teal-600'" 
+                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </a>
+
+                            <!-- Dropdown Menu Card -->
+                            <div x-show="servicesOpen" 
+                                 x-cloak
+                                 x-transition:enter="transition ease-out duration-200"
+                                 x-transition:enter-start="opacity-0 translate-y-2 scale-95"
+                                 x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                                 x-transition:leave="transition ease-in duration-150"
+                                 x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+                                 x-transition:leave-end="opacity-0 translate-y-2 scale-95"
+                                 class="absolute left-0 top-full pt-1.5 w-80 z-50">
+                                <div class="bg-white rounded-2xl shadow-[0_16px_40px_rgba(11,21,47,0.14)] border border-slate-100/90 p-3 space-y-0.5">
+                                    <a href="{{ route('services.show', 'call-center-customer-experience') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Call Center &amp; Customer Experience
+                                    </a>
+                                    <a href="{{ route('services.show', 'payment-operations') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Payment Operations
+                                    </a>
+                                    <a href="{{ route('services.show', 'back-office-operations') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Back-Office Operations
+                                    </a>
+                                    <a href="{{ route('services.show', 'technical-support') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Technical Support
+                                    </a>
+                                    <a href="{{ route('services.show', 'digital-ecommerce-operations') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Digital &amp; E-commerce Operations
+                                    </a>
+                                    <a href="{{ route('services.show', 'healthcare-administration') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Healthcare Administration
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Industries with Hover Dropdown -->
+                        <div class="relative py-2" 
+                             x-data="{ industriesOpen: false }" 
+                             @mouseenter="industriesOpen = true" 
+                             @mouseleave="industriesOpen = false">
+                            <a href="{{ route('home') }}#solutions" 
+                               class="inline-flex items-center gap-1.5 transition text-sm font-medium py-1 group"
+                               :class="industriesOpen ? 'text-teal-600 font-semibold' : 'text-slate-600 hover:text-teal-600'">
+                                <span>Industries</span>
+                                <svg class="w-3.5 h-3.5 transition-transform duration-200" 
+                                     :class="industriesOpen ? 'rotate-180 text-teal-600' : 'text-slate-400 group-hover:text-teal-600'" 
+                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </a>
+
+                            <!-- Dropdown Menu Card -->
+                            <div x-show="industriesOpen" 
+                                 x-cloak
+                                 x-transition:enter="transition ease-out duration-200"
+                                 x-transition:enter-start="opacity-0 translate-y-2 scale-95"
+                                 x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                                 x-transition:leave="transition ease-in duration-150"
+                                 x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+                                 x-transition:leave-end="opacity-0 translate-y-2 scale-95"
+                                 class="absolute left-0 top-full pt-1.5 w-72 z-50">
+                                <div class="bg-white rounded-2xl shadow-[0_16px_40px_rgba(11,21,47,0.14)] border border-slate-100/90 p-3 space-y-0.5">
+                                    <a href="{{ route('home') }}#solutions" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                    <a href="{{ route('industries.show', 'ecommerce') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        E-commerce
+                                    </a>
+                                    <a href="{{ route('home') }}#solutions" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                    <a href="{{ route('industries.show', 'saas-technology') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        SaaS &amp; Technology
+                                    </a>
+                                    <a href="{{ route('home') }}#solutions" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                    <a href="{{ route('industries.show', 'fintech-payments') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Fintech &amp; Payments
+                                    </a>
+                                    <a href="{{ route('home') }}#solutions" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                    <a href="{{ route('industries.show', 'healthcare') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Healthcare
+                                    </a>
+                                    <a href="{{ route('home') }}#solutions" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                    <a href="{{ route('industries.show', 'education') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Education
+                                    </a>
+                                    <a href="{{ route('home') }}#solutions" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                    <a href="{{ route('industries.show', 'financial-services') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Financial Services
+                                    </a>
+                                    <a href="{{ route('home') }}#solutions" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                    <a href="{{ route('industries.show', 'professional-services') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Professional Services
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <a href="{{ route('home') }}#process" class="hover:text-teal-600 transition">How It Works</a>
-                        <a href="{{ route('home') }}#uganda-hub" class="hover:text-teal-600 transition">Why Uganda</a>
-                        <a href="{{ route('home') }}#testimonials" class="hover:text-teal-600 transition">Case Studies</a>
+                        <a href="{{ route('home') }}#uganda-hub" class="hover:text-teal-600 transition">About</a>
+
+                        <!-- Resources with Hover Dropdown -->
+                        <div class="relative py-2" 
+                             x-data="{ resourcesOpen: false }" 
+                             @mouseenter="resourcesOpen = true" 
+                             @mouseleave="resourcesOpen = false">
+                            <a href="{{ route('home') }}#calculator" 
+                               class="inline-flex items-center gap-1.5 transition text-sm font-medium py-1 group"
+                               :class="resourcesOpen ? 'text-teal-600 font-semibold' : 'text-slate-600 hover:text-teal-600'">
+                                <span>Resources</span>
+                                <svg class="w-3.5 h-3.5 transition-transform duration-200" 
+                                     :class="resourcesOpen ? 'rotate-180 text-teal-600' : 'text-slate-400 group-hover:text-teal-600'" 
+                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </a>
+
+                            <!-- Dropdown Menu Card -->
+                            <div x-show="resourcesOpen" 
+                                 x-cloak
+                                 x-transition:enter="transition ease-out duration-200"
+                                 x-transition:enter-start="opacity-0 translate-y-2 scale-95"
+                                 x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                                 x-transition:leave="transition ease-in duration-150"
+                                 x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+                                 x-transition:leave-end="opacity-0 translate-y-2 scale-95"
+                                 class="absolute left-0 top-full pt-1.5 w-64 z-50">
+                                <div class="bg-white rounded-2xl shadow-[0_16px_40px_rgba(11,21,47,0.14)] border border-slate-100/90 p-3 space-y-0.5">
+                                    <a href="{{ route('resources.calculator') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        BPO Cost Calculator
+                                    </a>
+                                    <a href="{{ route('resources.bpo-guide') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        BPO Guide
+                                    </a>
+                                    <a href="{{ route('resources.case-studies') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Case Studies
+                                    </a>
+                                    <a href="{{ route('resources.insights') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#0B152F] hover:text-teal-600 hover:bg-slate-50 transition leading-snug">
+                                        Insights
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <a href="{{ route('home') }}#pricing" class="hover:text-teal-600 transition">Pricing</a>
                         <a href="{{ route('home') }}#contact" class="hover:text-teal-600 transition">Contact</a>
                     </nav>
@@ -168,7 +354,7 @@
                             <a href="{{ route('login') }}" class="text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0B152F] transition px-3 py-2">
                                 Log In
                             </a>
-                            <a href="#lead-capture" 
+                            <a href="{{ route('home') }}#lead-capture" 
                                class="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold rounded-full text-white bg-teal-500 hover:bg-teal-600 shadow-sm shadow-teal-500/20 hover:shadow-md hover:shadow-teal-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95">
                                 <span>Start Hiring &rarr;</span>
                             </a>
@@ -180,7 +366,7 @@
                         <button @click="mobileOpen = !mobileOpen" type="button" class="text-slate-700 hover:text-slate-900 focus:outline-none p-2" aria-label="Toggle Navigation">
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path x-show="!mobileOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                                <path x-show="mobileOpen" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                <path x-show="mobileOpen" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12"/>
                             </svg>
                         </button>
                     </div>
@@ -190,10 +376,102 @@
             <!-- Mobile Navigation Menu -->
             <div x-show="mobileOpen" x-cloak @click.outside="mobileOpen = false" class="lg:hidden bg-white border-b border-slate-200 px-4 pt-4 pb-6 space-y-3 shadow-xl">
                 <a @click="mobileOpen = false" href="{{ route('home') }}" class="block py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">Home</a>
-                <a @click="mobileOpen = false" href="{{ route('home') }}#services" class="block py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">Services</a>
+                
+                <!-- Mobile Services Accordion -->
+                <div x-data="{ mobileServicesOpen: false }" class="border-b border-slate-100 pb-2">
+                    <button @click="mobileServicesOpen = !mobileServicesOpen" type="button" class="w-full flex items-center justify-between py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">
+                        <span>Services</span>
+                        <svg class="w-4 h-4 transition-transform duration-200" :class="mobileServicesOpen ? 'rotate-180 text-teal-600' : 'text-slate-400'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="mobileServicesOpen" x-cloak class="pl-3 py-1 space-y-1 border-l-2 border-slate-100 ml-1">
+                        <a @click="mobileOpen = false" href="{{ route('services.show', 'call-center-customer-experience') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Call Center &amp; Customer Experience
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('services.show', 'payment-operations') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Payment Operations
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('services.show', 'back-office-operations') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Back-Office Operations
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('services.show', 'technical-support') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Technical Support
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('services.show', 'digital-ecommerce-operations') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Digital &amp; E-commerce Operations
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('services.show', 'healthcare-administration') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Healthcare Administration
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Industries Accordion -->
+                <div x-data="{ mobileIndustriesOpen: false }" class="border-b border-slate-100 pb-2">
+                    <button @click="mobileIndustriesOpen = !mobileIndustriesOpen" type="button" class="w-full flex items-center justify-between py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">
+                        <span>Industries</span>
+                        <svg class="w-4 h-4 transition-transform duration-200" :class="mobileIndustriesOpen ? 'rotate-180 text-teal-600' : 'text-slate-400'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="mobileIndustriesOpen" x-cloak class="pl-3 py-1 space-y-1 border-l-2 border-slate-100 ml-1">
+                        <a @click="mobileOpen = false" href="{{ route('home') }}#solutions" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                        <a @click="mobileOpen = false" href="{{ route('industries.show', 'ecommerce') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            E-commerce
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('home') }}#solutions" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                        <a @click="mobileOpen = false" href="{{ route('industries.show', 'saas-technology') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            SaaS &amp; Technology
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('home') }}#solutions" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                        <a @click="mobileOpen = false" href="{{ route('industries.show', 'fintech-payments') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Fintech &amp; Payments
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('home') }}#solutions" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                        <a @click="mobileOpen = false" href="{{ route('industries.show', 'healthcare') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Healthcare
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('home') }}#solutions" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                        <a @click="mobileOpen = false" href="{{ route('industries.show', 'education') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Education
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('home') }}#solutions" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                        <a @click="mobileOpen = false" href="{{ route('industries.show', 'financial-services') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Financial Services
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('industries.show', 'professional-services') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Professional Services
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Resources Accordion -->
+                <div x-data="{ mobileResourcesOpen: false }" class="border-b border-slate-100 pb-2">
+                    <button @click="mobileResourcesOpen = !mobileResourcesOpen" type="button" class="w-full flex items-center justify-between py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">
+                        <span>Resources</span>
+                        <svg class="w-4 h-4 transition-transform duration-200" :class="mobileResourcesOpen ? 'rotate-180 text-teal-600' : 'text-slate-400'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="mobileResourcesOpen" x-cloak class="pl-3 py-1 space-y-1 border-l-2 border-slate-100 ml-1">
+                        <a @click="mobileOpen = false" href="{{ route('resources.calculator') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            BPO Cost Calculator
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('resources.bpo-guide') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            BPO Guide
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('resources.case-studies') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Case Studies
+                        </a>
+                        <a @click="mobileOpen = false" href="{{ route('resources.insights') }}" class="block py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-600">
+                            Insights
+                        </a>
+                    </div>
+                </div>
+
                 <a @click="mobileOpen = false" href="{{ route('home') }}#process" class="block py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">How It Works</a>
-                <a @click="mobileOpen = false" href="{{ route('home') }}#uganda-hub" class="block py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">Why Uganda</a>
-                <a @click="mobileOpen = false" href="{{ route('home') }}#testimonials" class="block py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">Case Studies</a>
+                <a @click="mobileOpen = false" href="{{ route('home') }}#uganda-hub" class="block py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">About</a>
                 <a @click="mobileOpen = false" href="{{ route('home') }}#pricing" class="block py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">Pricing</a>
                 <a @click="mobileOpen = false" href="{{ route('home') }}#contact" class="block py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">Contact</a>
 
@@ -210,10 +488,10 @@
                             </button>
                         </form>
                     @else
-                        <a href="{{ route('login') }}" class="block w-full text-center py-2.5 text-sm font-semibold text-slate-700 border border-slate-200 rounded-lg">
-                            Sign In
+                        <a href="{{ route('login') }}" class="block w-full text-center py-2.5 text-sm font-semibold text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50">
+                            Log In
                         </a>
-                        <a href="{{ route('home') }}#lead-capture" class="block w-full text-center py-2.5 text-sm font-bold text-white bg-teal-500 rounded-lg">
+                        <a href="{{ route('home') }}#lead-capture" class="block w-full text-center py-2.5 text-sm font-bold text-white bg-teal-500 hover:bg-teal-600 rounded-lg shadow-sm">
                             Start Hiring &rarr;
                         </a>
                     @endauth

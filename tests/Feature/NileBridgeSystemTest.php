@@ -67,6 +67,89 @@ class NileBridgeSystemTest extends TestCase
     }
 
     /**
+     * Test 1.5: Public legal compliance pages render successfully.
+     */
+    public function test_legal_pages_render_successfully(): void
+    {
+        $privacyResponse = $this->get(route('privacy'));
+        $privacyResponse->assertStatus(200);
+        $privacyResponse->assertSee('Global Privacy Policy');
+        $privacyResponse->assertSee('privacy@nilebridge.com');
+
+        $termsResponse = $this->get(route('terms'));
+        $termsResponse->assertStatus(200);
+        $termsResponse->assertSee('Terms of Service &amp; Master Agreement', false);
+        $termsResponse->assertSee('100% Intellectual Property Assignment');
+    }
+
+    /**
+     * Test 1.6: All six dedicated enterprise service detail pages render successfully.
+     */
+    public function test_all_six_service_pages_render_successfully(): void
+    {
+        $services = [
+            'call-center-customer-experience' => 'Call Center & Customer Experience',
+            'payment-operations' => 'Payment Operations',
+            'back-office-operations' => 'Back-Office Operations',
+            'technical-support' => 'Technical Support',
+            'digital-ecommerce-operations' => 'Digital & E-commerce Operations',
+            'healthcare-administration' => 'Healthcare Administration',
+        ];
+
+        foreach ($services as $slug => $title) {
+            $response = $this->get(route('services.show', $slug));
+            $response->assertStatus(200);
+            $response->assertSee(e($title), false);
+            $response->assertSee('INITIATE REQUISITION');
+        }
+    }
+
+    /**
+     * Test 1.7: All seven dedicated enterprise industry detail pages render successfully.
+     */
+    public function test_all_seven_industry_pages_render_successfully(): void
+    {
+        $industries = [
+            'ecommerce' => 'E-commerce & Retail BPO',
+            'saas-technology' => 'SaaS & High-Growth Technology',
+            'fintech-payments' => 'Fintech & Digital Payments',
+            'healthcare' => 'Healthcare & HealthTech Administration',
+            'education' => 'Education & EdTech Solutions',
+            'financial-services' => 'Financial Services & WealthTech',
+            'professional-services' => 'Professional Services & Consulting',
+        ];
+
+        foreach ($industries as $slug => $title) {
+            $response = $this->get(route('industries.show', $slug));
+            $response->assertStatus(200);
+            $response->assertSee(e($title), false);
+            $response->assertSee('INITIATE INDUSTRY REQUISITION');
+        }
+    }
+
+    /**
+     * Test 1.8: All four dedicated enterprise resource pages render successfully.
+     */
+    public function test_all_four_resource_pages_render_successfully(): void
+    {
+        $calcResponse = $this->get(route('resources.calculator'));
+        $calcResponse->assertStatus(200);
+        $calcResponse->assertSee('Enterprise BPO Cost &amp; Savings Calculator', false);
+
+        $guideResponse = $this->get(route('resources.bpo-guide'));
+        $guideResponse->assertStatus(200);
+        $guideResponse->assertSee('The Enterprise Guide to Offshoring &amp; BPO in East Africa', false);
+
+        $casesResponse = $this->get(route('resources.case-studies'));
+        $casesResponse->assertStatus(200);
+        $casesResponse->assertSee('Client Case Studies &amp; Verified Results', false);
+
+        $insightsResponse = $this->get(route('resources.insights'));
+        $insightsResponse->assertStatus(200);
+        $insightsResponse->assertSee('Industry Insights, BPO Research &amp; Market Analysis', false);
+    }
+
+    /**
      * Test 2: Public user can submit lead inquiry with calculator payload.
      */
     public function test_public_lead_capture_stores_record_and_redirects(): void
@@ -273,5 +356,33 @@ class NileBridgeSystemTest extends TestCase
         $logoutResponse = $this->post('/logout');
         $logoutResponse->assertRedirect('/login');
         $this->assertGuest();
+    }
+
+    /**
+     * Test 13: New client registration flow.
+     */
+    public function test_client_can_register_and_access_dashboard(): void
+    {
+        $registerPageResponse = $this->get('/register');
+        $registerPageResponse->assertStatus(200);
+        $registerPageResponse->assertSee('Create Client Account');
+
+        $registerSubmitResponse = $this->post('/register', [
+            'name' => 'John Enterprise',
+            'company_name' => 'Nexus Global Labs',
+            'email' => 'john@nexuslabs.co',
+            'phone' => '+1 (555) 987-6543',
+            'password' => 'secret1234',
+            'password_confirmation' => 'secret1234',
+            'terms' => '1',
+        ]);
+
+        $registerSubmitResponse->assertRedirect(route('client.dashboard'));
+        $this->assertAuthenticated();
+
+        $this->assertDatabaseHas('users', [
+            'email' => 'john@nexuslabs.co',
+            'role' => User::ROLE_CUSTOMER,
+        ]);
     }
 }

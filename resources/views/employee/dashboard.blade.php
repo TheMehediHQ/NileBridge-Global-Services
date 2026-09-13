@@ -140,17 +140,17 @@
 
             <a href="{{ route('portal.dashboard', array_merge(request()->except('status'), ['status' => 'contacted'])) }}" 
                class="px-4 py-1.5 rounded-full text-xs font-semibold transition {{ request('status') === 'contacted' ? 'bg-[#0B152F] text-white shadow-sm' : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200/80 hover:bg-slate-50' }}">
-                Contacted
+                Contacted ({{ $myContactedCount ?? 0 }})
             </a>
 
             <a href="{{ route('portal.dashboard', array_merge(request()->except('status'), ['status' => 'qualified'])) }}" 
                class="px-4 py-1.5 rounded-full text-xs font-semibold transition {{ request('status') === 'qualified' ? 'bg-[#0B152F] text-white shadow-sm' : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200/80 hover:bg-slate-50' }}">
-                Qualified
+                Qualified ({{ $myQualifiedCount ?? 0 }})
             </a>
 
             <a href="{{ route('portal.dashboard', array_merge(request()->except('status'), ['status' => 'proposal_sent'])) }}" 
                class="px-4 py-1.5 rounded-full text-xs font-semibold transition {{ request('status') === 'proposal_sent' ? 'bg-[#0B152F] text-white shadow-sm' : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200/80 hover:bg-slate-50' }}">
-                Proposal Sent
+                Proposal Sent ({{ $myProposalSentCount ?? 0 }})
             </a>
 
             <a href="{{ route('portal.dashboard', array_merge(request()->except('status'), ['status' => 'won'])) }}" 
@@ -160,7 +160,7 @@
 
             <a href="{{ route('portal.dashboard', array_merge(request()->except('status'), ['status' => 'lost'])) }}" 
                class="px-4 py-1.5 rounded-full text-xs font-semibold transition {{ request('status') === 'lost' ? 'bg-[#0B152F] text-white shadow-sm' : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200/80 hover:bg-slate-50' }}">
-                Closed Lost
+                Closed Lost ({{ $myLostCount ?? 0 }})
             </a>
         </div>
 
@@ -214,11 +214,11 @@
                     <thead>
                         <tr class="border-b border-slate-200/80 bg-slate-50/70 text-slate-500 uppercase text-[11px] tracking-wider font-semibold">
                             <th class="py-4 px-6">Client Enterprise</th>
-                            <th class="py-4 px-4">Talent Specialization</th>
-                            <th class="py-4 px-4">Scale &amp; Budget</th>
-                            <th class="py-4 px-4">Current Stage</th>
+                            <th class="py-4 px-4 whitespace-nowrap">Talent Specialization</th>
+                            <th class="py-4 px-4 whitespace-nowrap">Scale &amp; Budget</th>
+                            <th class="py-4 px-4 whitespace-nowrap">Current Stage</th>
                             <th class="py-4 px-4">Latest Follow-up Note</th>
-                            <th class="py-4 px-6 text-right">Action</th>
+                            <th class="py-4 px-6 text-right whitespace-nowrap">Action</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100 text-slate-600">
@@ -247,17 +247,16 @@
                             <tr class="hover:bg-slate-50/70 transition">
                                 <!-- Company & Contact -->
                                 <td class="py-4 px-6">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-9 h-9 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center font-black text-xs text-[#0B152F] shrink-0 shadow-sm">
-                                        <div class="w-9 h-9 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center font-bold text-xs text-[#0B152F] shrink-0 shadow-sm">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-9 h-9 rounded-xl bg-amber-50 border border-amber-200/80 flex items-center justify-center font-mono font-bold text-xs text-amber-800 shrink-0 shadow-sm mt-0.5">
                                             {{ $monogram }}
                                         </div>
-                                        <div>
-                                            <div class="font-bold text-[#0B152F] text-base leading-tight">
+                                        <div class="min-w-0">
+                                            <a href="{{ route('portal.leads.show', $lead) }}" class="font-bold text-[#0B152F] hover:text-teal-600 text-base leading-tight transition block">
                                                 {{ $lead->company_name }}
-                                            </div>
-                                            <div class="text-xs text-slate-500 mt-0.5 flex flex-wrap items-center gap-1.5">
-                                                <span>{{ $lead->contact_name }}</span>
+                                            </a>
+                                            <div class="text-xs text-slate-500 mt-1 flex flex-wrap items-center gap-1.5">
+                                                <span class="font-medium text-slate-700">{{ $lead->contact_name }}</span>
                                                 <span class="text-slate-300">&bull;</span>
                                                 <a href="mailto:{{ $lead->contact_email }}" class="text-teal-600 hover:text-teal-700 hover:underline font-medium">
                                                     {{ $lead->contact_email }}
@@ -271,22 +270,22 @@
                                 </td>
 
                                 <!-- Specialization -->
-                                <td class="py-4 px-4">
+                                <td class="py-4 px-4 whitespace-nowrap">
                                     <span class="inline-block px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200/80">
                                         {{ $lead->service_category_label }}
                                     </span>
                                 </td>
 
                                 <!-- Team & Budget -->
-                                <td class="py-4 px-4">
-                                    <div class="text-[#0B152F] font-bold font-mono text-sm">{{ $lead->team_size_needed }} FTE</div>
+                                <td class="py-4 px-4 whitespace-nowrap">
+                                    <div class="text-[#0B152F] font-bold font-mono text-sm">{{ $lead->team_size_needed }} FTE{{ $lead->team_size_needed > 1 ? 's' : '' }}</div>
                                     <div class="text-xs text-emerald-600 font-semibold font-mono">
                                         {{ $lead->estimated_budget ? '$' . number_format($lead->estimated_budget) . '/mo' : 'Custom SLA' }}
                                     </div>
                                 </td>
 
                                 <!-- Status Badge -->
-                                <td class="py-4 px-4">
+                                <td class="py-4 px-4 whitespace-nowrap">
                                     <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border {{ $statusClasses }}">
                                         <span class="w-1.5 h-1.5 rounded-full {{ $dotClasses }} animate-pulse"></span>
                                         <span>{{ $lead->status_label }}</span>
@@ -295,18 +294,21 @@
 
                                 <!-- Latest Note Snippet -->
                                 <td class="py-4 px-4 max-w-xs">
-                                    @if($lead->leadNotes->isNotEmpty())
-                                        <p class="text-xs text-slate-700 truncate font-normal" title="{{ $lead->leadNotes->first()->note }}">
-                                            {{ $lead->leadNotes->first()->note }}
+                                    @php
+                                        $latestNote = $lead->leadNotes->first();
+                                    @endphp
+                                    @if($latestNote)
+                                        <p class="text-xs text-slate-700 truncate font-normal" title="{{ $latestNote->note }}">
+                                            {{ $latestNote->note }}
                                         </p>
-                                        <span class="text-[10px] text-slate-400 font-mono">{{ $lead->leadNotes->first()->created_at->diffForHumans() }}</span>
+                                        <span class="text-[10px] text-slate-400 font-mono">{{ $latestNote->created_at->diffForHumans() }}</span>
                                     @else
                                         <span class="text-xs text-slate-400 italic">No notes logged</span>
                                     @endif
                                 </td>
 
                                 <!-- Action -->
-                                <td class="py-4 px-6 text-right">
+                                <td class="py-4 px-6 text-right whitespace-nowrap">
                                     <a href="{{ route('portal.leads.show', $lead) }}" 
                                        class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-[#0B152F] hover:bg-teal-600 text-white shadow-sm transition-all transform hover:-translate-y-0.5">
                                         <span>Manage Lead</span>

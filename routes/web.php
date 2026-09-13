@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Public\LandingPageController;
 use App\Http\Controllers\Public\LeadCaptureController;
+use App\Http\Controllers\Public\ServiceController;
+use App\Http\Controllers\Public\IndustryController;
+use App\Http\Controllers\Public\ResourceController;
 use App\Http\Controllers\Admin\LeadController as AdminLeadController;
 use App\Http\Controllers\Employee\LeadController as EmployeeLeadController;
 use App\Http\Controllers\Customer\DashboardController as CustomerDashboardController;
@@ -15,6 +18,18 @@ use App\Http\Controllers\Customer\DashboardController as CustomerDashboardContro
 */
 Route::get('/', [LandingPageController::class, 'index'])->name('home');
 Route::post('/leads', [LeadCaptureController::class, 'store'])->name('leads.store');
+Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
+Route::get('/industries/{slug}', [IndustryController::class, 'show'])->name('industries.show');
+Route::get('/resources/calculator', [ResourceController::class, 'calculator'])->name('resources.calculator');
+Route::get('/resources/bpo-guide', [ResourceController::class, 'bpoGuide'])->name('resources.bpo-guide');
+Route::get('/resources/case-studies', [ResourceController::class, 'caseStudies'])->name('resources.case-studies');
+Route::get('/resources/insights', [ResourceController::class, 'insights'])->name('resources.insights');
+Route::get('/privacy-policy', function () {
+    return view('pages.privacy');
+})->name('privacy');
+Route::get('/terms-of-service', function () {
+    return view('pages.terms');
+})->name('terms');
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +38,8 @@ Route::post('/leads', [LeadCaptureController::class, 'store'])->name('leads.stor
 */
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 /*

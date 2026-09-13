@@ -44,11 +44,11 @@
                 <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-4 sm:mb-5 font-mono">PLATFORM</h4>
                 <ul class="space-y-2.5 sm:space-y-3 text-sm text-slate-400">
                     <li><a href="{{ route('home') }}" class="hover:text-teal-400 transition">Home</a></li>
-                    <li><a href="#services" class="hover:text-teal-400 transition">Services Directory</a></li>
-                    <li><a href="#process" class="hover:text-teal-400 transition">Engagement Model</a></li>
-                    <li><a href="#uganda-hub" class="hover:text-teal-400 transition">Kampala Hub</a></li>
-                    <li><a href="#testimonials" class="hover:text-teal-400 transition">Case Studies</a></li>
-                    <li><a href="#pricing" class="hover:text-teal-400 transition">Pricing Tiers</a></li>
+                    <li><a href="{{ route('home') }}#services" class="hover:text-teal-400 transition">Services Directory</a></li>
+                    <li><a href="{{ route('resources.bpo-guide') }}" class="hover:text-teal-400 transition">BPO Strategic Guide</a></li>
+                    <li><a href="{{ route('home') }}#uganda-hub" class="hover:text-teal-400 transition">Kampala Hub</a></li>
+                    <li><a href="{{ route('resources.case-studies') }}" class="hover:text-teal-400 transition">Case Studies</a></li>
+                    <li><a href="{{ route('home') }}#pricing" class="hover:text-teal-400 transition">Pricing Tiers</a></li>
                 </ul>
             </div>
 
@@ -56,12 +56,12 @@
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-4 sm:mb-5 font-mono">SOLUTIONS</h4>
                 <ul class="space-y-2.5 sm:space-y-3 text-sm text-slate-400">
-                    <li><a href="#services" class="hover:text-teal-400 transition">Talent Sourcing</a></li>
-                    <li><a href="#services" class="hover:text-teal-400 transition">Global Payroll EOR</a></li>
-                    <li><a href="#services" class="hover:text-teal-400 transition">Customer Care Operations</a></li>
-                    <li><a href="#services" class="hover:text-teal-400 transition">FinTech &amp; Payments BPO</a></li>
-                    <li><a href="#services" class="hover:text-teal-400 transition">Cloud Engineering Pods</a></li>
-                    <li><a href="#calculator" class="hover:text-teal-400 transition">ROI Calculator</a></li>
+                    <li><a href="{{ route('services.show', 'call-center-customer-experience') }}" class="hover:text-teal-400 transition">Customer Care Operations</a></li>
+                    <li><a href="{{ route('services.show', 'payment-operations') }}" class="hover:text-teal-400 transition">FinTech &amp; Payments BPO</a></li>
+                    <li><a href="{{ route('services.show', 'back-office-operations') }}" class="hover:text-teal-400 transition">Back-Office Operations</a></li>
+                    <li><a href="{{ route('services.show', 'technical-support') }}" class="hover:text-teal-400 transition">Technical Support Desk</a></li>
+                    <li><a href="{{ route('services.show', 'digital-ecommerce-operations') }}" class="hover:text-teal-400 transition">Digital &amp; E-commerce Ops</a></li>
+                    <li><a href="{{ route('resources.calculator') }}" class="hover:text-teal-400 transition">ROI &amp; Cost Calculator</a></li>
                 </ul>
             </div>
 
@@ -101,10 +101,8 @@
                 &copy; {{ date('Y') }} GlobalTalent by NileBridge Global Services Ltd. All rights reserved.
             </div>
             <div class="flex items-center space-x-6 text-slate-400">
-                <a href="#" class="hover:text-teal-400 transition">Privacy Policy</a>
-                <a href="#" class="hover:text-teal-400 transition">Terms of Service</a>
-                <a href="#" class="hover:text-teal-400 transition">SOC 2 Compliance</a>
-                <a href="#" class="hover:text-teal-400 transition">Security Disclosure</a>
+                <a href="{{ route('privacy') }}" class="hover:text-teal-400 transition">Privacy Policy</a>
+                <a href="{{ route('terms') }}" class="hover:text-teal-400 transition">Terms of Service</a>
             </div>
         </div>
     </div>

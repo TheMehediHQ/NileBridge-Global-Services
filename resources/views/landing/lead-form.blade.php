@@ -129,7 +129,7 @@
                         </div>
                         <div>
                             <div class="text-xs text-slate-500 font-medium">Email Inquiries</div>
-                            <div class="text-sm font-bold text-[#0B152F]">hello@globaltalent.com</div>
+                            <div class="text-sm font-bold text-[#0B152F]">hello@nilebridge.com</div>
                         </div>
                     </div>
                 </div>

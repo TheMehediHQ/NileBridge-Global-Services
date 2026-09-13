@@ -133,13 +133,22 @@
 
             <div class="pt-2">
                 <button type="submit" 
-                        class="w-full flex justify-center py-3.5 px-5 rounded-full shadow-md text-sm font-bold text-white bg-[#0B152F] hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-150 transform hover:-translate-y-0.5">
+                        class="w-full flex justify-center py-3.5 px-5 rounded-full shadow-md text-sm font-bold text-white bg-[#0B152F] hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-150 transform hover:-translate-y-0.5 cursor-pointer">
                     Authorize &amp; Authenticate
                 </button>
             </div>
         </form>
 
-        <div class="text-center text-[11px] text-slate-400 border-t border-slate-100 pt-4 leading-relaxed">
+        <div class="text-center pt-3 border-t border-slate-100">
+            <p class="text-xs text-slate-500">
+                Don't have an enterprise account? 
+                <a href="{{ route('register') }}" class="font-bold text-teal-600 hover:text-teal-700 transition underline ml-1">
+                    Create Client Account &rarr;
+                </a>
+            </p>
+        </div>
+
+        <div class="text-center text-[11px] text-slate-400 leading-relaxed">
             Protected by SOC 2 Type-II &amp; ISO 27001 Access Policies. All authentication sessions are cryptographically logged.
         </div>
     </div>

@@ -19,28 +19,41 @@
         </div>
 
         <!-- Interactive Monthly / Annual Billing Switcher -->
-        <div class="flex items-center justify-center gap-4 mb-16">
-            <span class="text-sm font-semibold transition-colors duration-200" :class="!annual ? 'text-[#0B152F]' : 'text-slate-400'">Monthly Billing</span>
+        <div class="flex items-center justify-center gap-4 mb-16 select-none">
+            <button 
+                type="button"
+                @click="annual = false"
+                class="text-sm font-bold transition-all duration-200 cursor-pointer px-3 py-1.5 rounded-lg focus:outline-none"
+                :class="!annual ? 'text-[#0B152F] bg-slate-100 shadow-xs' : 'text-slate-400 hover:text-slate-700'">
+                Monthly Billing
+            </button>
+            
             <button 
                 type="button" 
                 @click="annual = !annual"
-                class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none"
-                :class="annual ? 'bg-teal-500' : 'bg-slate-300'"
+                class="relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                :class="annual ? 'bg-teal-600' : 'bg-slate-300'"
                 role="switch"
                 :aria-checked="annual"
                 aria-label="Toggle Annual Billing"
             >
                 <span 
-                    class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out"
+                    class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out"
                     :class="annual ? 'translate-x-5' : 'translate-x-0'"
                 ></span>
             </button>
-            <span class="text-sm font-semibold flex items-center gap-2 transition-colors duration-200" :class="annual ? 'text-[#0B152F]' : 'text-slate-400'">
+
+            <button 
+                type="button"
+                @click="annual = true"
+                class="text-sm font-bold flex items-center gap-2 transition-all duration-200 cursor-pointer px-3 py-1.5 rounded-lg focus:outline-none"
+                :class="annual ? 'text-[#0B152F] bg-teal-50/70 shadow-xs' : 'text-slate-400 hover:text-slate-700'">
                 <span>Annual Commitment</span>
-                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-teal-50 text-teal-700 border border-teal-200/80">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold transition"
+                      :class="annual ? 'bg-teal-500 text-white shadow-xs' : 'bg-teal-50 text-teal-700 border border-teal-200/80'">
                     Save 20%
                 </span>
-            </span>
+            </button>
         </div>
 
         <!-- 4 Refined Architectural Pricing Cards -->
@@ -55,7 +68,7 @@
 
                     <div class="mt-6 flex items-baseline gap-1">
                         <span class="text-4xl font-extrabold text-[#0B152F] tracking-tight font-mono" x-text="annual ? '$239' : '$299'">$299</span>
-                        <span class="text-xs text-slate-400 font-medium">/month</span>
+                        <span class="text-xs text-slate-400 font-medium" x-text="annual ? '/mo (billed annually)' : '/month'">/month</span>
                     </div>
 
                     <ul class="mt-8 space-y-3 text-xs sm:text-sm text-slate-600 font-medium">
@@ -99,7 +112,7 @@
 
                     <div class="mt-6 flex items-baseline gap-1">
                         <span class="text-4xl font-extrabold text-teal-600 tracking-tight font-mono" x-text="annual ? '$639' : '$799'">$799</span>
-                        <span class="text-xs text-slate-400 font-medium">/month</span>
+                        <span class="text-xs text-slate-400 font-medium" x-text="annual ? '/mo (billed annually)' : '/month'">/month</span>
                     </div>
 
                     <ul class="mt-8 space-y-3 text-xs sm:text-sm text-slate-700 font-medium">
@@ -138,7 +151,7 @@
 
                     <div class="mt-6 flex items-baseline gap-1">
                         <span class="text-4xl font-extrabold text-[#0B152F] tracking-tight font-mono" x-text="annual ? '$1,599' : '$1,999'">$1,999</span>
-                        <span class="text-xs text-slate-400 font-medium">/month</span>
+                        <span class="text-xs text-slate-400 font-medium" x-text="annual ? '/mo (billed annually)' : '/month'">/month</span>
                     </div>
 
                     <ul class="mt-8 space-y-3 text-xs sm:text-sm text-slate-600 font-medium">
