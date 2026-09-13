@@ -5,6 +5,19 @@
 
 ---
 
+## 📚 Documentation Navigation & Technical Suite
+
+The NileBridge Global Services platform is thoroughly documented across four specialized technical manuals. Select the guide tailored to your workflow:
+
+| Guide | Scope & Core Topics | Target Audience |
+| :--- | :--- | :--- |
+| **[README.md](README.md)** *(Current)* | Daily quickstart, local environment setup, testing suite, and seeded accounts | Full-Stack Engineers & Contributors |
+| **[PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md)** | Strategic B2B value proposition, 6 service tracks, 7 industries, 4 resource hubs & RBAC portals | Product Managers & Enterprise Stakeholders |
+| **[SYSTEM_DESIGN.md](SYSTEM_DESIGN.md)** | Architectural deep-dive, database ERD schema, query indexing, RBAC matrix & state machine | Principal Architects & Backend Engineers |
+| **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** | Ubuntu Linux server provisioning, Nginx vhost, Let's Encrypt SSL, Cron & zero-downtime script | DevOps & Site Reliability Engineers |
+
+---
+
 ## 🛠 Tech Stack Overview
 
 | Layer | Technology | Version | Architectural Role & Details |
@@ -47,7 +60,7 @@ php artisan serve
 
 ## 🛠 Complete First-Time Setup & Installation
 
-Follow this step-by-step procedure when cloning the repository onto a fresh development workstation:
+Follow this step-by-step procedure when cloning the repository onto a fresh development workstation *(for production server deployment, see the **[Production Deployment Manual](DEPLOYMENT_GUIDE.md)**)*:
 
 ### 1. System Prerequisites
 * **PHP 8.2+** (Required extensions: `pdo_mysql`, `mbstring`, `xml`, `curl`, `bcmath`, `fileinfo`, `zip`)
@@ -102,7 +115,7 @@ docker run --name nilebridge-mysql \
 ```bash
 php artisan migrate:fresh --seed
 ```
-*This command executes all schema migrations and seeds realistic enterprise leads, notes, and multi-tier user accounts.*
+*This command executes all schema migrations and seeds realistic enterprise leads, notes, and multi-tier user accounts. For complete database schema diagrams and data dictionaries, consult the **[System Architecture & Design Document](SYSTEM_DESIGN.md)**.*
 
 ---
 
@@ -134,7 +147,7 @@ Authentication Gateway: **[http://127.0.0.1:8000/login](http://127.0.0.1:8000/lo
 | 💼 **Employee 2** | `employee2@nilebridge.com` | `password` | `/portal` | Dedicated Nordic & Cloud Vanguard accounts, pipeline progress tracking |
 | 🏢 **Client** | `client@acme.com` | `password` | `/client` | Active talent pod monitoring, assigned AE dossier, SLA performance metrics |
 
-> **Client Self-Registration:** Prospective enterprise clients can self-register anytime via the dedicated onboarding gateway at **[http://127.0.0.1:8000/register](http://127.0.0.1:8000/register)**.
+> **Client Self-Registration:** Prospective enterprise clients can self-register anytime via the dedicated onboarding gateway at **[http://127.0.0.1:8000/register](http://127.0.0.1:8000/register)**. Learn more in **[PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md)**.
 
 ---
 
@@ -158,6 +171,10 @@ php artisan test
 
 ```
 kanon/
+├── README.md                                   # Developer Guide & Local Quickstart Hub
+├── PROJECT_OVERVIEW.md                         # Strategic B2B Blueprint & Feature Catalog
+├── SYSTEM_DESIGN.md                            # Technical Architecture, Schema & RBAC Design
+├── DEPLOYMENT_GUIDE.md                         # Production Infrastructure & Deployment Manual
 ├── app/
 │   ├── Http/
 │   │   ├── Controllers/
@@ -198,8 +215,6 @@ kanon/
 │       ├── layouts/app.blade.php               # Institutional Glassmorphism master layout
 │       └── pages/                              # Services, Industries, Resources, Legal pages
 ├── routes/web.php                              # Explicit monolith route declarations
-├── PROJECT_OVERVIEW.md                         # Business vision & feature documentation
-├── DEPLOYMENT_GUIDE.md                         # Production deployment walkthrough
 └── tests/Feature/NileBridgeSystemTest.php      # 19 Automated test cases
 ```
 
@@ -210,3 +225,10 @@ kanon/
 * **Password Hashing:** Strict Bcrypt (cost factor 12) on all user credentials.
 * **Database Session Security:** Sessions and CSRF tokens are tracked via database storage.
 * **Input Sanitization:** Explicit FormRequest-style validation preventing SQL injection and XSS.
+
+---
+
+## 🔗 Documentation Links & Cross-References
+* 🎯 **[Project Overview & System Blueprint (PROJECT_OVERVIEW.md)](PROJECT_OVERVIEW.md)** — Understand the commercial problem, public features, and business value.
+* 🏗️ **[System Architecture & Design Document (SYSTEM_DESIGN.md)](SYSTEM_DESIGN.md)** — Explore database schemas, foreign keys, and RBAC matrix.
+* 🚀 **[Production Deployment Manual (DEPLOYMENT_GUIDE.md)](DEPLOYMENT_GUIDE.md)** — Step-by-step instructions for Ubuntu, Nginx, MySQL, and SSL.

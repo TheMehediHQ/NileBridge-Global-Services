@@ -5,6 +5,14 @@
 
 ---
 
+> **Documentation Navigation:**  
+> 📖 **[Developer Guide & Local Setup (README.md)](README.md)** &nbsp;|&nbsp; 
+> 🎯 **[Project Overview & Blueprint (PROJECT_OVERVIEW.md)](PROJECT_OVERVIEW.md)** *(Current)* &nbsp;|&nbsp; 
+> 🏗️ **[System Architecture & Design (SYSTEM_DESIGN.md)](SYSTEM_DESIGN.md)** &nbsp;|&nbsp; 
+> 🚀 **[Production Deployment Manual (DEPLOYMENT_GUIDE.md)](DEPLOYMENT_GUIDE.md)**
+
+---
+
 ## 🎯 1. Why Was This Project Built?
 
 ### The Enterprise Problem
@@ -139,6 +147,13 @@ graph TD
 | **Time to Deployment** | **< 14 Business Days** | Pre-vetted candidate dossiers and pods ready to deploy within two weeks. |
 | **Replacement Guarantee** | **2-Week Risk-Free SLA** | Complimentary talent reassignment if performance does not meet SLAs. |
 | **Automated Test Coverage** | **19 Tests / 119 Assertions** | 100% pass rate across public routing, intake validation, and RBAC isolation. |
+
+---
+ 
+## 🔗 Documentation Links & Cross-References
+* 📖 **[Developer Guide & Local Setup (README.md)](README.md)** — Daily quickstart, environment installation, testing suite, and seeded accounts.
+* 🏗️ **[System Architecture & Design Document (SYSTEM_DESIGN.md)](SYSTEM_DESIGN.md)** — In-depth ERD diagrams, database dictionary, and RBAC matrix.
+* 🚀 **[Production Deployment Manual (DEPLOYMENT_GUIDE.md)](DEPLOYMENT_GUIDE.md)** — Production server setup, Nginx configuration, SSL, and automated deployment script.
 
 ---
 *Authorized by the NileBridge Global Services Architecture & Engineering Committee.*

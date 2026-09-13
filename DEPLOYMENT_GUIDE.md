@@ -5,6 +5,14 @@
 
 ---
 
+> **Documentation Navigation:**  
+> 📖 **[Developer Guide & Local Setup (README.md)](README.md)** &nbsp;|&nbsp; 
+> 🎯 **[Project Overview & Blueprint (PROJECT_OVERVIEW.md)](PROJECT_OVERVIEW.md)** &nbsp;|&nbsp; 
+> 🏗️ **[System Architecture & Design (SYSTEM_DESIGN.md)](SYSTEM_DESIGN.md)** &nbsp;|&nbsp; 
+> 🚀 **[Production Deployment Manual (DEPLOYMENT_GUIDE.md)](DEPLOYMENT_GUIDE.md)** *(Current)*
+
+---
+
 ## 📋 1. Target Infrastructure & Prerequisites
 
 Ensure your production instance satisfies the following baseline specifications before initiating deployment:
@@ -325,6 +333,13 @@ Verify the following production checks after deployment:
 - [ ] **Lead Ingestion Validation:** Submit an inquiry via the intake form; verify honeypot validation, database record creation, and flash alert rendering.
 - [ ] **Portal Authentication:** Authenticate as Admin, Employee, and Client to confirm role-based access control (RBAC).
 - [ ] **Client Self-Registration:** Verify that `/register` creates new user records with encrypted credentials and redirects directly to `/client`.
+
+---
+ 
+## 🔗 Documentation Links & Cross-References
+* 📖 **[Developer Guide & Local Setup (README.md)](README.md)** — Daily development workflow, local database configuration, and test suites.
+* 🎯 **[Project Overview & System Blueprint (PROJECT_OVERVIEW.md)](PROJECT_OVERVIEW.md)** — High-level platform capabilities, business ROI calculator, and commercial layer.
+* 🏗️ **[System Architecture & Design Document (SYSTEM_DESIGN.md)](SYSTEM_DESIGN.md)** — Relational data model, indexes, and role-based security rules.
 
 ---
 

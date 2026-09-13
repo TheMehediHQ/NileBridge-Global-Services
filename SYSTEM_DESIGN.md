@@ -7,6 +7,14 @@
 
 ---
 
+> **Documentation Navigation:**  
+> 📖 **[Developer Guide & Local Setup (README.md)](README.md)** &nbsp;|&nbsp; 
+> 🎯 **[Project Overview & Blueprint (PROJECT_OVERVIEW.md)](PROJECT_OVERVIEW.md)** &nbsp;|&nbsp; 
+> 🏗️ **[System Architecture & Design (SYSTEM_DESIGN.md)](SYSTEM_DESIGN.md)** *(Current)* &nbsp;|&nbsp; 
+> 🚀 **[Production Deployment Manual (DEPLOYMENT_GUIDE.md)](DEPLOYMENT_GUIDE.md)**
+
+---
+
 ## Table of Contents
 1. [Executive Summary & Project Objectives](#1-executive-summary--project-objectives)
 2. [High-Level Architecture Overview](#2-high-level-architecture-overview)
@@ -1348,6 +1356,13 @@ Deployment follows an atomic, zero-downtime release pattern (e.g., using GitHub 
    - `php artisan event:cache`
 6. Atomic symlink flip: Point `/var/www/nilebridge/current` to the new release folder.
 7. Reload PHP-FPM (`systemctl reload php8.2-fpm`) and restart queue workers (`php artisan queue:restart`).
+
+---
+
+## 🔗 Documentation Links & Cross-References
+* 📖 **[Developer Guide & Local Setup (README.md)](README.md)** — Daily developer quickstart, local environment setup, and test suite commands.
+* 🎯 **[Project Overview & System Blueprint (PROJECT_OVERVIEW.md)](PROJECT_OVERVIEW.md)** — High-level platform capabilities, business ROI calculator, and commercial layer.
+* 🚀 **[Production Deployment Manual (DEPLOYMENT_GUIDE.md)](DEPLOYMENT_GUIDE.md)** — Bare-metal and cloud server provisioning, Nginx, MySQL, and SSL.
 
 ---
 
