@@ -1,44 +1,46 @@
 # NileBridge Global Services — Production Deployment Guide
 
 > **Official Production Infrastructure & Deployment Manual**  
-> Complete, step-by-step instructions for deploying NileBridge Global Services onto Linux Ubuntu servers (VPS / Dedicated Server / Cloud Droplet / AWS EC2) with Nginx, PHP 8.2/8.3-FPM, MySQL 8.0, and SSL.
+> Comprehensive, step-by-step instructions for provisioning, configuring, securing, and deploying NileBridge Global Services onto Linux Ubuntu servers (Cloud Droplets, AWS EC2, Dedicated Bare-Metal, or VPS) with Nginx, PHP 8.2/8.3-FPM, MySQL 8.0, and SSL/TLS.
 
 ---
 
-## 📋 1. Production Server Prerequisites (সার্ভার রিকোয়ারমেন্টস)
+## 📋 1. Target Infrastructure & Prerequisites
 
-* **Operating System:** Ubuntu 22.04 LTS or 24.04 LTS (x64)
+Ensure your production instance satisfies the following baseline specifications before initiating deployment:
+
+* **Operating System:** Ubuntu 22.04 LTS or 24.04 LTS (x86_64 or ARM64)
+* **Compute Minimums:** 2 vCPUs, 2 GB RAM (4 GB recommended for concurrent builds)
 * **Web Server:** Nginx 1.20+
-* **PHP:** PHP 8.2 or 8.3-FPM
-  * Required PHP Extensions: `php8.2-fpm`, `php8.2-mysql`, `php8.2-mbstring`, `php8.2-xml`, `php8.2-curl`, `php8.2-bcmath`, `php8.2-zip`, `php8.2-intl`, `php8.2-gd`
-* **Database:** MySQL 8.0+ Server (InnoDB engine)
-* **Package Managers:** Composer 2.x, Bun (or Node.js 20+ LTS / NPM)
-* **SSL:** Let's Encrypt Certbot
+* **PHP Engine:** PHP 8.2 or 8.3-FPM
+  * Required Extensions: `php8.2-fpm`, `php8.2-mysql`, `php8.2-mbstring`, `php8.2-xml`, `php8.2-curl`, `php8.2-bcmath`, `php8.2-zip`, `php8.2-intl`, `php8.2-gd`
+* **Relational Database:** MySQL 8.0+ Server (InnoDB engine, strict mode enabled)
+* **Package Managers:** Composer 2.x, Bun 1.0+ (or Node.js 20+ LTS / NPM)
+* **Security & SSL:** UFW Firewall, Let's Encrypt Certbot
 
 ---
 
-## 🚀 2. Step-by-Step Server Setup & Deployment
+## 🚀 2. Server Provisioning & Package Installation
 
-### ধাপ ১: সার্ভার প্যাকেজ ও সফটওয়্যার ইনস্টলেশন
-সার্ভারে SSH দিয়ে লগইন করে নিচের কমান্ডগুলো চালান:
+Connect to your target server via SSH with root or sudo privileges:
 
 ```bash
-# সিস্টেম প্যাকেজ আপডেট
+# 1. Update and upgrade base system packages
 sudo apt update && sudo apt upgrade -y
 
-# প্রয়োজনীয় টুলস ও Nginx ইনস্টল
+# 2. Install essential system utilities and Nginx web server
 sudo apt install -y nginx curl git unzip ufw certbot python3-certbot-nginx
 
-# PHP 8.2-FPM ও এক্সটেনশন ইনস্টল
+# 3. Add Ondrej PHP repository and install PHP 8.2-FPM with core extensions
 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt update
 sudo apt install -y php8.2-fpm php8.2-mysql php8.2-mbstring php8.2-xml \
                     php8.2-curl php8.2-bcmath php8.2-zip php8.2-intl php8.2-gd
 
-# Composer ইনস্টল
+# 4. Install Composer globally
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
-# Bun ইনস্টল (ফ্রন্টএন্ড বিল্ডের জন্য)
+# 5. Install Bun for fast frontend asset compilation
 curl -fsSL https://bun.sh/install | bash
 source ~/.bashrc
 sudo ln -s ~/.bun/bin/bun /usr/local/bin/bun
@@ -46,18 +48,23 @@ sudo ln -s ~/.bun/bin/bun /usr/local/bin/bun
 
 ---
 
-### ধাপ ২: MySQL ডেটাবেস প্রস্তুত করা
+## 🗄️ 3. Production MySQL Database Setup
+
 ```bash
+# Install MySQL server
 sudo apt install -y mysql-server
+
+# Run MySQL security hardening wizard
 sudo mysql_secure_installation
 ```
 
-MySQL কনসোলে লগইন করে ডেটাবেস ও ব্যবহারকারী তৈরি করুন:
+Log into MySQL and provision an isolated database and restricted user:
+
 ```sql
 sudo mysql -u root -p
 
 CREATE DATABASE nilebridge CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'nilebridge_user'@'localhost' IDENTIFIED BY 'StrongSecurePassword123#';
+CREATE USER 'nilebridge_user'@'localhost' IDENTIFIED BY 'StrongEnterprisePassword123#';
 GRANT ALL PRIVILEGES ON nilebridge.* TO 'nilebridge_user'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
@@ -65,17 +72,18 @@ EXIT;
 
 ---
 
-### ধাপ ৩: কোড ক্লোন ও পারমিশন সেটআপ
+## 📂 4. Repository Deployment & Permissions
+
 ```bash
-# প্রজেক্ট ডিরেক্টরি তৈরি
+# 1. Prepare web root directory
 sudo mkdir -p /var/www/nilebridge
 sudo chown -R $USER:www-data /var/www/nilebridge
 
-# গিট রিপোজিটরি ক্লোন করুন
-git clone https://github.com/your-org/nilebridge-platform.git /var/www/nilebridge
+# 2. Clone repository from GitHub
+git clone https://github.com/TheMehediHQ/NileBridge-Global-Services.git /var/www/nilebridge
 cd /var/www/nilebridge
 
-# ফাইল ও ফোল্ডার পারমিশন নিশ্চিত করা (অত্যন্ত গুরুত্বপূর্ণ)
+# 3. Apply secure ownership and permissions to writable storage directories
 sudo chown -R $USER:www-data /var/www/nilebridge
 sudo chmod -R 775 /var/www/nilebridge/storage
 sudo chmod -R 775 /var/www/nilebridge/bootstrap/cache
@@ -83,13 +91,17 @@ sudo chmod -R 775 /var/www/nilebridge/bootstrap/cache
 
 ---
 
-### ধাপ ৪: প্রোডাকশন `.env` ফাইল কনফিগারেশন
+## ⚙️ 5. Production Environment Configuration (`.env`)
+
+Initialize and edit your production environment configuration:
+
 ```bash
 cp .env.example .env
 nano .env
 ```
 
-নিচের প্রোডাকশন ভ্যালুগুলো সঠিকভাবে সেট করুন:
+Apply the following production configuration:
+
 ```ini
 APP_NAME="NileBridge Global Services"
 APP_ENV=production
@@ -97,12 +109,16 @@ APP_KEY=
 APP_DEBUG=false
 APP_URL=https://yourdomain.com
 
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=error
+
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=nilebridge
 DB_USERNAME=nilebridge_user
-DB_PASSWORD=StrongSecurePassword123#
+DB_PASSWORD=StrongEnterprisePassword123#
 
 SESSION_DRIVER=database
 SESSION_LIFETIME=120
@@ -123,31 +139,28 @@ MAIL_FROM_NAME="NileBridge Global Services"
 
 ---
 
-### ধাপ ৫: ব্যাকএন্ড ও ফ্রন্টএন্ড বিল্ড সম্পন্ন করা
+## 🏗️ 6. Build Pipeline & Production Optimization
+
+Execute the production build sequence:
+
 ```bash
-# ১. প্রোডাকশন অপটিমাইজড কম্পোজার প্যাকেজ ইনস্টল
+# 1. Install production PHP packages without development overhead
 composer install --no-dev --optimize-autoloader
 
-# ২. ইউনিক সিকিউরিটি কি তৈরি
+# 2. Generate application security encryption key
 php artisan key:generate --force
 
-# ৩. ডেটাবেস মাইগ্রেশন রান (প্রোডাকশন টেবিল সৃষ্টি)
+# 3. Execute database schema migrations
 php artisan migrate --force
 
-# ৪. (ঐচ্ছিক) ডেমো ডেটা সিড করতে চাইলে:
+# 4. Optional: Seed initial demonstration accounts and leads
 # php artisan db:seed --force
 
-# ৫. ফ্রন্টএন্ড অ্যাসেট ইনস্টল ও প্রোডাকশন বিল্ড
+# 5. Install frontend packages and compile optimized static assets
 bun install
 bun run build
-```
 
----
-
-### ধাপ ৬: প্রোডাকশন ক্যাশিং চালু (High Performance Caching)
-প্রোডাকশনে সাইট সুপার-ফাস্ট করার জন্য লারাভেলের ৩টি ক্যাশ ইঞ্জিন সক্রিয় করুন:
-
-```bash
+# 6. Prime production caching engines for maximum performance
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
@@ -155,14 +168,15 @@ php artisan view:cache
 
 ---
 
-## 🌐 3. Nginx Web Server Configuration
+## 🌐 7. Nginx Virtual Host Configuration
 
-একটি নতুন Nginx কনফিগারেশন ফাইল তৈরি করুন:
+Create an Nginx server block configuration for the application:
+
 ```bash
 sudo nano /etc/nginx/sites-available/nilebridge.conf
 ```
 
-নিচের কনফিগারেশনটি পেস্ট করুন (আপনার ডোমেইন নাম বসিয়ে নিন):
+Paste the following configuration (replace `yourdomain.com` with your live domain):
 
 ```nginx
 server {
@@ -177,10 +191,9 @@ server {
     add_header Referrer-Policy "strict-origin-when-cross-origin";
 
     index index.php index.html;
-
     charset utf-8;
 
-    # Gzip Compression
+    # Gzip Compression for Fast Delivery
     gzip on;
     gzip_vary on;
     gzip_min_length 1024;
@@ -209,7 +222,8 @@ server {
 }
 ```
 
-সাইট এনাবল করুন ও Nginx রিস্টার্ট দিন:
+Enable the virtual host and reload Nginx:
+
 ```bash
 sudo ln -s /etc/nginx/sites-available/nilebridge.conf /etc/nginx/sites-enabled/
 sudo nginx -t
@@ -218,57 +232,61 @@ sudo systemctl restart nginx
 
 ---
 
-## 🔒 4. Free SSL Setup (HTTPS via Let's Encrypt)
+## 🔒 8. Automated SSL/TLS Encryption (Let's Encrypt)
+
+Secure traffic with automatic HTTPS via Certbot:
 
 ```bash
-# Certbot দিয়ে অটোমেটিক SSL সার্টিফিকেট ইনস্টল
 sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 ```
-*Certbot স্বয়ংক্রিয়ভাবে HTTPS কনফিগার করবে এবং প্রতি ৯০ দিন পর পর সার্টিফিকেট রিনিউ করার ক্রনজব সেট করে দেবে।*
+
+Certbot automatically configures TLS certificates, sets up automatic renewal cron jobs, and configures HTTP-to-HTTPS redirects.
 
 ---
 
-## ⏰ 5. Background Scheduler & Cron Job Setup
+## ⏰ 9. Task Scheduler & Background Workers
 
-লারাভেলের ব্যাকগ্রাউন্ড জবস এবং শিডিউলার পরিচালনার জন্য ক্রনট্যাব সেট করুন:
+Configure system crontab to execute Laravel's scheduled commands:
 
 ```bash
 crontab -e
 ```
-নিচের লাইনটি সবার নিচে যোগ করে সেভ করুন:
+
+Add the following entry:
 ```bash
 * * * * * cd /var/www/nilebridge && php artisan schedule:run >> /dev/null 2>&1
 ```
 
 ---
 
-## 🔄 6. Zero-Downtime Deployment Script (`deploy.sh`)
+## 🔄 10. Automated Zero-Downtime Deployment Script (`deploy.sh`)
 
-ভবিষ্যতে যেকোনো আপডেট বা নতুন কোড পুশ করার পর সার্ভারে খুব সহজে এক ক্লিকে ডেপ্লয় করার জন্য একটি স্ক্রিপ্ট তৈরি করে রাখতে পারেন:
+To streamline continuous updates, deploy this automated deployment script in the project root:
 
-`/var/www/nilebridge/deploy.sh`:
+Create `/var/www/nilebridge/deploy.sh`:
+
 ```bash
 #!/bin/bash
 set -e
 
-echo "🚀 Starting NileBridge Deployment..."
+echo "🚀 Starting NileBridge Deployment sequence..."
 
-# ১. Maintenance Mode অন করা (ঐচ্ছিক)
+# 1. Enter Maintenance Mode (Optional)
 # php artisan down --render="errors::503"
 
-# ২. সর্বশেষ গিট কোড টানা
+# 2. Pull latest release from repository
 git pull origin main
 
-# ৩. Composer আপডেট ও অপটিমাইজ
+# 3. Update production PHP dependencies
 composer install --no-dev --optimize-autoloader
 
-# ৪. ডাটাবেজ মাইগ্রেশন রান
+# 4. Run database migrations safely
 php artisan migrate --force
 
-# ৫. ফ্রন্টএন্ড অ্যাসেট নতুন করে বিল্ড
+# 5. Recompile frontend assets
 bun run build
 
-# ৬. ক্যাশ রিফ্রেশ
+# 6. Flush and re-prime production caches
 php artisan config:clear
 php artisan route:clear
 php artisan view:clear
@@ -276,38 +294,38 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
-# ৭. PHP-FPM রিলোড (OPCache ক্লিয়ার করার জন্য)
+# 7. Reload PHP-FPM to clear bytecode/OPcache
 sudo systemctl reload php8.2-fpm
 
-# ৮. Maintenance Mode অফ করা
+# 8. Deactivate Maintenance Mode
 # php artisan up
 
-echo "✅ NileBridge Platform successfully deployed and live!"
+echo "✅ NileBridge Global Services successfully deployed and live!"
 ```
 
-স্ক্রিপ্টটি এক্সিকিউটেবল করুন:
+Grant executable permissions:
 ```bash
 chmod +x /var/www/nilebridge/deploy.sh
 ```
 
-পরবর্তীতে ডেপ্লয় করতে শুধু চালাবেন:
+Execute future deployments with a single command:
 ```bash
 ./deploy.sh
 ```
 
 ---
 
-## 🛠 7. Post-Deployment Verification Checklist
+## 🧪 11. Post-Deployment Verification Checklist
 
-ডেপ্লয়মেন্ট সফল হয়েছে কিনা তা যাচাই করতে নিচের বিষয়গুলো চেক করুন:
+Verify the following production checks after deployment:
 
-- [ ] **HTTPS এনফোর্সমেন্ট:** `http://yourdomain.com` স্বয়ংক্রিয়ভাবে `https://yourdomain.com`-এ রিডাইরেক্ট হচ্ছে।
-- [ ] **Assets লোডিং:** কনসোলে কোনো 404 (CSS/JS) এরর নেই।
-- [ ] **ROI ক্যালকুলেটর:** স্লাইডার টেনে দেখতে পাচ্ছেন যে রিয়েল-টাইমে ডলার ও সেভিংস আপডেট হচ্ছে।
-- [ ] **লিড ফর্ম টেস্ট:** একটি টেস্ট লিড সাবমিট করে দেখুন গ্রিন ব্যানার আসছে কিনা এবং ডাটাবেজে রেকর্ড জমছে কিনা।
-- [ ] **লগইন ও পোর্টাল:** `/login` পেজ থেকে অ্যাডমিন, স্টাফ ও ক্লায়েন্ট ড্যাশবোর্ড লোড হচ্ছে কিনা।
-- [ ] **রেজিস্ট্রেশন পেজ:** `/register` থেকে নতুন ক্লায়েন্ট অ্যাকাউন্ট সফলভাবে তৈরি হয়ে ড্যাশবোর্ডে যাচ্ছে কিনা।
+- [ ] **HTTPS Enforcement:** Requests to `http://yourdomain.com` immediately redirect to `https://yourdomain.com`.
+- [ ] **Asset Integrity:** Static CSS and JavaScript bundles load with HTTP 200 and zero browser console errors.
+- [ ] **ROI Calculator Reactivity:** Interactive sliders dynamically calculate financial savings and ticket metrics in real-time.
+- [ ] **Lead Ingestion Validation:** Submit an inquiry via the intake form; verify honeypot validation, database record creation, and flash alert rendering.
+- [ ] **Portal Authentication:** Authenticate as Admin, Employee, and Client to confirm role-based access control (RBAC).
+- [ ] **Client Self-Registration:** Verify that `/register` creates new user records with encrypted credentials and redirects directly to `/client`.
 
 ---
-*ডকুমেন্টটি NileBridge Global Services DevOps ও ইনফ্রাস্ট্রাকচার টিম দ্বারা পরীক্ষিত ও ভেরিফাইড।*
 
+*Authored and verified by the NileBridge Global Services DevOps & Infrastructure Architecture Team.*

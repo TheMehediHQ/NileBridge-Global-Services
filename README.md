@@ -7,75 +7,76 @@
 
 ## 🛠 Tech Stack Overview
 
-| Layer | Technology | Version | Purpose / Notes |
+| Layer | Technology | Version | Architectural Role & Details |
 | :--- | :--- | :--- | :--- |
-| **Backend** | **PHP / Laravel** | `11.56.x` / `PHP 8.2+` | Clean MVC Monolith, RoleMiddleware RBAC, DB Transactions |
-| **Frontend UI** | **Blade Templates** | Modern Components | Semantic HTML5, Glassmorphism, Responsive Grid |
+| **Backend** | **PHP / Laravel** | `11.56.x` / `PHP 8.2+` | Clean MVC Monolith, RoleMiddleware RBAC, Database Transactions |
+| **Frontend UI** | **Blade Templates** | Modern Components | Semantic HTML5, Glassmorphism, Fully Responsive Grid |
 | **Styling** | **Tailwind CSS** | `3.4.x` | Deep Navy (`#060D1D`, `#0B152F`), Vibrant Teal (`#0D9488`) |
-| **Reactivity** | **Alpine.js** | `3.17.x` | ROI Calculator Engine, Billing Switcher, Mobile Nav |
-| **Database** | **MySQL Engine** | `8.0.x` | Strict SQL Mode, InnoDB, Foreign Key Constraints |
-| **Bundling** | **Bun & Vite** | `Bun 1.3+` / `Vite 6` | Instant HMR, Production minification & asset bundling |
-| **Testing** | **PHPUnit** | `11.x` | 19 Feature & Unit Tests, 119 Assertions (100% Pass) |
+| **Reactivity** | **Alpine.js** | `3.17.x` | Real-time ROI Calculator, Billing Frequency Switcher, Mobile Navigation |
+| **Database** | **MySQL Engine** | `8.0.x` | Strict SQL Mode, InnoDB Storage Engine, Foreign Key Constraints |
+| **Bundler** | **Bun & Vite** | `Bun 1.3+` / `Vite 6` | Instant Hot Module Replacement (HMR), Production Minification |
+| **Testing** | **PHPUnit** | `11.x` | 19 Feature & Unit Tests, 119 Assertions (100% Passing) |
 
 ---
 
-## ⚡ Quickstart: How to Run Locally (প্রতিদিন যেভাবে সহজে চালাবেন)
+## ⚡ Daily Quickstart: How to Run Locally
 
-আপনার মেশিনে প্রোজেক্টটি ইতোমধ্যে সেটআপ করা থাকলে প্রতিদিন রান করার জন্য নিচের ৩টি সহজ ধাপ অনুসরণ করুন:
+If the project has already been initialized on your local machine, follow these three commands to start developing:
 
-### ধাপ ১: MySQL ডেটাবেস কন্টেইনার চালু করুন (Docker)
+### Step 1: Start the MySQL Database Container
 ```bash
 docker start nilebridge-mysql
 ```
-*(যদি ডকার ব্যবহার না করেন, তবে নিশ্চিত করুন আপনার লোকাল MySQL সার্ভিস চালু আছে)*
+*(If you are running native MySQL without Docker, ensure your local MySQL daemon is running on port `3306`.)*
 
-### ধাপ ২: ফ্রন্টএন্ড অ্যাসেট বিল্ড করুন
+### Step 2: Compile Frontend Assets
 ```bash
 bun run build
-# অথবা লাইভ অটো-রিলোড (HMR) এর জন্য:
+# Or for live hot-reloading during frontend styling:
 # bun run dev
 ```
 
-### ধাপ ৩: Laravel সার্ভার চালু করুন
+### Step 3: Start the Laravel Development Server
 ```bash
 php artisan serve
 ```
 
-🌐 ব্রাউজারে প্রবেশ করুন: **[http://127.0.0.1:8000](http://127.0.0.1:8000)** (বা `http://localhost:8000`)
+🌐 Open your browser and navigate to: **[http://127.0.0.1:8000](http://127.0.0.1:8000)** (or `http://localhost:8000`)
 
 ---
 
-## 🛠 Complete First-Time Setup (প্রথমবার সম্পূর্ণ সেটআপ করার নিয়ম)
+## 🛠 Complete First-Time Setup & Installation
 
-নতুন মেশিনে প্রজেক্টটি প্রথমবার ক্লোন করার পর কনফিগার করার সম্পূর্ণ ধাপ:
+Follow this step-by-step procedure when cloning the repository onto a fresh development workstation:
 
-### ১. সিস্টেম রিকোয়ারমেন্টস (Prerequisites)
-* **PHP 8.2+** (এক্সটেনশনসমূহ: `pdo_mysql`, `mbstring`, `xml`, `curl`, `bcmath`, `fileinfo`)
-* **MySQL 8.0+** (লোকাল অথবা ডকার কন্টেইনার)
-* **Composer 2.x**
-* **Bun** (অথবা Node.js 20+ ও NPM)
+### 1. System Prerequisites
+* **PHP 8.2+** (Required extensions: `pdo_mysql`, `mbstring`, `xml`, `curl`, `bcmath`, `fileinfo`, `zip`)
+* **MySQL 8.0+** (Local service or Docker container)
+* **Composer 2.x** (PHP dependency management)
+* **Bun 1.0+** (or Node.js 20+ LTS with NPM)
+* **Git**
 
 ---
 
-### ২. ডিপেনডেন্সি ও এনভায়রনমেন্ট কনফিগারেশন
+### 2. Dependency Installation & Environment Initialization
 ```bash
-# প্রজেক্ট ডিরেক্টরিতে যান
+# Navigate to project root
 cd /path/to/kanon
 
-# ১. এনভায়রনমেন্ট ফাইল তৈরি করুন
+# 1. Duplicate environment template
 cp .env.example .env
 
-# ২. PHP ডিপেনডেন্সি ইনস্টল করুন
+# 2. Install PHP dependencies
 composer install
 
-# ৩. অ্যাপ্লিকেশন সিকিউরিটি কি (Key) তৈরি করুন
+# 3. Generate unique application cryptographic key
 php artisan key:generate
 ```
 
 ---
 
-### ৩. ডেটাবেস কনফিগারেশন (`.env`)
-আপনার `.env` ফাইলের ডেটাবেস সেটিংস কনফিগার করুন:
+### 3. Database Setup (`.env`)
+Configure your database connection parameters inside `.env`:
 ```ini
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -85,7 +86,7 @@ DB_USERNAME=nilebridge
 DB_PASSWORD=secret
 ```
 
-*(যদি Docker দিয়ে খুব সহজে ডেটাবেস রান করতে চান:)*
+*(Optional: Launch an isolated, zero-configuration MySQL container via Docker:)*
 ```bash
 docker run --name nilebridge-mysql \
   -e MYSQL_DATABASE=nilebridge \
@@ -97,15 +98,15 @@ docker run --name nilebridge-mysql \
 
 ---
 
-### ৪. ডেটাবেস মাইগ্রেশন ও ডেমো ডেটা সিডিং
+### 4. Database Migrations & Seed Data Generation
 ```bash
 php artisan migrate:fresh --seed
 ```
-*এই কমান্ডটি সব টেবিল তৈরি করবে এবং অ্যাডমিন, স্টাফ ও ক্লায়েন্ট অ্যাকাউন্ট সহ বাস্তবসম্মত ডেমো লিড ডেটা প্রস্তুত করে দেবে।*
+*This command executes all schema migrations and seeds realistic enterprise leads, notes, and multi-tier user accounts.*
 
 ---
 
-### ৫. ফ্রন্টএন্ড প্যাকেজ ইনস্টল ও প্রোডাকশন বিল্ড
+### 5. Frontend Asset Compilation
 ```bash
 bun install
 bun run build
@@ -113,42 +114,43 @@ bun run build
 
 ---
 
-### ৬. অ্যাপ্লিকেশন সার্ভার চালু করুন
+### 6. Launch Application
 ```bash
 php artisan serve
 ```
 
 ---
 
-## 👥 Seeded Demonstration Accounts (লগইন তথ্য)
+## 👥 Seeded Demonstration Accounts
 
-সকল অ্যাকাউন্টের ডিফল্ট পাসওয়ার্ড: `password`  
-লগইন পেজ: **[http://127.0.0.1:8000/login](http://127.0.0.1:8000/login)**  
-*(টিপস: লগইন পেজের উপরে **১-ক্লিক অটো-ফিল বাটন** রয়েছে, ক্লিক করলেই পাসওয়ার্ড সহ ইনপুট পূরণ হয়ে যায়)*
+All pre-seeded test accounts share the default password: `password`  
+Authentication Gateway: **[http://127.0.0.1:8000/login](http://127.0.0.1:8000/login)**  
+*(Quick tip: The login interface includes **1-Click Auto-Fill Credential Buttons** for instantaneous review.)*
 
-| রোল (Role) | ইমেইল (Email) | পাসওয়ার্ড | ড্যাশবোর্ড রুট | কার্যাবলী ও এক্সেস |
+| Role | Email Address | Password | Landing Route | Access Scope & Capabilities |
 | :--- | :--- | :--- | :--- | :--- |
-| 👑 **Admin** | `admin@nilebridge.com` | `password` | `/admin` | গ্লোবাল সেলস পাইপলাইন, লিড রি-অ্যাসাইন, সম্পূর্ণ CSV ডেটা এক্সপোর্ট |
-| 💼 **Employee 1** | `employee1@nilebridge.com` | `password` | `/portal` | নিজের কাছে অ্যাসাইন করা লিড, স্টেজ ট্রানজিশন, ক্লায়েন্ট ফলো-আপ নোটস |
-| 💼 **Employee 2** | `employee2@nilebridge.com` | `password` | `/portal` | নর্ডিক ও ক্লাউড ভ্যানগার্ড লিড ম্যানেজমেন্ট, পাইপলাইন আপডেট |
-| 🏢 **Client** | `client@acme.com` | `password` | `/client` | নিজস্ব ট্যালেন্ট পড রিকুইজিশন ট্র্যাকিং, অ্যাকাউন্ট পার্টনার ও SLA ওভারভিউ |
+| 👑 **Admin** | `admin@nilebridge.com` | `password` | `/admin` | Global sales pipeline triage, staff reassignments, full CSV dataset exports |
+| 💼 **Employee 1** | `employee1@nilebridge.com` | `password` | `/portal` | Scoped assigned inquiries, linear stage transitions, follow-up timeline memos |
+| 💼 **Employee 2** | `employee2@nilebridge.com` | `password` | `/portal` | Dedicated Nordic & Cloud Vanguard accounts, pipeline progress tracking |
+| 🏢 **Client** | `client@acme.com` | `password` | `/client` | Active talent pod monitoring, assigned AE dossier, SLA performance metrics |
 
-> **নতুন ক্লায়েন্ট সাইন আপ:** নতুন কোনো ক্লায়েন্ট নিজে অ্যাকাউন্ট খুলতে চাইলে সরাসরি **[http://127.0.0.1:8000/register](http://127.0.0.1:8000/register)** পেজে গিয়ে সাইন আপ করতে পারবে।
+> **Client Self-Registration:** Prospective enterprise clients can self-register anytime via the dedicated onboarding gateway at **[http://127.0.0.1:8000/register](http://127.0.0.1:8000/register)**.
 
 ---
 
-## 🧪 Automated Testing (টেস্ট রান করার নিয়ম)
+## 🧪 Automated Testing Suite
 
-প্ল্যাটফর্মের সকল রুট, সিকিউরিটি মিডলওয়্যার, লিড ভ্যালিডেশন, ক্যালকুলেটর ইন্টিগ্রেশন এবং ক্লায়েন্ট রেজিস্ট্রেশন স্বয়ংক্রিয়ভাবে টেস্ট করতে নিচের কমান্ডটি রান করুন:
+The platform includes comprehensive test suites validating routing integrity, authentication controls, RBAC authorization, anti-spam honeypot guards, lead intake validation, and registration workflows.
 
+Execute the test suite with:
 ```bash
 php artisan test
 ```
 
-### টেস্ট কভারেজ মেট্রিক্স:
-* **মোট টেস্ট:** ১৯টি
-* **মোট Assertion:** ১১৯টি
-* **স্ট্যাটাস:** **All Passing (0 Failures, 0 Errors)**
+### Test Coverage Summary:
+* **Total Tests:** 19 Passed
+* **Total Assertions:** 119 Passed
+* **Status:** **100% Pass Rate (0 Failures, 0 Errors)**
 
 ---
 
@@ -200,3 +202,11 @@ kanon/
 ├── DEPLOYMENT_GUIDE.md                         # Production deployment walkthrough
 └── tests/Feature/NileBridgeSystemTest.php      # 19 Automated test cases
 ```
+
+---
+
+## 🔒 Security Best Practices
+* **CSRF Protection:** Integrated on all form submissions via `@csrf`.
+* **Password Hashing:** Strict Bcrypt (cost factor 12) on all user credentials.
+* **Database Session Security:** Sessions and CSRF tokens are tracked via database storage.
+* **Input Sanitization:** Explicit FormRequest-style validation preventing SQL injection and XSS.
